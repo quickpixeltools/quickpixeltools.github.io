@@ -1,130 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>QuickPixel Tools - Free Image Tools</title>
+<title>QuickPixel Tools - Free Image Compressor</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #222;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
 
-        header {
-            background: #ffffff;
-            padding: 20px 8%;
-            border-bottom: 1px solid #e5e7eb;
-        }
+header {
+    background: white;
+    padding: 20px 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
 
-        .hero {
-            text-align: center;
-            padding: 70px 20px 40px;
-        }
+.hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
 
-        .hero p {
-            color: #666;
-            font-size: 18px;
-        }
+.hero p {
+    color: #666;
+    font-size: 18px;
+}
 
-        .tools {
-            max-width: 900px;
-            margin: 30px auto 80px;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+.tool {
+    max-width: 650px;
+    margin: 30px auto 70px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    text-align: center;
+}
 
-        .tool-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        }
+.upload {
+    border: 2px dashed #aaa;
+    padding: 35px 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
 
-        .tool-card h2 {
-            margin-top: 10px;
-        }
+input[type="file"] {
+    margin: 15px;
+}
 
-        .tool-card p {
-            color: #666;
-            line-height: 1.6;
-        }
+label {
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: bold;
+}
 
-        button {
-            border: none;
-            padding: 12px 22px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-            background: #111827;
-            color: white;
-        }
+input[type="range"] {
+    width: 80%;
+}
 
-        button:hover {
-            opacity: 0.9;
-        }
+button {
+    background: #111827;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            color: #777;
-        }
-    </style>
+button:hover {
+    opacity: 0.9;
+}
+
+#result {
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+#download {
+    display: none;
+    text-decoration: none;
+    background: #16a34a;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    color: #777;
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">⚡ QuickPixel Tools</div>
-    </header>
+<header>
+    <div class="logo">⚡ QuickPixel Tools</div>
+</header>
 
-    <section class="hero">
-        <h1>Free Online Image Tools</h1>
-        <p>Compress and resize your images quickly and easily.</p>
-    </section>
+<section class="hero">
+    <h1>Free Image Compressor</h1>
+    <p>Compress your images directly in your browser.</p>
+</section>
 
-    <section class="tools">
+<section class="tool">
 
-        <div class="tool-card">
-            <div style="font-size: 45px;">🗜️</div>
-            <h2>Image Compressor</h2>
-            <p>Reduce your image file size while keeping good quality.</p>
-            <button>Open Tool</button>
-        </div>
+    <div class="upload">
+        <h2>Choose an Image</h2>
 
-        <div class="tool-card">
-            <div style="font-size: 45px;">📐</div>
-            <h2>Image Resizer</h2>
-            <p>Resize your images to the dimensions you need.</p>
-            <button>Open Tool</button>
-        </div>
+        <input
+            type="file"
+            id="imageInput"
+            accept="image/jpeg,image/png,image/webp"
+        >
+    </div>
 
-    </section>
+    <label for="quality">
+        Compression Quality: <span id="qualityValue">70</span>%
+    </label>
 
-    <footer>
-        © 2026 QuickPixel Tools — Free Online Tools
-    </footer>
+    <input
+        type="range"
+        id="quality"
+        min="10"
+        max="100"
+        value="70"
+    >
+
+    <br>
+
+    <button onclick="compressImage()">
+        Compress Image
+    </button>
+
+    <div id="result"></div>
+
+    <a id="download" download="compressed-image.jpg">
+        Download Compressed Image
+    </a>
+
+</section>
+
+<footer>
+    © 2026 QuickPixel Tools — Free Online Image Tools
+</footer>
+
+<script>
+
+const qualitySlider = document.getElementById("quality");
+const qualityValue = document.getElementById("qualityValue");
+
+qualitySlider.addEventListener("input", function() {
+    qualityValue.textContent = this.value;
+});
+
+function compressImage() {
+
+    const input = document.getElementById("imageInput");
+
+    if (!input.files || !input.files[0]) {
+        alert("Please choose an image first.");
+        return;
+    }
+
+    const file = input.files[0];
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        const image = new Image();
+
+        image.onload = function() {
+
+            const canvas = document.createElement("canvas");
+
+            canvas.width = image.width;
+            canvas.height = image.height;
+
+            const ctx = canvas.getContext("2d");
+
+            ctx.drawImage(
+                image,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            const quality =
+                parseInt(qualitySlider.value) / 100;
+
+            canvas.toBlob(
+                function(blob) {
+
+                    const originalSize =
+                        (file.size / 1024).toFixed(1);
+
+                    const compressedSize =
+                        (blob.size / 1024).toFixed(1);
+
+                    const download =
+                        document.getElementById("download");
+
+                    const result =
+                        document.getElementById("result");
+
+                    const url =
+                        URL.createObjectURL(blob);
+
+                    download.href = url;
+                    download.style.display = "inline-block";
+
+                    result.innerHTML =
+                        "Original: " +
+                        originalSize +
+                        " KB<br>" +
+                        "Compressed: " +
+                        compressedSize +
+                        " KB";
+
+                },
+                "image/jpeg",
+                quality
+            );
+        };
+
+        image.src = event.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}
+
+</script>
 
 </body>
 </html>
