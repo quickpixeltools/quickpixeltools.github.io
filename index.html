@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>QuickPixel Tools - Free Image Compressor</title>
+<title>QuickPixel Tools - Free Image Tools</title>
+
+<meta name="description" content="Free online image compressor and image resizer. Compress and resize JPG, PNG and WebP images easily.">
 
 <style>
 * {
@@ -31,22 +33,23 @@ header {
 
 .hero {
     text-align: center;
-    padding: 60px 20px 30px;
+    padding: 65px 20px 35px;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
 .hero p {
     color: #666;
     font-size: 18px;
+    line-height: 1.6;
 }
 
 .tool {
     max-width: 650px;
-    margin: 30px auto 70px;
+    margin: 30px auto 50px;
     background: white;
     padding: 35px;
     border-radius: 16px;
@@ -54,15 +57,20 @@ header {
     text-align: center;
 }
 
+.tool h2 {
+    font-size: 28px;
+}
+
 .upload {
     border: 2px dashed #aaa;
-    padding: 35px 20px;
+    padding: 30px 20px;
     border-radius: 12px;
     margin: 25px 0;
 }
 
 input[type="file"] {
     margin: 15px;
+    max-width: 100%;
 }
 
 label {
@@ -73,6 +81,16 @@ label {
 
 input[type="range"] {
     width: 80%;
+}
+
+input[type="number"] {
+    width: 80%;
+    max-width: 350px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -90,12 +108,13 @@ button:hover {
     opacity: 0.9;
 }
 
-#result {
+.result {
     margin-top: 25px;
     font-weight: bold;
+    line-height: 1.8;
 }
 
-#download {
+.download {
     display: none;
     text-decoration: none;
     background: #16a34a;
@@ -106,11 +125,47 @@ button:hover {
     display: inline-block;
 }
 
+.download:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    max-width: 650px;
+    margin: 60px auto;
+    border-top: 1px solid #ddd;
+}
+
+.info {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 25px;
+    line-height: 1.8;
+}
+
+.info h2 {
+    text-align: center;
+}
+
 footer {
     text-align: center;
     padding: 30px;
     background: white;
     color: #777;
+    margin-top: 60px;
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .tool {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 25px 18px;
+    }
+
 }
 </style>
 </head>
@@ -121,26 +176,49 @@ footer {
     <div class="logo">⚡ QuickPixel Tools</div>
 </header>
 
+
 <section class="hero">
-    <h1>Free Image Compressor</h1>
-    <p>Compress your images directly in your browser.</p>
+
+    <h1>Free Online Image Tools</h1>
+
+    <p>
+        Compress and resize your images quickly and easily.
+        Your images are processed directly in your browser.
+    </p>
+
 </section>
+
+
+<!-- IMAGE COMPRESSOR -->
 
 <section class="tool">
 
+    <h2>🗜️ Image Compressor</h2>
+
+    <p>
+        Reduce your image file size while keeping good quality.
+    </p>
+
     <div class="upload">
-        <h2>Choose an Image</h2>
+
+        <h3>Choose an Image</h3>
 
         <input
             type="file"
             id="imageInput"
             accept="image/jpeg,image/png,image/webp"
         >
+
     </div>
 
+
     <label for="quality">
-        Compression Quality: <span id="qualityValue">70</span>%
+
+        Compression Quality:
+        <span id="qualityValue">70</span>%
+
     </label>
+
 
     <input
         type="range"
@@ -150,58 +228,231 @@ footer {
         value="70"
     >
 
+
     <br>
 
+
     <button onclick="compressImage()">
+
         Compress Image
+
     </button>
 
-    <div id="result"></div>
 
-    <a id="download" download="compressed-image.jpg">
+    <div
+        id="result"
+        class="result">
+    </div>
+
+
+    <a
+        id="download"
+        class="download"
+        download="compressed-image.jpg">
+
         Download Compressed Image
+
     </a>
 
 </section>
 
+
+<!-- IMAGE RESIZER -->
+
+<section class="tool">
+
+    <h2>📐 Image Resizer</h2>
+
+    <p>
+        Resize your image to the exact dimensions you need.
+    </p>
+
+
+    <div class="upload">
+
+        <h3>Choose an Image</h3>
+
+        <input
+            type="file"
+            id="resizeInput"
+            accept="image/jpeg,image/png,image/webp"
+        >
+
+    </div>
+
+
+    <label for="resizeWidth">
+
+        Width (pixels)
+
+    </label>
+
+    <input
+        type="number"
+        id="resizeWidth"
+        placeholder="Example: 800"
+        min="1"
+    >
+
+
+    <label for="resizeHeight">
+
+        Height (pixels)
+
+    </label>
+
+    <input
+        type="number"
+        id="resizeHeight"
+        placeholder="Example: 600"
+        min="1"
+    >
+
+
+    <br>
+
+
+    <button onclick="resizeImage()">
+
+        Resize Image
+
+    </button>
+
+
+    <div
+        id="resizeResult"
+        class="result">
+    </div>
+
+
+    <a
+        id="resizeDownload"
+        class="download"
+        download="resized-image.jpg">
+
+        Download Resized Image
+
+    </a>
+
+</section>
+
+
+<!-- INFORMATION -->
+
+<section class="info">
+
+    <h2>Why Use QuickPixel Tools?</h2>
+
+    <p>
+        QuickPixel Tools provides simple and free image utilities
+        that anyone can use directly from their browser.
+    </p>
+
+    <p>
+        You can compress images to reduce file size or resize
+        images to specific dimensions without installing software.
+    </p>
+
+    <p>
+        Your images are processed directly in your browser,
+        so you don't need to upload them to our server.
+    </p>
+
+</section>
+
+
 <footer>
+
     © 2026 QuickPixel Tools — Free Online Image Tools
+
 </footer>
+
 
 <script>
 
-const qualitySlider = document.getElementById("quality");
-const qualityValue = document.getElementById("qualityValue");
+/* ================================
+   IMAGE COMPRESSOR
+================================ */
 
-qualitySlider.addEventListener("input", function() {
-    qualityValue.textContent = this.value;
-});
+
+const qualitySlider =
+    document.getElementById("quality");
+
+
+const qualityValue =
+    document.getElementById("qualityValue");
+
+
+qualitySlider.addEventListener(
+    "input",
+    function() {
+
+        qualityValue.textContent =
+            this.value;
+
+    }
+);
+
 
 function compressImage() {
 
-    const input = document.getElementById("imageInput");
+    const input =
+        document.getElementById("imageInput");
 
-    if (!input.files || !input.files[0]) {
-        alert("Please choose an image first.");
+
+    if (
+        !input.files ||
+        !input.files[0]
+    ) {
+
+        alert(
+            "Please choose an image first."
+        );
+
         return;
+
     }
 
-    const file = input.files[0];
 
-    const reader = new FileReader();
+    const file =
+        input.files[0];
 
-    reader.onload = function(event) {
 
-        const image = new Image();
+    const reader =
+        new FileReader();
 
-        image.onload = function() {
 
-            const canvas = document.createElement("canvas");
+    reader.onload =
+        function(event) {
 
-            canvas.width = image.width;
-            canvas.height = image.height;
 
-            const ctx = canvas.getContext("2d");
+        const image =
+            new Image();
+
+
+        image.onload =
+            function() {
+
+
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
+
+
+            canvas.width =
+                image.width;
+
+
+            canvas.height =
+                image.height;
+
+
+            const ctx =
+                canvas.getContext(
+                    "2d"
+                );
+
 
             ctx.drawImage(
                 image,
@@ -211,48 +462,260 @@ function compressImage() {
                 canvas.height
             );
 
+
             const quality =
-                parseInt(qualitySlider.value) / 100;
+                parseInt(
+                    qualitySlider.value
+                ) / 100;
+
 
             canvas.toBlob(
+
                 function(blob) {
 
+
                     const originalSize =
-                        (file.size / 1024).toFixed(1);
+                        (
+                            file.size / 1024
+                        ).toFixed(1);
+
 
                     const compressedSize =
-                        (blob.size / 1024).toFixed(1);
+                        (
+                            blob.size / 1024
+                        ).toFixed(1);
+
 
                     const download =
-                        document.getElementById("download");
+                        document.getElementById(
+                            "download"
+                        );
+
 
                     const result =
-                        document.getElementById("result");
+                        document.getElementById(
+                            "result"
+                        );
+
 
                     const url =
-                        URL.createObjectURL(blob);
+                        URL.createObjectURL(
+                            blob
+                        );
 
-                    download.href = url;
-                    download.style.display = "inline-block";
+
+                    download.href =
+                        url;
+
+
+                    download.style.display =
+                        "inline-block";
+
 
                     result.innerHTML =
                         "Original: " +
                         originalSize +
                         " KB<br>" +
+
                         "Compressed: " +
                         compressedSize +
                         " KB";
 
                 },
+
                 "image/jpeg",
+
                 quality
+
             );
+
         };
 
-        image.src = event.target.result;
+
+        image.src =
+            event.target.result;
+
     };
 
+
     reader.readAsDataURL(file);
+
+}
+
+
+/* ================================
+   IMAGE RESIZER
+================================ */
+
+
+function resizeImage() {
+
+    const input =
+        document.getElementById(
+            "resizeInput"
+        );
+
+
+    if (
+        !input.files ||
+        !input.files[0]
+    ) {
+
+        alert(
+            "Please choose an image first."
+        );
+
+        return;
+
+    }
+
+
+    const width =
+        parseInt(
+            document.getElementById(
+                "resizeWidth"
+            ).value
+        );
+
+
+    const height =
+        parseInt(
+            document.getElementById(
+                "resizeHeight"
+            ).value
+        );
+
+
+    if (
+        !width ||
+        !height ||
+        width < 1 ||
+        height < 1
+    ) {
+
+        alert(
+            "Please enter a valid width and height."
+        );
+
+        return;
+
+    }
+
+
+    const file =
+        input.files[0];
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(event) {
+
+
+        const image =
+            new Image();
+
+
+        image.onload =
+            function() {
+
+
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
+
+
+            canvas.width =
+                width;
+
+
+            canvas.height =
+                height;
+
+
+            const ctx =
+                canvas.getContext(
+                    "2d"
+                );
+
+
+            ctx.drawImage(
+
+                image,
+
+                0,
+                0,
+
+                width,
+                height
+
+            );
+
+
+            canvas.toBlob(
+
+                function(blob) {
+
+
+                    const url =
+                        URL.createObjectURL(
+                            blob
+                        );
+
+
+                    const download =
+                        document.getElementById(
+                            "resizeDownload"
+                        );
+
+
+                    const result =
+                        document.getElementById(
+                            "resizeResult"
+                        );
+
+
+                    download.href =
+                        url;
+
+
+                    download.style.display =
+                        "inline-block";
+
+
+                    result.innerHTML =
+                        "New image size: " +
+
+                        width +
+
+                        " × " +
+
+                        height +
+
+                        " pixels";
+
+                },
+
+                "image/jpeg",
+
+                0.9
+
+            );
+
+        };
+
+
+        image.src =
+            event.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
 }
 
 </script>
