@@ -11,8 +11,7 @@
 
 <title>QuickPixel Tools - Free Online Image Tools</title>
 
-<meta name="description" content="Free online image compressor and image resizer. Compress and resize JPG, PNG and WebP images directly in your browser.">
-
+<meta name="description" content="Free online image compressor, image resizer and JPG to PNG converter. Easy image tools that work directly in your browser.">
 
 <style>
 
@@ -20,174 +19,276 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
+    background: #f6f8fc;
+    color: #1f2937;
+    line-height: 1.6;
 }
 
 header {
     background: white;
-    padding: 20px 8%;
+    padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
 
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 nav {
     background: white;
-    padding: 18px 10px;
-    text-align: center;
     border-bottom: 1px solid #eee;
+    padding: 12px 10px;
+    text-align: center;
 }
 
 nav a {
-    color: #111827;
+    color: #374151;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     margin: 0 10px;
-    line-height: 2.5;
+    display: inline-block;
+    padding: 5px;
 }
 
 nav a:hover {
+    color: #111827;
     text-decoration: underline;
 }
 
 .hero {
+    max-width: 900px;
+    margin: auto;
     text-align: center;
-    padding: 65px 20px 35px;
+    padding: 75px 20px 55px;
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 0 0 20px;
 }
 
 .hero p {
-    color: #666;
-    font-size: 18px;
-    line-height: 1.6;
+    max-width: 700px;
+    margin: auto;
+    color: #667085;
+    font-size: 19px;
 }
 
-.tool {
-    max-width: 650px;
-    margin: 30px auto 50px;
-    background: white;
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-    text-align: center;
+.hero-buttons {
+    margin-top: 30px;
 }
 
-.tool h2 {
-    font-size: 28px;
-}
-
-.upload {
-    border: 2px dashed #aaa;
-    padding: 30px 20px;
-    border-radius: 12px;
-    margin: 25px 0;
-}
-
-input[type="file"] {
-    margin: 15px;
-    max-width: 100%;
-}
-
-label {
-    display: block;
-    margin: 20px 0 8px;
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 9px;
+    text-decoration: none;
     font-weight: bold;
+    margin: 6px;
 }
 
-input[type="range"] {
-    width: 80%;
+.primary-btn {
+    background: #111827;
+    color: white;
 }
 
-input[type="number"] {
-    width: 80%;
-    max-width: 350px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+.secondary-btn {
+    background: white;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
-button {
-    background: #111827;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
+.section-title p {
+    color: #667085;
 }
 
-button:hover {
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 70px;
+}
+
+.card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    border: 1px solid #edf0f5;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #667085;
+    min-height: 75px;
+}
+
+.card a {
+    display: inline-block;
+    background: #111827;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card a:hover {
     opacity: 0.9;
 }
 
-.result {
-    margin-top: 25px;
-    font-weight: bold;
-    line-height: 1.8;
+.info-section {
+    background: white;
+    border-radius: 18px;
+    padding: 40px;
+    margin-bottom: 45px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
 }
 
-.download {
-    display: none;
-    text-decoration: none;
-    background: #16a34a;
-    color: white;
-    padding: 12px 22px;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-
-.info {
-    max-width: 800px;
-    margin: 60px auto;
-    padding: 0 25px;
-    line-height: 1.8;
-}
-
-.info h2 {
+.info-section h2 {
     text-align: center;
+    margin-top: 0;
+    font-size: 30px;
 }
 
-.info p {
-    color: #555;
+.info-section h3 {
+    margin-top: 28px;
+}
+
+.info-section p {
+    color: #59636e;
+}
+
+.faq-item {
+    border-top: 1px solid #e5e7eb;
+    padding: 18px 0;
+}
+
+.faq-item:first-of-type {
+    border-top: none;
+}
+
+.faq-item h3 {
+    margin: 0 0 7px;
+}
+
+.faq-item p {
+    margin: 0;
+}
+
+.trust {
+    text-align: center;
+    padding: 30px 20px 65px;
+}
+
+.trust p {
+    color: #667085;
 }
 
 footer {
-    text-align: center;
-    padding: 30px;
     background: white;
-    color: #777;
-    margin-top: 60px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: 35px 20px;
+    color: #667085;
 }
 
-@media (max-width: 600px) {
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #374151;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+
+    .tools {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .info-section {
+        padding: 28px 22px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 17px 20px;
+    }
+
+    .header-inner {
+        justify-content: center;
+    }
+
+    .hero {
+        padding-top: 55px;
+    }
 
     .hero h1 {
         font-size: 32px;
     }
 
-    .tool {
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 25px 18px;
-    }
-
     nav a {
-        display: inline-block;
-        margin: 0 6px;
+        margin: 0 5px;
+        font-size: 14px;
     }
 
 }
@@ -202,8 +303,12 @@ footer {
 
 <header>
 
+<div class="header-inner">
+
 <div class="logo">
 ⚡ QuickPixel Tools
+</div>
+
 </div>
 
 </header>
@@ -213,9 +318,11 @@ footer {
 
 <a href="index.html">Home</a>
 
-<a href="image-compressor.html">Image Compressor</a>
+<a href="image-compressor.html">Compressor</a>
 
-<a href="image-resizer.html">Image Resizer</a>
+<a href="image-resizer.html">Resizer</a>
+
+<a href="jpg-to-png.html">JPG to PNG</a>
 
 <a href="about.html">About</a>
 
@@ -228,206 +335,214 @@ footer {
 
 <section class="hero">
 
-<h1>Free Online Image Tools</h1>
+<h1>Simple & Free Online Image Tools</h1>
 
 <p>
-Compress and resize your images quickly and easily.
-Your images are processed directly in your browser.
+Compress, resize and convert your images quickly and easily.
+No software installation required.
 </p>
+
+<div class="hero-buttons">
+
+<a
+class="primary-btn"
+href="#tools">
+Explore Tools
+</a>
+
+<a
+class="secondary-btn"
+href="about.html">
+Learn More
+</a>
+
+</div>
 
 </section>
 
 
-<!-- IMAGE COMPRESSOR -->
+<section
+id="tools"
+class="container">
 
-<section class="tool">
 
-<h2>🗜️ Image Compressor</h2>
+<div class="section-title">
+
+<h2>Our Free Tools</h2>
 
 <p>
-Reduce your image file size while keeping good quality.
+Choose the image tool you need.
 </p>
 
-
-<div class="upload">
-
-<h3>Choose an Image</h3>
-
-<input
-type="file"
-id="imageInput"
-accept="image/jpeg,image/png,image/webp"
->
-
 </div>
 
 
-<label for="quality">
-
-Compression Quality:
-<span id="qualityValue">70</span>%
-
-</label>
+<div class="tools">
 
 
-<input
-type="range"
-id="quality"
-min="10"
-max="100"
-value="70"
->
+<div class="card">
 
-
-<br>
-
-
-<button onclick="compressImage()">
-
-Compress Image
-
-</button>
-
-
-<div
-id="result"
-class="result">
+<div class="card-icon">
+🗜️
 </div>
 
+<h3>Image Compressor</h3>
 
-<a
-id="download"
-class="download"
-download="compressed-image.jpg">
-
-Download Compressed Image
-
-</a>
-
-
-<p style="margin-top:25px;">
+<p>
+Reduce image file size while keeping good visual quality.
+</p>
 
 <a href="image-compressor.html">
-Open Full Image Compressor →
+Compress Images →
 </a>
 
-</p>
-
-</section>
+</div>
 
 
-<!-- IMAGE RESIZER -->
+<div class="card">
 
-<section class="tool">
+<div class="card-icon">
+📐
+</div>
 
-<h2>📐 Image Resizer</h2>
+<h3>Image Resizer</h3>
 
 <p>
-Resize your image to the exact dimensions you need.
+Resize images to custom width and height in pixels.
 </p>
-
-
-<div class="upload">
-
-<h3>Choose an Image</h3>
-
-<input
-type="file"
-id="resizeInput"
-accept="image/jpeg,image/png,image/webp"
->
-
-</div>
-
-
-<label for="resizeWidth">
-Width (pixels)
-</label>
-
-<input
-type="number"
-id="resizeWidth"
-placeholder="Example: 800"
-min="1"
->
-
-
-<label for="resizeHeight">
-Height (pixels)
-</label>
-
-<input
-type="number"
-id="resizeHeight"
-placeholder="Example: 600"
-min="1"
->
-
-
-<br>
-
-
-<button onclick="resizeImage()">
-
-Resize Image
-
-</button>
-
-
-<div
-id="resizeResult"
-class="result">
-</div>
-
-
-<a
-id="resizeDownload"
-class="download"
-download="resized-image.jpg">
-
-Download Resized Image
-
-</a>
-
-
-<p style="margin-top:25px;">
 
 <a href="image-resizer.html">
-Open Full Image Resizer →
+Resize Images →
 </a>
 
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">
+🔄
+</div>
+
+<h3>JPG to PNG</h3>
+
+<p>
+Convert JPG and JPEG images into PNG format directly in your browser.
 </p>
+
+<a href="jpg-to-png.html">
+Convert JPG to PNG →
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- INFORMATION -->
+<section class="container">
 
-<section class="info">
+
+<div class="info-section">
 
 <h2>Why Use QuickPixel Tools?</h2>
 
 <p>
-QuickPixel Tools provides simple and free image utilities
-that anyone can use directly from their browser.
+QuickPixel Tools provides simple online image utilities
+that are easy to use on both desktop and mobile devices.
 </p>
 
+<h3>Fast and Simple</h3>
+
 <p>
-You can compress images to reduce file size or resize
-images to specific dimensions without installing software.
+Our tools are designed with a simple interface so you can
+process your images without complicated software.
 </p>
 
+<h3>Browser-Based Image Processing</h3>
+
 <p>
-Our image tools are designed to process images directly
-in your browser.
+Our image tools are designed to process selected images
+directly in your browser. Your images do not need to be
+uploaded to a QuickPixel Tools server for these basic
+image operations.
 </p>
 
-<h2>Free Online Image Tools</h2>
+<h3>Free Online Tools</h3>
 
 <p>
-Use our free image compressor to reduce image file sizes,
-or use our image resizer to change image dimensions.
-Both tools are designed to be simple and easy to use.
+You can use our current image tools for free without
+installing additional software.
+</p>
+
+</div>
+
+
+<div class="info-section">
+
+<h2>Frequently Asked Questions</h2>
+
+
+<div class="faq-item">
+
+<h3>Is QuickPixel Tools free?</h3>
+
+<p>
+Yes. Our current image tools are available to use for free.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Do I need to install software?</h3>
+
+<p>
+No. The tools work directly in a modern web browser.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Can I use QuickPixel Tools on my phone?</h3>
+
+<p>
+Yes. The website is designed to work on modern mobile
+and desktop browsers.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>What image formats are supported?</h3>
+
+<p>
+Our current tools support common image formats including
+JPG, JPEG, PNG and WebP where applicable.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section class="trust">
+
+<h2>Easy Image Tools, Right in Your Browser</h2>
+
+<p>
+No complicated setup. Choose a tool and get started.
 </p>
 
 </section>
@@ -435,337 +550,21 @@ Both tools are designed to be simple and easy to use.
 
 <footer>
 
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy Policy</a>
+
+</div>
+
 © 2026 QuickPixel Tools — Free Online Image Tools
 
 </footer>
-
-
-<script>
-
-
-/* IMAGE COMPRESSOR */
-
-
-const qualitySlider =
-document.getElementById("quality");
-
-
-const qualityValue =
-document.getElementById("qualityValue");
-
-
-qualitySlider.addEventListener(
-"input",
-function() {
-
-qualityValue.textContent =
-this.value;
-
-}
-);
-
-
-function compressImage() {
-
-const input =
-document.getElementById("imageInput");
-
-
-if (
-!input.files ||
-!input.files[0]
-) {
-
-alert(
-"Please choose an image first."
-);
-
-return;
-
-}
-
-
-const file =
-input.files[0];
-
-
-const reader =
-new FileReader();
-
-
-reader.onload =
-function(event) {
-
-const image =
-new Image();
-
-
-image.onload =
-function() {
-
-const canvas =
-document.createElement("canvas");
-
-
-canvas.width =
-image.width;
-
-
-canvas.height =
-image.height;
-
-
-const ctx =
-canvas.getContext("2d");
-
-
-ctx.drawImage(
-image,
-0,
-0,
-canvas.width,
-canvas.height
-);
-
-
-const quality =
-parseInt(
-qualitySlider.value
-) / 100;
-
-
-canvas.toBlob(
-
-function(blob) {
-
-const originalSize =
-(
-file.size / 1024
-).toFixed(1);
-
-
-const compressedSize =
-(
-blob.size / 1024
-).toFixed(1);
-
-
-const download =
-document.getElementById(
-"download"
-);
-
-
-const result =
-document.getElementById(
-"result"
-);
-
-
-const url =
-URL.createObjectURL(
-blob
-);
-
-
-download.href =
-url;
-
-
-download.style.display =
-"inline-block";
-
-
-result.innerHTML =
-"Original: " +
-originalSize +
-" KB<br>" +
-
-"Compressed: " +
-compressedSize +
-" KB";
-
-},
-
-"image/jpeg",
-
-quality
-
-);
-
-};
-
-
-image.src =
-event.target.result;
-
-};
-
-
-reader.readAsDataURL(file);
-
-}
-
-
-/* IMAGE RESIZER */
-
-
-function resizeImage() {
-
-const input =
-document.getElementById(
-"resizeInput"
-);
-
-
-if (
-!input.files ||
-!input.files[0]
-) {
-
-alert(
-"Please choose an image first."
-);
-
-return;
-
-}
-
-
-const width =
-parseInt(
-document.getElementById(
-"resizeWidth"
-).value
-);
-
-
-const height =
-parseInt(
-document.getElementById(
-"resizeHeight"
-).value
-);
-
-
-if (
-!width ||
-!height ||
-width < 1 ||
-height < 1
-) {
-
-alert(
-"Please enter a valid width and height."
-);
-
-return;
-
-}
-
-
-const file =
-input.files[0];
-
-
-const reader =
-new FileReader();
-
-
-reader.onload =
-function(event) {
-
-const image =
-new Image();
-
-
-image.onload =
-function() {
-
-const canvas =
-document.createElement("canvas");
-
-
-canvas.width =
-width;
-
-
-canvas.height =
-height;
-
-
-const ctx =
-canvas.getContext("2d");
-
-
-ctx.drawImage(
-image,
-0,
-0,
-width,
-height
-);
-
-
-canvas.toBlob(
-
-function(blob) {
-
-const url =
-URL.createObjectURL(
-blob
-);
-
-
-const download =
-document.getElementById(
-"resizeDownload"
-);
-
-
-const result =
-document.getElementById(
-"resizeResult"
-);
-
-
-download.href =
-url;
-
-
-download.style.display =
-"inline-block";
-
-
-result.innerHTML =
-"New image size: " +
-width +
-" × " +
-height +
-" pixels";
-
-},
-
-"image/jpeg",
-
-0.9
-
-);
-
-};
-
-
-image.src =
-event.target.result;
-
-};
-
-
-reader.readAsDataURL(file);
-
-}
-
-</script>
 
 
 </body>
