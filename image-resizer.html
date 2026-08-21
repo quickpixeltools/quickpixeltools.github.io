@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Free Image Resizer Online - QuickPixel Tools</title>
+
+<meta name="description" content="Resize JPG, PNG and WebP images online for free. Choose custom width and height and resize your image directly in your browser.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+header {
+    background: white;
+    padding: 20px 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.tool {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+.upload {
+    border: 2px dashed #aaa;
+    padding: 35px 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+input[type="file"] {
+    margin: 15px;
+    max-width: 100%;
+}
+
+label {
+    display: block;
+    margin: 20px 0 8px;
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 80%;
+    max-width: 350px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #111827;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 25px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.download {
+    display: none;
+    text-decoration: none;
+    background: #16a34a;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.info {
+    background: white;
+    margin-top: 35px;
+    padding: 30px;
+    border-radius: 16px;
+    line-height: 1.8;
+}
+
+.info h2 {
+    margin-top: 25px;
+}
+
+.info h2:first-child {
+    margin-top: 0;
+}
+
+.faq {
+    background: white;
+    margin-top: 35px;
+    padding: 30px;
+    border-radius: 16px;
+    line-height: 1.8;
+}
+
+.faq h2 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    color: #777;
+    margin-top: 60px;
+}
+
+a {
+    color: #111827;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .tool {
+        padding: 25px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+⚡ QuickPixel Tools
+</div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero">
+
+<h1>Free Image Resizer Online</h1>
+
+<p>
+Resize JPG, PNG and WebP images to custom dimensions
+quickly and easily directly in your browser.
+</p>
+
+</section>
+
+
+<section class="tool">
+
+
+<h2>Resize Your Image</h2>
+
+<p>
+Choose an image and enter the width and height you need.
+</p>
+
+
+<div class="upload">
+
+<h3>Choose an Image</h3>
+
+<input
+type="file"
+id="resizeInput"
+accept="image/jpeg,image/png,image/webp"
+>
+
+</div>
+
+
+<label for="resizeWidth">
+Width (pixels)
+</label>
+
+<input
+type="number"
+id="resizeWidth"
+placeholder="Example: 800"
+min="1"
+>
+
+
+<label for="resizeHeight">
+Height (pixels)
+</label>
+
+<input
+type="number"
+id="resizeHeight"
+placeholder="Example: 600"
+min="1"
+>
+
+
+<br>
+
+
+<button onclick="resizeImage()">
+
+Resize Image
+
+</button>
+
+
+<div
+id="resizeResult"
+class="result">
+</div>
+
+
+<a
+id="resizeDownload"
+class="download"
+download="resized-image.jpg">
+
+Download Resized Image
+
+</a>
+
+
+</section>
+
+
+<section class="info">
+
+
+<h2>What Is an Image Resizer?</h2>
+
+<p>
+An image resizer changes the dimensions of an image,
+such as its width and height. Resizing can help you
+prepare images for websites, social media, documents
+and other digital uses.
+</p>
+
+
+<h2>How to Resize an Image</h2>
+
+<p>
+Choose your JPG, PNG or WebP image, enter the desired
+width and height in pixels, and click the Resize Image
+button. You can then download your resized image.
+</p>
+
+
+<h2>Is This Image Resizer Free?</h2>
+
+<p>
+Yes. QuickPixel Tools provides this image resizer
+as a free online tool.
+</p>
+
+
+<h2>Are My Images Uploaded?</h2>
+
+<p>
+The image resizing process is performed directly in your
+browser. Your selected image does not need to be uploaded
+to a QuickPixel Tools server for resizing.
+</p>
+
+
+<h2>Why Resize Images?</h2>
+
+<p>
+Different websites and applications may require images
+with specific dimensions. Resizing an image can help
+you meet those requirements and make images easier
+to use.
+</p>
+
+
+</section>
+
+
+<section class="faq">
+
+
+<h2>Frequently Asked Questions</h2>
+
+
+<h3>Can I resize JPG images?</h3>
+
+<p>
+Yes. JPG images are supported.
+</p>
+
+
+<h3>Can I resize PNG images?</h3>
+
+<p>
+Yes. PNG images are supported. The downloaded result
+is provided as a JPEG image.
+</p>
+
+
+<h3>Can I resize images on my phone?</h3>
+
+<p>
+Yes. The tool works in modern mobile and desktop browsers.
+</p>
+
+
+<h3>Do I need to install software?</h3>
+
+<p>
+No. You can resize images directly in your browser.
+</p>
+
+
+<h3>Can I choose custom dimensions?</h3>
+
+<p>
+Yes. You can enter your preferred width and height
+in pixels.
+</p>
+
+
+</section>
+
+
+<p style="text-align:center; margin-top:35px;">
+
+<a href="index.html">
+← Back to QuickPixel Tools
+</a>
+
+</p>
+
+
+</main>
+
+
+<footer>
+
+© 2026 QuickPixel Tools — Free Online Image Tools
+
+</footer>
+
+
+<script>
+
+
+function resizeImage() {
+
+
+const input =
+document.getElementById(
+"resizeInput"
+);
+
+
+if (
+!input.files ||
+!input.files[0]
+) {
+
+alert(
+"Please choose an image first."
+);
+
+return;
+
+}
+
+
+const width =
+parseInt(
+document.getElementById(
+"resizeWidth"
+).value
+);
+
+
+const height =
+parseInt(
+document.getElementById(
+"resizeHeight"
+).value
+);
+
+
+if (
+!width ||
+!height ||
+width < 1 ||
+height < 1
+) {
+
+alert(
+"Please enter a valid width and height."
+);
+
+return;
+
+}
+
+
+const file =
+input.files[0];
+
+
+const reader =
+new FileReader();
+
+
+reader.onload =
+function(event) {
+
+
+const image =
+new Image();
+
+
+image.onload =
+function() {
+
+
+const canvas =
+document.createElement("canvas");
+
+
+canvas.width =
+width;
+
+
+canvas.height =
+height;
+
+
+const ctx =
+canvas.getContext("2d");
+
+
+ctx.drawImage(
+image,
+0,
+0,
+width,
+height
+);
+
+
+canvas.toBlob(
+
+function(blob) {
+
+
+const url =
+URL.createObjectURL(
+blob
+);
+
+
+const download =
+document.getElementById(
+"resizeDownload"
+);
+
+
+const result =
+document.getElementById(
+"resizeResult"
+);
+
+
+download.href =
+url;
+
+
+download.style.display =
+"inline-block";
+
+
+result.innerHTML =
+"Original size: " +
+image.width +
+" × " +
+image.height +
+" pixels<br>" +
+
+"New size: " +
+width +
+" × " +
+height +
+" pixels";
+
+},
+
+"image/jpeg",
+
+0.9
+
+);
+
+};
+
+
+image.src =
+event.target.result;
+
+
+};
+
+
+reader.readAsDataURL(file);
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
