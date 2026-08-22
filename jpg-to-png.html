@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +13,10 @@
 <meta name="description" content="Convert JPG and JPEG images to PNG online for free. Convert images directly in your browser with QuickPixel Tools.">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/jpg-to-png.html">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+     crossorigin="anonymous"></script>
 
 <style>
 
@@ -205,9 +210,7 @@ footer {
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -216,7 +219,6 @@ footer {
 </div>
 
 </header>
-
 
 <nav>
 
@@ -236,9 +238,7 @@ footer {
 
 </nav>
 
-
 <main>
-
 
 <section class="hero">
 
@@ -251,7 +251,6 @@ The conversion happens directly in your browser.
 
 </section>
 
-
 <section class="tool">
 
 <h2>Convert JPG to PNG</h2>
@@ -259,7 +258,6 @@ The conversion happens directly in your browser.
 <p>
 Choose a JPG or JPEG image to get started.
 </p>
-
 
 <div class="upload">
 
@@ -273,19 +271,14 @@ accept="image/jpeg,.jpg,.jpeg"
 
 </div>
 
-
 <button onclick="convertToPNG()">
-
 Convert to PNG
-
 </button>
-
 
 <div
 id="result"
 class="result">
 </div>
-
 
 <a
 id="download"
@@ -298,9 +291,7 @@ Download PNG Image
 
 </section>
 
-
 <section class="content-box">
-
 
 <h2>What Is a JPG to PNG Converter?</h2>
 
@@ -310,7 +301,6 @@ format into PNG format. PNG images can be useful for
 websites, graphics, documents and other digital projects.
 </p>
 
-
 <h2>How to Convert JPG to PNG</h2>
 
 <p>
@@ -318,7 +308,6 @@ Choose a JPG or JPEG image using the upload box above.
 Click Convert to PNG and wait for the conversion to finish.
 Then click the download button to save your PNG image.
 </p>
-
 
 <h2>Why Convert JPG to PNG?</h2>
 
@@ -328,14 +317,12 @@ require PNG files. Converting a JPG image gives you a PNG
 version without needing to install additional software.
 </p>
 
-
 <h2>Is This JPG to PNG Converter Free?</h2>
 
 <p>
 Yes. QuickPixel Tools provides this JPG to PNG converter
 for free.
 </p>
-
 
 <h2>Are My Images Uploaded?</h2>
 
@@ -345,9 +332,7 @@ Your selected image does not need to be uploaded to a
 QuickPixel Tools server.
 </p>
 
-
 <h2>Frequently Asked Questions</h2>
-
 
 <div class="faq">
 
@@ -359,7 +344,6 @@ Yes. Both JPG and JPEG images are supported.
 
 </div>
 
-
 <div class="faq">
 
 <h3>Is the JPG to PNG converter free?</h3>
@@ -369,7 +353,6 @@ Yes. You can use the converter for free.
 </p>
 
 </div>
-
 
 <div class="faq">
 
@@ -381,7 +364,6 @@ No. The conversion works directly in a modern web browser.
 
 </div>
 
-
 <div class="faq">
 
 <h3>Can I use this converter on my phone?</h3>
@@ -391,7 +373,6 @@ Yes. The converter works on modern mobile browsers.
 </p>
 
 </div>
-
 
 <div class="faq">
 
@@ -404,9 +385,7 @@ image does not need to be uploaded to our server.
 
 </div>
 
-
 </section>
-
 
 <p style="text-align:center; margin-top:35px;">
 
@@ -416,9 +395,7 @@ image does not need to be uploaded to our server.
 
 </p>
 
-
 </main>
-
 
 <footer>
 
@@ -438,24 +415,18 @@ image does not need to be uploaded to our server.
 
 </footer>
 
-
 <script>
 
-
 function convertToPNG() {
-
 
 const input =
 document.getElementById("jpgInput");
 
-
 const result =
 document.getElementById("result");
 
-
 const download =
 document.getElementById("download");
-
 
 if (
 !input.files ||
@@ -470,10 +441,8 @@ return;
 
 }
 
-
 const file =
 input.files[0];
-
 
 if (
 file.type !== "image/jpeg"
@@ -487,26 +456,20 @@ return;
 
 }
 
-
 const reader =
 new FileReader();
-
 
 reader.onload =
 function(event) {
 
-
 const image =
 new Image();
-
 
 image.onload =
 function() {
 
-
 const canvas =
 document.createElement("canvas");
-
 
 canvas.width =
 image.width;
@@ -514,10 +477,8 @@ image.width;
 canvas.height =
 image.height;
 
-
 const ctx =
 canvas.getContext("2d");
-
 
 ctx.drawImage(
 image,
@@ -527,11 +488,9 @@ canvas.width,
 canvas.height
 );
 
-
 canvas.toBlob(
 
 function(blob) {
-
 
 if (!blob) {
 
@@ -542,24 +501,19 @@ return;
 
 }
 
-
 const url =
 URL.createObjectURL(blob);
-
 
 download.href =
 url;
 
-
 download.style.display =
 "inline-block";
-
 
 const size =
 (
 blob.size / 1024
 ).toFixed(1);
-
 
 result.innerHTML =
 "Conversion completed successfully!<br>" +
@@ -567,23 +521,18 @@ result.innerHTML =
 size +
 " KB";
 
-
 },
 
 "image/png"
 
 );
 
-
 };
-
 
 image.src =
 event.target.result;
 
-
 };
-
 
 reader.readAsDataURL(file);
 
@@ -591,7 +540,7 @@ reader.readAsDataURL(file);
 
 </script>
 
-
 </body>
 
 </html>
+```
