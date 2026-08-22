@@ -7,9 +7,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Image Compressor Online - QuickPixel Tools</title>
+<title>Free Image Compressor Online - Compress JPG, PNG & WebP | QuickPixel Tools</title>
 
-<meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size directly in your browser without uploading your images to a server.">
+<meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size while maintaining good quality. Fast browser-based image compressor.">
+
+<link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/image-compressor.html">
 
 <style>
 
@@ -20,25 +22,46 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
+    background: #f6f8fc;
+    color: #1f2937;
+    line-height: 1.6;
 }
 
 header {
     background: white;
-    padding: 20px 8%;
+    padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
 }
 
+nav {
+    background: white;
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+nav a {
+    color: #374151;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    display: inline-block;
+    padding: 5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
 main {
-    max-width: 850px;
-    margin: 45px auto;
-    padding: 0 20px;
+    max-width: 950px;
+    margin: auto;
+    padding: 45px 20px 70px;
 }
 
 .hero {
@@ -47,26 +70,28 @@ main {
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 42px;
+    line-height: 1.2;
     margin-bottom: 15px;
 }
 
 .hero p {
-    color: #666;
+    color: #667085;
     font-size: 18px;
-    line-height: 1.7;
+    max-width: 720px;
+    margin: auto;
 }
 
 .tool {
     background: white;
     padding: 35px;
-    border-radius: 16px;
+    border-radius: 18px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
     text-align: center;
 }
 
 .upload {
-    border: 2px dashed #aaa;
+    border: 2px dashed #b8bec8;
     padding: 35px 20px;
     border-radius: 12px;
     margin: 25px 0;
@@ -79,12 +104,13 @@ input[type="file"] {
 
 label {
     display: block;
-    margin: 20px 0 8px;
     font-weight: bold;
+    margin: 20px 0 10px;
 }
 
 input[type="range"] {
     width: 80%;
+    max-width: 500px;
 }
 
 button {
@@ -105,7 +131,6 @@ button:hover {
 .result {
     margin-top: 25px;
     font-weight: bold;
-    line-height: 1.8;
 }
 
 .download {
@@ -118,55 +143,71 @@ button:hover {
     margin-top: 15px;
 }
 
-.info {
+.content-box {
     background: white;
+    padding: 35px;
     margin-top: 35px;
-    padding: 30px;
-    border-radius: 16px;
-    line-height: 1.8;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
 }
 
-.info h2 {
-    margin-top: 25px;
+.content-box h2 {
+    margin-top: 28px;
 }
 
-.info h2:first-child {
+.content-box h2:first-child {
     margin-top: 0;
+}
+
+.content-box p {
+    color: #59636e;
 }
 
 .faq {
-    background: white;
-    margin-top: 35px;
-    padding: 30px;
-    border-radius: 16px;
-    line-height: 1.8;
+    border-top: 1px solid #e5e7eb;
+    padding: 18px 0;
 }
 
-.faq h2 {
-    margin-top: 0;
+.faq:first-of-type {
+    border-top: none;
+}
+
+.faq h3 {
+    margin-bottom: 6px;
 }
 
 footer {
-    text-align: center;
-    padding: 30px;
     background: white;
-    color: #777;
-    margin-top: 60px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: 35px 20px;
+    color: #667085;
 }
 
-a {
-    color: #111827;
-    font-weight: bold;
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #374151;
+    text-decoration: none;
+    margin: 0 8px;
 }
 
 @media (max-width: 600px) {
 
     .hero h1 {
-        font-size: 31px;
+        font-size: 32px;
     }
 
-    .tool {
+    .tool,
+    .content-box {
         padding: 25px 18px;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 14px;
     }
 
 }
@@ -188,6 +229,25 @@ a {
 </header>
 
 
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="image-compressor.html">Compressor</a>
+
+<a href="image-resizer.html">Resizer</a>
+
+<a href="jpg-to-png.html">JPG to PNG</a>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy</a>
+
+</nav>
+
+
 <main>
 
 
@@ -196,8 +256,8 @@ a {
 <h1>Free Image Compressor Online</h1>
 
 <p>
-Compress JPG, PNG and WebP images quickly and easily.
-Reduce image file size directly in your browser.
+Compress JPG, PNG and WebP images online for free.
+Reduce image file size while keeping good image quality.
 </p>
 
 </section>
@@ -205,17 +265,16 @@ Reduce image file size directly in your browser.
 
 <section class="tool">
 
-
 <h2>Compress Your Image</h2>
 
 <p>
-Choose an image below to get started.
+Choose an image and adjust the compression quality.
 </p>
 
 
 <div class="upload">
 
-<h3>Choose an Image</h3>
+<h3>Select an Image</h3>
 
 <input
 type="file"
@@ -268,12 +327,10 @@ Download Compressed Image
 
 </a>
 
-
 </section>
 
 
-<section class="info">
-
+<section class="content-box">
 
 <h2>What Is an Image Compressor?</h2>
 
@@ -287,77 +344,99 @@ on websites.
 <h2>How to Compress an Image</h2>
 
 <p>
-Choose your JPG, PNG or WebP image, select the compression
-quality and click the Compress Image button. After processing,
-you can download the compressed image.
-</p>
-
-
-<h2>Is It Free?</h2>
-
-<p>
-Yes. QuickPixel Tools provides this image compressor
-as a free online tool.
-</p>
-
-
-<h2>Are My Images Uploaded?</h2>
-
-<p>
-The image processing on this page is performed directly
-inside your browser. Your selected image does not need to
-be uploaded to a QuickPixel Tools server for compression.
+Choose a JPG, PNG or WebP image above. Select the
+compression quality and click the Compress Image button.
+When processing is complete, you can download the
+compressed image.
 </p>
 
 
 <h2>Why Compress Images?</h2>
 
 <p>
-Large image files can take more storage space and may take
-longer to upload or share. Compressing images can reduce
-their file size while maintaining an appropriate level of
-visual quality.
+Large image files can take longer to upload, download
+and share. Compressing images can help reduce file size
+while keeping the image suitable for many everyday uses.
 </p>
 
 
-</section>
+<h2>Is QuickPixel Image Compressor Free?</h2>
+
+<p>
+Yes. The QuickPixel image compressor is available to use
+for free.
+</p>
 
 
-<section class="faq">
+<h2>Are My Images Uploaded?</h2>
+
+<p>
+The image compression process is performed directly in
+your browser. Your selected image does not need to be
+uploaded to a QuickPixel Tools server.
+</p>
 
 
 <h2>Frequently Asked Questions</h2>
 
 
-<h3>Can I compress JPG images?</h3>
+<div class="faq">
+
+<h3>Can I compress JPG images online?</h3>
 
 <p>
-Yes. JPG images are supported by this tool.
+Yes. JPG and JPEG images are supported by this tool.
 </p>
 
+</div>
+
+
+<div class="faq">
 
 <h3>Can I compress PNG images?</h3>
 
 <p>
-Yes. PNG images can be selected and processed.
-The downloaded result is provided as a JPEG image.
+Yes. PNG images can be selected and processed in the
+browser.
 </p>
 
+</div>
 
-<h3>Can I use this tool on my phone?</h3>
+
+<div class="faq">
+
+<h3>Does image compression reduce quality?</h3>
 
 <p>
-Yes. The page is designed to work on modern mobile
-and desktop browsers.
+Compression can affect image quality depending on the
+selected quality setting. A higher quality setting generally
+keeps more visual detail.
 </p>
 
+</div>
+
+
+<div class="faq">
 
 <h3>Do I need to install software?</h3>
 
 <p>
-No. You can use the tool directly from your browser.
+No. The tool works directly in a modern web browser.
 </p>
 
+</div>
+
+
+<div class="faq">
+
+<h3>Can I use the compressor on my phone?</h3>
+
+<p>
+Yes. The page is designed to work on modern mobile
+browsers as well as desktop browsers.
+</p>
+
+</div>
 
 </section>
 
@@ -376,6 +455,15 @@ No. You can use the tool directly from your browser.
 
 <footer>
 
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+
+</div>
+
 © 2026 QuickPixel Tools — Free Online Image Tools
 
 </footer>
@@ -386,7 +474,6 @@ No. You can use the tool directly from your browser.
 
 const qualitySlider =
 document.getElementById("quality");
-
 
 const qualityValue =
 document.getElementById("qualityValue");
@@ -408,6 +495,14 @@ function compressImage() {
 
 const input =
 document.getElementById("imageInput");
+
+
+const result =
+document.getElementById("result");
+
+
+const download =
+document.getElementById("download");
 
 
 if (
@@ -451,7 +546,6 @@ document.createElement("canvas");
 canvas.width =
 image.width;
 
-
 canvas.height =
 image.height;
 
@@ -480,6 +574,16 @@ canvas.toBlob(
 function(blob) {
 
 
+if (!blob) {
+
+result.textContent =
+"Compression failed. Please try another image.";
+
+return;
+
+}
+
+
 const originalSize =
 (
 file.size / 1024
@@ -492,22 +596,8 @@ blob.size / 1024
 ).toFixed(1);
 
 
-const download =
-document.getElementById(
-"download"
-);
-
-
-const result =
-document.getElementById(
-"result"
-);
-
-
 const url =
-URL.createObjectURL(
-blob
-);
+URL.createObjectURL(blob);
 
 
 download.href =
@@ -519,13 +609,14 @@ download.style.display =
 
 
 result.innerHTML =
-"Original: " +
+"Original size: " +
 originalSize +
 " KB<br>" +
 
-"Compressed: " +
+"Compressed size: " +
 compressedSize +
 " KB";
+
 
 },
 
@@ -534,6 +625,7 @@ compressedSize +
 quality
 
 );
+
 
 };
 
@@ -546,7 +638,6 @@ event.target.result;
 
 
 reader.readAsDataURL(file);
-
 
 }
 
