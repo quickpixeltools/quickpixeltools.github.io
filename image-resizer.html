@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +9,25 @@
 
 <title>Free Image Resizer Online - Resize JPG, PNG & WebP | QuickPixel Tools</title>
 
-<meta name="description" content="Resize JPG, PNG and WebP images online for free. Set custom image width and height in pixels with QuickPixel Tools.">
+<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height while maintaining aspect ratio with QuickPixel Tools.">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/image-resizer.html">
 
+<!-- Google AdSense verification -->
+<meta name="google-adsense-account" content="ca-pub-5655905002909310">
+
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 <style>
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -109,7 +115,7 @@ input[type="file"] {
 
 .input-group {
     margin: 20px auto;
-    max-width: 400px;
+    max-width: 420px;
 }
 
 .input-group label {
@@ -124,6 +130,34 @@ input[type="file"] {
     border: 1px solid #cbd0d8;
     border-radius: 8px;
     font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #111827;
+}
+
+.checkbox-group {
+    margin: 20px 0;
+}
+
+.checkbox-group label {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    margin-right: 8px;
+    transform: scale(1.15);
+}
+
+.original-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    color: #59636e;
+    display: none;
 }
 
 button {
@@ -141,6 +175,11 @@ button:hover {
     opacity: 0.9;
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .result {
     margin-top: 25px;
     font-weight: bold;
@@ -154,6 +193,10 @@ button:hover {
     padding: 12px 22px;
     border-radius: 8px;
     margin-top: 15px;
+}
+
+.download:hover {
+    opacity: 0.9;
 }
 
 .content-box {
@@ -207,6 +250,10 @@ footer {
     margin: 0 8px;
 }
 
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
 
     .hero h1 {
@@ -223,15 +270,17 @@ footer {
         font-size: 14px;
     }
 
+    .input-group {
+        max-width: 100%;
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -241,28 +290,19 @@ footer {
 
 </header>
 
-
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="image-compressor.html">Compressor</a>
-
 <a href="image-resizer.html">Resizer</a>
-
 <a href="jpg-to-png.html">JPG to PNG</a>
-
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
-
 <a href="privacy.html">Privacy</a>
 
 </nav>
 
-
 <main>
-
 
 <section class="hero">
 
@@ -275,7 +315,6 @@ directly in your browser.
 
 </section>
 
-
 <section class="tool">
 
 <h2>Resize Your Image</h2>
@@ -283,7 +322,6 @@ directly in your browser.
 <p>
 Choose an image and enter the width and height you need.
 </p>
-
 
 <div class="upload">
 
@@ -297,6 +335,10 @@ accept="image/jpeg,image/png,image/webp"
 
 </div>
 
+<div
+id="originalInfo"
+class="original-info">
+</div>
 
 <div class="input-group">
 
@@ -309,10 +351,10 @@ type="number"
 id="resizeWidth"
 placeholder="Example: 800"
 min="1"
+max="10000"
 >
 
 </div>
-
 
 <div class="input-group">
 
@@ -325,23 +367,40 @@ type="number"
 id="resizeHeight"
 placeholder="Example: 600"
 min="1"
+max="10000"
 >
 
 </div>
 
+<div class="checkbox-group">
 
-<button onclick="resizeImage()">
+<label>
+
+<input
+type="checkbox"
+id="aspectRatio"
+checked
+>
+
+Maintain aspect ratio
+
+</label>
+
+</div>
+
+<button
+type="button"
+id="resizeButton"
+onclick="resizeImage()">
 
 Resize Image
 
 </button>
 
-
 <div
 id="resizeResult"
 class="result">
 </div>
-
 
 <a
 id="resizeDownload"
@@ -354,7 +413,6 @@ Download Resized Image
 
 </section>
 
-
 <section class="content-box">
 
 <h2>What Is an Image Resizer?</h2>
@@ -365,7 +423,6 @@ to specific dimensions. This can be useful when an image
 needs to fit a particular website, application or project.
 </p>
 
-
 <h2>How to Resize an Image</h2>
 
 <p>
@@ -374,22 +431,28 @@ pixels, then click the Resize Image button. When processing
 is complete, you can download your resized image.
 </p>
 
+<h2>Maintain Image Aspect Ratio</h2>
+
+<p>
+The Maintain aspect ratio option helps prevent your image
+from becoming stretched or distorted. When enabled, changing
+one dimension automatically calculates the other dimension.
+</p>
 
 <h2>Why Resize Images?</h2>
 
 <p>
 Different websites and applications may require images
 with specific dimensions. Resizing an image can help it
-fit those requirements.
+fit those requirements and reduce unnecessary image
+dimensions.
 </p>
-
 
 <h2>Is QuickPixel Image Resizer Free?</h2>
 
 <p>
 Yes. The QuickPixel image resizer is free to use.
 </p>
-
 
 <h2>Are My Images Uploaded?</h2>
 
@@ -399,9 +462,7 @@ Your selected image does not need to be uploaded to a
 QuickPixel Tools server.
 </p>
 
-
 <h2>Frequently Asked Questions</h2>
-
 
 <div class="faq">
 
@@ -413,7 +474,6 @@ Yes. JPG and JPEG images are supported.
 
 </div>
 
-
 <div class="faq">
 
 <h3>Can I resize PNG images?</h3>
@@ -424,6 +484,15 @@ Yes. PNG images can be selected and resized.
 
 </div>
 
+<div class="faq">
+
+<h3>Can I resize WebP images?</h3>
+
+<p>
+Yes. WebP images are supported by the image resizer.
+</p>
+
+</div>
 
 <div class="faq">
 
@@ -435,6 +504,16 @@ Yes. Enter your desired width and height in pixels.
 
 </div>
 
+<div class="faq">
+
+<h3>Can I maintain the original aspect ratio?</h3>
+
+<p>
+Yes. Enable the Maintain aspect ratio option before
+changing the dimensions.
+</p>
+
+</div>
 
 <div class="faq">
 
@@ -445,7 +524,6 @@ No. The tool works directly in a modern web browser.
 </p>
 
 </div>
-
 
 <div class="faq">
 
@@ -460,7 +538,6 @@ as desktop browsers.
 
 </section>
 
-
 <p style="text-align:center; margin-top:35px;">
 
 <a href="index.html">
@@ -469,9 +546,7 @@ as desktop browsers.
 
 </p>
 
-
 </main>
-
 
 <footer>
 
@@ -488,183 +563,346 @@ as desktop browsers.
 
 </footer>
 
-
 <script>
+
+const resizeInput =
+document.getElementById("resizeInput");
+
+const resizeWidth =
+document.getElementById("resizeWidth");
+
+const resizeHeight =
+document.getElementById("resizeHeight");
+
+const aspectRatio =
+document.getElementById("aspectRatio");
+
+const originalInfo =
+document.getElementById("originalInfo");
+
+const resizeResult =
+document.getElementById("resizeResult");
+
+const resizeDownload =
+document.getElementById("resizeDownload");
+
+let originalWidth = 0;
+let originalHeight = 0;
+let currentObjectURL = null;
+
+resizeInput.addEventListener("change", function() {
+
+    const file = this.files[0];
+
+    if (!file) {
+        originalInfo.style.display = "none";
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Please select a valid image file.");
+
+        this.value = "";
+        originalInfo.style.display = "none";
+
+        return;
+    }
+
+    const image = new Image();
+
+    image.onload = function() {
+
+        originalWidth = image.naturalWidth;
+        originalHeight = image.naturalHeight;
+
+        resizeWidth.value = originalWidth;
+        resizeHeight.value = originalHeight;
+
+        originalInfo.innerHTML =
+            "Original dimensions: " +
+            originalWidth +
+            " × " +
+            originalHeight +
+            " pixels";
+
+        originalInfo.style.display = "block";
+
+    };
+
+    image.onerror = function() {
+
+        alert("Unable to read this image. Please try another file.");
+
+        originalInfo.style.display = "none";
+
+    };
+
+    image.src = URL.createObjectURL(file);
+
+});
+
+
+resizeWidth.addEventListener("input", function() {
+
+    if (
+        aspectRatio.checked &&
+        originalWidth > 0 &&
+        originalHeight > 0
+    ) {
+
+        const width = parseInt(this.value);
+
+        if (width > 0) {
+
+            const newHeight =
+                Math.round(
+                    width * originalHeight / originalWidth
+                );
+
+            resizeHeight.value = newHeight;
+
+        }
+
+    }
+
+});
+
+
+resizeHeight.addEventListener("input", function() {
+
+    if (
+        aspectRatio.checked &&
+        originalWidth > 0 &&
+        originalHeight > 0
+    ) {
+
+        const height = parseInt(this.value);
+
+        if (height > 0) {
+
+            const newWidth =
+                Math.round(
+                    height * originalWidth / originalHeight
+                );
+
+            resizeWidth.value = newWidth;
+
+        }
+
+    }
+
+});
 
 
 function resizeImage() {
 
+    const file = resizeInput.files[0];
 
-const input =
-document.getElementById("resizeInput");
+    if (!file) {
 
+        alert("Please choose an image first.");
 
-const result =
-document.getElementById("resizeResult");
+        return;
 
+    }
 
-const download =
-document.getElementById("resizeDownload");
+    let width =
+        parseInt(resizeWidth.value);
 
+    let height =
+        parseInt(resizeHeight.value);
 
-if (
-!input.files ||
-!input.files[0]
-) {
+    if (
+        !width ||
+        !height ||
+        width < 1 ||
+        height < 1
+    ) {
 
-alert(
-"Please choose an image first."
-);
+        alert("Please enter a valid width and height.");
 
-return;
+        return;
 
-}
+    }
 
+    if (width > 10000 || height > 10000) {
 
-const width =
-parseInt(
-document.getElementById("resizeWidth").value
-);
+        alert("Maximum image dimension is 10,000 pixels.");
 
+        return;
 
-const height =
-parseInt(
-document.getElementById("resizeHeight").value
-);
+    }
 
+    if (
+        aspectRatio.checked &&
+        originalWidth > 0 &&
+        originalHeight > 0
+    ) {
 
-if (
-!width ||
-!height ||
-width < 1 ||
-height < 1
-) {
+        const ratio =
+            originalWidth / originalHeight;
 
-alert(
-"Please enter a valid width and height."
-);
+        const enteredWidth =
+            parseInt(resizeWidth.value);
 
-return;
+        const enteredHeight =
+            parseInt(resizeHeight.value);
 
-}
+        if (
+            document.activeElement === resizeWidth &&
+            enteredWidth > 0
+        ) {
 
+            width = enteredWidth;
 
-const file =
-input.files[0];
+            height =
+                Math.round(width / ratio);
 
+            resizeHeight.value = height;
 
-const reader =
-new FileReader();
+        } else if (
+            enteredHeight > 0
+        ) {
 
+            height = enteredHeight;
 
-reader.onload =
-function(event) {
+            width =
+                Math.round(height * ratio);
 
+            resizeWidth.value = width;
 
-const image =
-new Image();
+        }
 
+    }
 
-image.onload =
-function() {
+    resizeResult.textContent =
+        "Processing image...";
 
+    resizeDownload.style.display =
+        "none";
 
-const canvas =
-document.createElement("canvas");
+    const reader =
+        new FileReader();
 
+    reader.onload = function(event) {
 
-canvas.width =
-width;
+        const image =
+            new Image();
 
-canvas.height =
-height;
+        image.onload = function() {
 
+            const canvas =
+                document.createElement("canvas");
 
-const ctx =
-canvas.getContext("2d");
+            canvas.width = width;
+            canvas.height = height;
 
+            const ctx =
+                canvas.getContext("2d");
 
-ctx.drawImage(
-image,
-0,
-0,
-width,
-height
-);
+            ctx.imageSmoothingEnabled = true;
+            ctx.imageSmoothingQuality = "high";
 
+            ctx.drawImage(
+                image,
+                0,
+                0,
+                width,
+                height
+            );
 
-canvas.toBlob(
+            let outputType = "image/jpeg";
+            let extension = "jpg";
 
-function(blob) {
+            if (file.type === "image/png") {
 
+                outputType = "image/png";
+                extension = "png";
 
-if (!blob) {
+            } else if (file.type === "image/webp") {
 
-result.textContent =
-"Resizing failed. Please try another image.";
+                outputType = "image/webp";
+                extension = "webp";
 
-return;
+            }
 
-}
+            canvas.toBlob(
+                function(blob) {
 
+                    if (!blob) {
 
-const url =
-URL.createObjectURL(blob);
+                        resizeResult.textContent =
+                            "Resizing failed. Please try another image.";
 
+                        return;
 
-download.href =
-url;
+                    }
 
+                    if (currentObjectURL) {
+                        URL.revokeObjectURL(currentObjectURL);
+                    }
 
-download.style.display =
-"inline-block";
+                    currentObjectURL =
+                        URL.createObjectURL(blob);
 
+                    resizeDownload.href =
+                        currentObjectURL;
 
-const size =
-(
-blob.size / 1024
-).toFixed(1);
+                    resizeDownload.download =
+                        "resized-image." + extension;
 
+                    resizeDownload.style.display =
+                        "inline-block";
 
-result.innerHTML =
-"Image resized successfully!<br>" +
-"New dimensions: " +
-width +
-" × " +
-height +
-" pixels<br>" +
-"File size: " +
-size +
-" KB";
+                    const size =
+                        (
+                            blob.size / 1024
+                        ).toFixed(1);
 
+                    resizeResult.innerHTML =
+                        "Image resized successfully!<br>" +
+                        "New dimensions: " +
+                        width +
+                        " × " +
+                        height +
+                        " pixels<br>" +
+                        "File size: " +
+                        size +
+                        " KB";
 
-},
+                },
+                outputType,
+                0.92
+            );
 
-"image/jpeg",
+        };
 
-0.9
+        image.onerror = function() {
 
-);
+            resizeResult.textContent =
+                "Unable to process this image. Please try another file.";
 
+        };
 
-};
+        image.src =
+            event.target.result;
 
+    };
 
-image.src =
-event.target.result;
+    reader.onerror = function() {
 
+        resizeResult.textContent =
+            "Could not read the selected image.";
 
-};
+    };
 
-
-reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
 
 }
 
 </script>
 
-
 </body>
 
 </html>
-```
