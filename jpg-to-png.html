@@ -12,7 +12,7 @@
 
 <meta name="description" content="Convert JPG and JPEG images to PNG online for free. Convert images directly in your browser with QuickPixel Tools.">
 
-<link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/jpg-to-png.html">
+<link rel="canonical" href="https://quickpixeltools.github.io/jpg-to-png.html">
 
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
@@ -462,10 +462,10 @@ function convertToPNG() {
         alert("Please choose a JPG or JPEG image first.");
 
         return;
-
     }
 
-    const file = input.files[0];
+    const file =
+        input.files[0];
 
     const fileName =
         file.name.toLowerCase();
@@ -482,7 +482,6 @@ function convertToPNG() {
         input.value = "";
 
         return;
-
     }
 
     result.textContent =
@@ -525,19 +524,31 @@ function convertToPNG() {
                     false;
 
                 return;
-
             }
 
-            ctx.drawImage(
-                image,
+            /*
+             * Fill white background.
+             * This prevents unexpected transparency
+             * when converting JPG to PNG.
+             */
+
+            ctx.fillStyle =
+                "#ffffff";
+
+            ctx.fillRect(
                 0,
                 0,
                 canvas.width,
                 canvas.height
             );
 
-            canvas.toBlob(
+            ctx.drawImage(
+                image,
+                0,
+                0
+            );
 
+            canvas.toBlob(
                 function(blob) {
 
                     button.disabled =
@@ -549,7 +560,6 @@ function convertToPNG() {
                             "Conversion failed. Please try another image.";
 
                         return;
-
                     }
 
                     if (currentDownloadURL) {
@@ -584,14 +594,12 @@ function convertToPNG() {
                         " × " +
                         image.naturalHeight +
                         " pixels<br>" +
-                        "PNG size: " +
+                        "PNG file size: " +
                         size +
                         " KB";
 
                 },
-
                 "image/png"
-
             );
 
         };
