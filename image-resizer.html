@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +12,10 @@
 
 <meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height while maintaining aspect ratio with QuickPixel Tools.">
 
-<link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/image-resizer.html">
+<link rel="canonical" href="https://quickpixeltools.github.io/image-resizer.html">
 
-<!-- Google AdSense verification -->
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
-<!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
 crossorigin="anonymous"></script>
 
@@ -39,7 +38,7 @@ body {
 }
 
 header {
-    background: white;
+    background: #ffffff;
     padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
@@ -50,10 +49,10 @@ header {
 }
 
 nav {
-    background: white;
+    background: #ffffff;
     padding: 12px 10px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 nav a {
@@ -94,7 +93,7 @@ main {
 }
 
 .tool {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     border-radius: 18px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
@@ -162,7 +161,7 @@ input[type="file"] {
 
 button {
     background: #111827;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 13px 25px;
     border-radius: 8px;
@@ -175,11 +174,6 @@ button:hover {
     opacity: 0.9;
 }
 
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
 .result {
     margin-top: 25px;
     font-weight: bold;
@@ -189,7 +183,7 @@ button:disabled {
     display: none;
     text-decoration: none;
     background: #16a34a;
-    color: white;
+    color: #ffffff;
     padding: 12px 22px;
     border-radius: 8px;
     margin-top: 15px;
@@ -200,7 +194,7 @@ button:disabled {
 }
 
 .content-box {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     margin-top: 35px;
     border-radius: 18px;
@@ -233,7 +227,7 @@ button:disabled {
 }
 
 footer {
-    background: white;
+    background: #ffffff;
     border-top: 1px solid #e5e7eb;
     text-align: center;
     padding: 35px 20px;
@@ -335,10 +329,7 @@ accept="image/jpeg,image/png,image/webp"
 
 </div>
 
-<div
-id="originalInfo"
-class="original-info">
-</div>
+<div id="originalInfo" class="original-info"></div>
 
 <div class="input-group">
 
@@ -397,10 +388,7 @@ Resize Image
 
 </button>
 
-<div
-id="resizeResult"
-class="result">
-</div>
+<div id="resizeResult" class="result"></div>
 
 <a
 id="resizeDownload"
@@ -610,6 +598,7 @@ resizeInput.addEventListener("change", function() {
     }
 
     const image = new Image();
+    const imageURL = URL.createObjectURL(file);
 
     image.onload = function() {
 
@@ -628,6 +617,8 @@ resizeInput.addEventListener("change", function() {
 
         originalInfo.style.display = "block";
 
+        URL.revokeObjectURL(imageURL);
+
     };
 
     image.onerror = function() {
@@ -636,12 +627,13 @@ resizeInput.addEventListener("change", function() {
 
         originalInfo.style.display = "none";
 
+        URL.revokeObjectURL(imageURL);
+
     };
 
-    image.src = URL.createObjectURL(file);
+    image.src = imageURL;
 
 });
-
 
 resizeWidth.addEventListener("input", function() {
 
@@ -668,7 +660,6 @@ resizeWidth.addEventListener("input", function() {
 
 });
 
-
 resizeHeight.addEventListener("input", function() {
 
     if (
@@ -693,7 +684,6 @@ resizeHeight.addEventListener("input", function() {
     }
 
 });
-
 
 function resizeImage() {
 
@@ -734,48 +724,6 @@ function resizeImage() {
 
     }
 
-    if (
-        aspectRatio.checked &&
-        originalWidth > 0 &&
-        originalHeight > 0
-    ) {
-
-        const ratio =
-            originalWidth / originalHeight;
-
-        const enteredWidth =
-            parseInt(resizeWidth.value);
-
-        const enteredHeight =
-            parseInt(resizeHeight.value);
-
-        if (
-            document.activeElement === resizeWidth &&
-            enteredWidth > 0
-        ) {
-
-            width = enteredWidth;
-
-            height =
-                Math.round(width / ratio);
-
-            resizeHeight.value = height;
-
-        } else if (
-            enteredHeight > 0
-        ) {
-
-            height = enteredHeight;
-
-            width =
-                Math.round(height * ratio);
-
-            resizeWidth.value = width;
-
-        }
-
-    }
-
     resizeResult.textContent =
         "Processing image...";
 
@@ -792,6 +740,49 @@ function resizeImage() {
 
         image.onload = function() {
 
+            if (
+                aspectRatio.checked &&
+                originalWidth > 0 &&
+                originalHeight > 0
+            ) {
+
+                const ratio =
+                    originalWidth / originalHeight;
+
+                if (
+                    document.activeElement === resizeWidth
+                ) {
+
+                    width =
+                        parseInt(resizeWidth.value);
+
+                    height =
+                        Math.round(width / ratio);
+
+                } else {
+
+                    height =
+                        parseInt(resizeHeight.value);
+
+                    width =
+                        Math.round(height * ratio);
+
+                }
+
+            }
+
+            if (
+                width > 10000 ||
+                height > 10000
+            ) {
+
+                resizeResult.textContent =
+                    "The resulting dimensions cannot exceed 10,000 pixels.";
+
+                return;
+
+            }
+
             const canvas =
                 document.createElement("canvas");
 
@@ -800,6 +791,15 @@ function resizeImage() {
 
             const ctx =
                 canvas.getContext("2d");
+
+            if (!ctx) {
+
+                resizeResult.textContent =
+                    "Your browser does not support image resizing.";
+
+                return;
+
+            }
 
             ctx.imageSmoothingEnabled = true;
             ctx.imageSmoothingQuality = "high";
@@ -906,3 +906,4 @@ function resizeImage() {
 </body>
 
 </html>
+```
