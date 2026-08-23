@@ -14,14 +14,20 @@
 
 <link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/jpg-to-png.html">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
-     crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-5655905002909310">
+
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+crossorigin="anonymous"></script>
 
 <style>
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -122,6 +128,11 @@ button:hover {
     opacity: 0.9;
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .result {
     margin-top: 25px;
     font-weight: bold;
@@ -135,6 +146,10 @@ button:hover {
     padding: 12px 22px;
     border-radius: 8px;
     margin-top: 15px;
+}
+
+.download:hover {
+    opacity: 0.9;
 }
 
 .content-box {
@@ -186,6 +201,10 @@ footer {
     color: #374151;
     text-decoration: none;
     margin: 0 8px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -271,8 +290,13 @@ accept="image/jpeg,.jpg,.jpeg"
 
 </div>
 
-<button onclick="convertToPNG()">
+<button
+type="button"
+id="convertButton"
+onclick="convertToPNG()">
+
 Convert to PNG
+
 </button>
 
 <div
@@ -417,124 +441,187 @@ image does not need to be uploaded to our server.
 
 <script>
 
+let currentDownloadURL = null;
+
 function convertToPNG() {
 
-const input =
-document.getElementById("jpgInput");
+    const input =
+        document.getElementById("jpgInput");
 
-const result =
-document.getElementById("result");
+    const result =
+        document.getElementById("result");
 
-const download =
-document.getElementById("download");
+    const download =
+        document.getElementById("download");
 
-if (
-!input.files ||
-!input.files[0]
-) {
+    const button =
+        document.getElementById("convertButton");
 
-alert(
-"Please choose a JPG or JPEG image first."
-);
+    if (!input.files || !input.files[0]) {
 
-return;
+        alert("Please choose a JPG or JPEG image first.");
 
-}
+        return;
 
-const file =
-input.files[0];
+    }
 
-if (
-file.type !== "image/jpeg"
-) {
+    const file = input.files[0];
 
-alert(
-"Please select a JPG or JPEG image."
-);
+    const fileName =
+        file.name.toLowerCase();
 
-return;
+    const isJPG =
+        file.type === "image/jpeg" ||
+        fileName.endsWith(".jpg") ||
+        fileName.endsWith(".jpeg");
 
-}
+    if (!isJPG) {
 
-const reader =
-new FileReader();
+        alert("Please select a JPG or JPEG image.");
 
-reader.onload =
-function(event) {
+        input.value = "";
 
-const image =
-new Image();
+        return;
 
-image.onload =
-function() {
+    }
 
-const canvas =
-document.createElement("canvas");
+    result.textContent =
+        "Converting image...";
 
-canvas.width =
-image.width;
+    download.style.display =
+        "none";
 
-canvas.height =
-image.height;
+    button.disabled =
+        true;
 
-const ctx =
-canvas.getContext("2d");
+    const reader =
+        new FileReader();
 
-ctx.drawImage(
-image,
-0,
-0,
-canvas.width,
-canvas.height
-);
+    reader.onload = function(event) {
 
-canvas.toBlob(
+        const image =
+            new Image();
 
-function(blob) {
+        image.onload = function() {
 
-if (!blob) {
+            const canvas =
+                document.createElement("canvas");
 
-result.textContent =
-"Conversion failed. Please try another image.";
+            canvas.width =
+                image.naturalWidth;
 
-return;
+            canvas.height =
+                image.naturalHeight;
 
-}
+            const ctx =
+                canvas.getContext("2d");
 
-const url =
-URL.createObjectURL(blob);
+            if (!ctx) {
 
-download.href =
-url;
+                result.textContent =
+                    "Your browser does not support image conversion.";
 
-download.style.display =
-"inline-block";
+                button.disabled =
+                    false;
 
-const size =
-(
-blob.size / 1024
-).toFixed(1);
+                return;
 
-result.innerHTML =
-"Conversion completed successfully!<br>" +
-"PNG size: " +
-size +
-" KB";
+            }
 
-},
+            ctx.drawImage(
+                image,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
 
-"image/png"
+            canvas.toBlob(
 
-);
+                function(blob) {
 
-};
+                    button.disabled =
+                        false;
 
-image.src =
-event.target.result;
+                    if (!blob) {
 
-};
+                        result.textContent =
+                            "Conversion failed. Please try another image.";
 
-reader.readAsDataURL(file);
+                        return;
+
+                    }
+
+                    if (currentDownloadURL) {
+
+                        URL.revokeObjectURL(
+                            currentDownloadURL
+                        );
+
+                    }
+
+                    currentDownloadURL =
+                        URL.createObjectURL(blob);
+
+                    download.href =
+                        currentDownloadURL;
+
+                    download.download =
+                        "converted-image.png";
+
+                    download.style.display =
+                        "inline-block";
+
+                    const size =
+                        (
+                            blob.size / 1024
+                        ).toFixed(1);
+
+                    result.innerHTML =
+                        "Conversion completed successfully!<br>" +
+                        "Original dimensions: " +
+                        image.naturalWidth +
+                        " × " +
+                        image.naturalHeight +
+                        " pixels<br>" +
+                        "PNG size: " +
+                        size +
+                        " KB";
+
+                },
+
+                "image/png"
+
+            );
+
+        };
+
+        image.onerror = function() {
+
+            button.disabled =
+                false;
+
+            result.textContent =
+                "Unable to read this image. Please try another JPG file.";
+
+        };
+
+        image.src =
+            event.target.result;
+
+    };
+
+    reader.onerror = function() {
+
+        button.disabled =
+            false;
+
+        result.textContent =
+            "Could not read the selected image.";
+
+    };
+
+    reader.readAsDataURL(file);
 
 }
 
