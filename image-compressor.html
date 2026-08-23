@@ -12,11 +12,14 @@
 
 <meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size while maintaining good quality. Fast browser-based image compressor.">
 
-<link rel="canonical" href="https://quickpixeltools.github.io/quickpixel-tools/image-compressor.html">
+<link rel="canonical" href="https://quickpixeltools.github.io/image-compressor.html">
+
+<!-- Google AdSense verification -->
+<meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
-     crossorigin="anonymous"></script>
+crossorigin="anonymous"></script>
 
 <style>
 
@@ -221,9 +224,7 @@ footer {
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -233,28 +234,19 @@ footer {
 
 </header>
 
-
 <nav>
 
 <a href="index.html">Home</a>
-
 <a href="image-compressor.html">Compressor</a>
-
 <a href="image-resizer.html">Resizer</a>
-
 <a href="jpg-to-png.html">JPG to PNG</a>
-
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
-
 <a href="privacy.html">Privacy</a>
 
 </nav>
 
-
 <main>
-
 
 <section class="hero">
 
@@ -267,7 +259,6 @@ Reduce image file size while keeping good image quality.
 
 </section>
 
-
 <section class="tool">
 
 <h2>Compress Your Image</h2>
@@ -275,7 +266,6 @@ Reduce image file size while keeping good image quality.
 <p>
 Choose an image and adjust the compression quality.
 </p>
-
 
 <div class="upload">
 
@@ -289,14 +279,12 @@ accept="image/jpeg,image/png,image/webp"
 
 </div>
 
-
 <label for="quality">
 
 Compression Quality:
 <span id="qualityValue">70</span>%
 
 </label>
-
 
 <input
 type="range"
@@ -306,22 +294,13 @@ max="100"
 value="70"
 >
 
-
 <br>
 
-
 <button onclick="compressImage()">
-
 Compress Image
-
 </button>
 
-
-<div
-id="result"
-class="result">
-</div>
-
+<div id="result" class="result"></div>
 
 <a
 id="download"
@@ -334,7 +313,6 @@ Download Compressed Image
 
 </section>
 
-
 <section class="content-box">
 
 <h2>What Is an Image Compressor?</h2>
@@ -345,7 +323,6 @@ Smaller image files can be easier to store, share and use
 on websites.
 </p>
 
-
 <h2>How to Compress an Image</h2>
 
 <p>
@@ -355,7 +332,6 @@ When processing is complete, you can download the
 compressed image.
 </p>
 
-
 <h2>Why Compress Images?</h2>
 
 <p>
@@ -364,14 +340,12 @@ and share. Compressing images can help reduce file size
 while keeping the image suitable for many everyday uses.
 </p>
 
-
 <h2>Is QuickPixel Image Compressor Free?</h2>
 
 <p>
 Yes. The QuickPixel image compressor is available to use
 for free.
 </p>
-
 
 <h2>Are My Images Uploaded?</h2>
 
@@ -381,9 +355,7 @@ your browser. Your selected image does not need to be
 uploaded to a QuickPixel Tools server.
 </p>
 
-
 <h2>Frequently Asked Questions</h2>
-
 
 <div class="faq">
 
@@ -395,7 +367,6 @@ Yes. JPG and JPEG images are supported by this tool.
 
 </div>
 
-
 <div class="faq">
 
 <h3>Can I compress PNG images?</h3>
@@ -406,7 +377,6 @@ browser.
 </p>
 
 </div>
-
 
 <div class="faq">
 
@@ -420,7 +390,6 @@ keeps more visual detail.
 
 </div>
 
-
 <div class="faq">
 
 <h3>Do I need to install software?</h3>
@@ -430,7 +399,6 @@ No. The tool works directly in a modern web browser.
 </p>
 
 </div>
-
 
 <div class="faq">
 
@@ -445,7 +413,6 @@ browsers as well as desktop browsers.
 
 </section>
 
-
 <p style="text-align:center; margin-top:35px;">
 
 <a href="index.html">
@@ -454,9 +421,7 @@ browsers as well as desktop browsers.
 
 </p>
 
-
 </main>
-
 
 <footer>
 
@@ -473,16 +438,13 @@ browsers as well as desktop browsers.
 
 </footer>
 
-
 <script>
-
 
 const qualitySlider =
 document.getElementById("quality");
 
 const qualityValue =
 document.getElementById("qualityValue");
-
 
 qualitySlider.addEventListener(
 "input",
@@ -494,21 +456,16 @@ this.value;
 }
 );
 
-
 function compressImage() {
-
 
 const input =
 document.getElementById("imageInput");
 
-
 const result =
 document.getElementById("result");
 
-
 const download =
 document.getElementById("download");
-
 
 if (
 !input.files ||
@@ -523,30 +480,23 @@ return;
 
 }
 
-
 const file =
 input.files[0];
-
 
 const reader =
 new FileReader();
 
-
 reader.onload =
 function(event) {
-
 
 const image =
 new Image();
 
-
 image.onload =
 function() {
 
-
 const canvas =
 document.createElement("canvas");
-
 
 canvas.width =
 image.width;
@@ -554,10 +504,8 @@ image.width;
 canvas.height =
 image.height;
 
-
 const ctx =
 canvas.getContext("2d");
-
 
 ctx.drawImage(
 image,
@@ -567,17 +515,14 @@ canvas.width,
 canvas.height
 );
 
-
 const quality =
 parseInt(
 qualitySlider.value
 ) / 100;
 
-
 canvas.toBlob(
 
 function(blob) {
-
 
 if (!blob) {
 
@@ -588,30 +533,24 @@ return;
 
 }
 
-
 const originalSize =
 (
 file.size / 1024
 ).toFixed(1);
-
 
 const compressedSize =
 (
 blob.size / 1024
 ).toFixed(1);
 
-
 const url =
 URL.createObjectURL(blob);
-
 
 download.href =
 url;
 
-
 download.style.display =
 "inline-block";
-
 
 result.innerHTML =
 "Original size: " +
@@ -622,7 +561,6 @@ originalSize +
 compressedSize +
 " KB";
 
-
 },
 
 "image/jpeg",
@@ -631,23 +569,18 @@ quality
 
 );
 
-
 };
-
 
 image.src =
 event.target.result;
 
-
 };
-
 
 reader.readAsDataURL(file);
 
 }
 
 </script>
-
 
 </body>
 
