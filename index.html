@@ -8,9 +8,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>QuickPixel Tools - Free Online Image Tools</title>
+<title>QuickPixel Tools - Free Online Image Compressor, Resizer & Converter</title>
 
-<meta name="description" content="Free online image compressor, image resizer and JPG to PNG converter. Easy browser-based image tools for everyday image tasks.">
+<meta name="description" content="Free online image tools to compress, resize and convert JPG, PNG and WebP images. Simple browser-based image tools with no software installation required.">
+
+<meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/">
 
@@ -21,6 +23,56 @@
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
 crossorigin="anonymous"></script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is QuickPixel Tools free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools provides free online image tools for common image processing tasks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. QuickPixel Tools works directly in a modern web browser without requiring additional software."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use QuickPixel Tools on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools is designed to work on modern mobile and desktop browsers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What image formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current tools support common image formats including JPG, JPEG, PNG and WebP where applicable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current image tools are designed to process selected images directly in your browser, so the images do not need to be uploaded to a QuickPixel Tools server for these basic operations."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 
@@ -34,14 +86,14 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
     line-height: 1.6;
 }
 
 header {
-    background: white;
+    background: #ffffff;
     padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
@@ -56,12 +108,12 @@ header {
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 nav {
-    background: white;
-    border-bottom: 1px solid #eee;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
     padding: 12px 10px;
     text-align: center;
 }
@@ -94,7 +146,7 @@ nav a:hover {
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
     color: #667085;
     font-size: 19px;
@@ -110,19 +162,24 @@ nav a:hover {
     padding: 13px 22px;
     border-radius: 9px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     margin: 6px;
 }
 
 .primary-btn {
     background: #111827;
-    color: white;
+    color: #ffffff;
 }
 
 .secondary-btn {
-    background: white;
+    background: #ffffff;
     color: #111827;
     border: 1px solid #d1d5db;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    opacity: 0.9;
 }
 
 .container {
@@ -153,7 +210,7 @@ nav a:hover {
 }
 
 .card {
-    background: white;
+    background: #ffffff;
     padding: 30px 25px;
     border-radius: 16px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.06);
@@ -179,11 +236,11 @@ nav a:hover {
 .card a {
     display: inline-block;
     background: #111827;
-    color: white;
+    color: #ffffff;
     padding: 11px 18px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     margin-top: 10px;
 }
 
@@ -192,7 +249,7 @@ nav a:hover {
 }
 
 .info-section {
-    background: white;
+    background: #ffffff;
     border-radius: 18px;
     padding: 40px;
     margin-bottom: 45px;
@@ -213,6 +270,11 @@ nav a:hover {
     color: #59636e;
 }
 
+.info-section a {
+    color: #111827;
+    font-weight: 600;
+}
+
 .steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -229,7 +291,7 @@ nav a:hover {
 
 .step-number {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .step h3 {
@@ -247,6 +309,7 @@ nav a:hover {
 
 .faq-item h3 {
     margin: 0 0 7px;
+    font-size: 19px;
 }
 
 .faq-item p {
@@ -258,12 +321,16 @@ nav a:hover {
     padding: 30px 20px 65px;
 }
 
+.trust h2 {
+    margin-bottom: 10px;
+}
+
 .trust p {
     color: #667085;
 }
 
 footer {
-    background: white;
+    background: #ffffff;
     border-top: 1px solid #e5e7eb;
     text-align: center;
     padding: 35px 20px;
@@ -344,7 +411,7 @@ footer {
 
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
 <a href="image-compressor.html">Compressor</a>
@@ -358,21 +425,22 @@ footer {
 
 <section class="hero">
 
-<h1>Simple & Free Online Image Tools</h1>
+<h1>Free Online Image Tools</h1>
 
 <p>
-Compress, resize and convert your images quickly and easily.
+Compress, resize and convert JPG, PNG and WebP images
+quickly and easily with simple browser-based tools.
 No software installation required.
 </p>
 
 <div class="hero-buttons">
 
 <a class="primary-btn" href="#tools">
-Explore Tools
+Explore Free Tools
 </a>
 
 <a class="secondary-btn" href="about.html">
-Learn More
+Learn More About Us
 </a>
 
 </div>
@@ -383,10 +451,10 @@ Learn More
 
 <div class="section-title">
 
-<h2>Our Free Tools</h2>
+<h2>Free Online Image Tools</h2>
 
 <p>
-Choose the image tool you need.
+Choose the tool you need to complete your image task.
 </p>
 
 </div>
@@ -395,12 +463,13 @@ Choose the image tool you need.
 
 <div class="card">
 
-<div class="card-icon">🗜️</div>
+<div class="card-icon" aria-hidden="true">🗜️</div>
 
 <h3>Image Compressor</h3>
 
 <p>
-Reduce image file size while keeping good visual quality.
+Compress JPG, PNG and WebP images to reduce file size
+while keeping good visual quality.
 </p>
 
 <a href="image-compressor.html">
@@ -411,12 +480,13 @@ Compress Images →
 
 <div class="card">
 
-<div class="card-icon">📐</div>
+<div class="card-icon" aria-hidden="true">📐</div>
 
 <h3>Image Resizer</h3>
 
 <p>
-Resize images to custom width and height in pixels.
+Resize JPG, PNG and WebP images to custom width and
+height dimensions in pixels.
 </p>
 
 <a href="image-resizer.html">
@@ -427,12 +497,13 @@ Resize Images →
 
 <div class="card">
 
-<div class="card-icon">🔄</div>
+<div class="card-icon" aria-hidden="true">🔄</div>
 
-<h3>JPG to PNG</h3>
+<h3>JPG to PNG Converter</h3>
 
 <p>
-Convert JPG and JPEG images into PNG format directly in your browser.
+Convert JPG and JPEG images into PNG format directly
+in your browser.
 </p>
 
 <a href="jpg-to-png.html">
@@ -453,8 +524,8 @@ Convert JPG to PNG →
 
 <p>
 QuickPixel Tools provides simple browser-based image
-utilities for common image tasks. You can choose a tool,
-select your image and download the result after processing.
+utilities for common image tasks. Choose a tool, select
+your image, complete the operation and download the result.
 </p>
 
 <div class="steps">
@@ -466,7 +537,8 @@ select your image and download the result after processing.
 <h3>Choose a Tool</h3>
 
 <p>
-Select the image tool that matches the task you want to perform.
+Select the image tool that matches the task you want
+to perform.
 </p>
 
 </div>
@@ -478,7 +550,8 @@ Select the image tool that matches the task you want to perform.
 <h3>Select Your Image</h3>
 
 <p>
-Choose a supported image file from your computer or mobile device.
+Choose a supported image file from your computer,
+tablet or mobile device.
 </p>
 
 </div>
@@ -490,7 +563,8 @@ Choose a supported image file from your computer or mobile device.
 <h3>Download the Result</h3>
 
 <p>
-Complete the image operation and download the resulting file.
+Complete the image operation and download the resulting
+file to your device.
 </p>
 
 </div>
@@ -504,15 +578,15 @@ Complete the image operation and download the resulting file.
 <h2>Why Use QuickPixel Tools?</h2>
 
 <p>
-QuickPixel Tools provides simple online image utilities
-that are easy to use on both desktop and mobile devices.
+QuickPixel Tools is designed to make common image tasks
+simple and accessible without complicated software.
 </p>
 
-<h3>Fast and Simple</h3>
+<h3>Simple and Easy to Use</h3>
 
 <p>
-Our tools are designed with a simple interface so you can
-process your images without complicated software.
+Our tools use a straightforward interface so you can
+complete common image tasks with just a few steps.
 </p>
 
 <h3>Browser-Based Image Processing</h3>
@@ -524,11 +598,34 @@ to be uploaded to a QuickPixel Tools server for these
 basic image operations.
 </p>
 
-<h3>Free Online Tools</h3>
+<h3>Free Online Image Tools</h3>
 
 <p>
 You can use our current image tools for free without
-installing additional software.
+installing additional image editing software.
+</p>
+
+<h3>Works on Desktop and Mobile</h3>
+
+<p>
+QuickPixel Tools is designed to work with modern browsers
+on computers, tablets and mobile devices.
+</p>
+
+</div>
+
+<div class="info-section">
+
+<h2>Explore Our Image Tools</h2>
+
+<p>
+Use the
+<a href="image-compressor.html">Image Compressor</a>
+to reduce image file size, the
+<a href="image-resizer.html">Image Resizer</a>
+to change image dimensions, or the
+<a href="jpg-to-png.html">JPG to PNG Converter</a>
+to convert JPG and JPEG images to PNG format.
 </p>
 
 </div>
@@ -542,7 +639,8 @@ installing additional software.
 <h3>Is QuickPixel Tools free?</h3>
 
 <p>
-Yes. Our current image tools are available to use for free.
+Yes. QuickPixel Tools provides free online image tools
+for common image processing tasks.
 </p>
 
 </div>
@@ -552,7 +650,8 @@ Yes. Our current image tools are available to use for free.
 <h3>Do I need to install software?</h3>
 
 <p>
-No. The tools work directly in a modern web browser.
+No. QuickPixel Tools works directly in a modern web
+browser without requiring additional software.
 </p>
 
 </div>
@@ -562,8 +661,8 @@ No. The tools work directly in a modern web browser.
 <h3>Can I use QuickPixel Tools on my phone?</h3>
 
 <p>
-Yes. The website is designed to work on modern mobile
-and desktop browsers.
+Yes. QuickPixel Tools is designed to work on modern
+mobile and desktop browsers.
 </p>
 
 </div>
@@ -573,8 +672,21 @@ and desktop browsers.
 <h3>What image formats are supported?</h3>
 
 <p>
-Our current tools support common image formats including
+The current tools support common image formats including
 JPG, JPEG, PNG and WebP where applicable.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Are my images uploaded to a server?</h3>
+
+<p>
+The current image tools are designed to process selected
+images directly in your browser. Your images do not need
+to be uploaded to a QuickPixel Tools server for these
+basic operations.
 </p>
 
 </div>
@@ -585,10 +697,10 @@ JPG, JPEG, PNG and WebP where applicable.
 
 <section class="trust">
 
-<h2>Easy Image Tools, Right in Your Browser</h2>
+<h2>Simple Image Tools, Right in Your Browser</h2>
 
 <p>
-No complicated setup. Choose a tool and get started.
+Choose a tool above and get started with your image task.
 </p>
 
 </section>
