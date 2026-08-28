@@ -10,14 +10,68 @@
 
 <title>Free Image Resizer Online - Resize JPG, PNG & WebP | QuickPixel Tools</title>
 
-<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height while maintaining aspect ratio with QuickPixel Tools.">
+<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height while maintaining aspect ratio. Fast browser-based image resizing with QuickPixel Tools.">
+
+<meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/image-resizer.html">
 
+<!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
 crossorigin="anonymous"></script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I resize JPG images online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. JPG and JPEG images are supported by the QuickPixel image resizer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I resize PNG images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PNG images can be selected and resized directly in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I resize WebP images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebP images are supported by the image resizer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I maintain the original aspect ratio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enable the Maintain aspect ratio option to help keep the original image proportions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The resizing process is performed directly in your browser. Your selected image does not need to be uploaded to a QuickPixel Tools server."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 
@@ -31,7 +85,7 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
     line-height: 1.6;
@@ -45,7 +99,7 @@ header {
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 nav {
@@ -70,7 +124,7 @@ nav a:hover {
 
 main {
     max-width: 950px;
-    margin: auto;
+    margin: 0 auto;
     padding: 45px 20px 70px;
 }
 
@@ -82,14 +136,14 @@ main {
 .hero h1 {
     font-size: 42px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .hero p {
     color: #667085;
     font-size: 18px;
     max-width: 720px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .tool {
@@ -107,6 +161,11 @@ main {
     margin: 25px 0;
 }
 
+.upload h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
 input[type="file"] {
     margin: 15px;
     max-width: 100%;
@@ -119,7 +178,7 @@ input[type="file"] {
 
 .input-group label {
     display: block;
-    font-weight: bold;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
@@ -174,9 +233,14 @@ button:hover {
     opacity: 0.9;
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .result {
     margin-top: 25px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .download {
@@ -202,7 +266,8 @@ button:hover {
 }
 
 .content-box h2 {
-    margin-top: 28px;
+    margin-top: 30px;
+    line-height: 1.3;
 }
 
 .content-box h2:first-child {
@@ -211,6 +276,19 @@ button:hover {
 
 .content-box p {
     color: #59636e;
+}
+
+.content-box ul {
+    color: #59636e;
+}
+
+.content-box li {
+    margin-bottom: 10px;
+}
+
+.content-box a {
+    color: #111827;
+    font-weight: 600;
 }
 
 .faq {
@@ -223,7 +301,23 @@ button:hover {
 }
 
 .faq h3 {
-    margin-bottom: 6px;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.back-link a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -284,7 +378,7 @@ footer {
 
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
 <a href="image-compressor.html">Compressor</a>
@@ -304,7 +398,8 @@ footer {
 
 <p>
 Resize JPG, PNG and WebP images to custom dimensions
-directly in your browser.
+directly in your browser while maintaining the original
+aspect ratio when needed.
 </p>
 
 </section>
@@ -319,13 +414,18 @@ Choose an image and enter the width and height you need.
 
 <div class="upload">
 
-<h3>Select an Image</h3>
+<h2>Select an Image</h2>
 
 <input
 type="file"
 id="resizeInput"
 accept="image/jpeg,image/png,image/webp"
+aria-label="Select JPG, PNG or WebP image"
 >
+
+<p>
+Supported formats: JPG, JPEG, PNG and WebP.
+</p>
 
 </div>
 
@@ -388,7 +488,11 @@ Resize Image
 
 </button>
 
-<div id="resizeResult" class="result"></div>
+<div
+id="resizeResult"
+class="result"
+aria-live="polite">
+</div>
 
 <a
 id="resizeDownload"
@@ -407,47 +511,81 @@ Download Resized Image
 
 <p>
 An image resizer changes the width and height of an image
-to specific dimensions. This can be useful when an image
-needs to fit a particular website, application or project.
+to specific pixel dimensions. Resizing can be useful when
+an image needs to fit a website, document, social media
+layout, application or other digital project.
 </p>
 
-<h2>How to Resize an Image</h2>
+<h2>How to Resize an Image Online</h2>
 
 <p>
-Choose your image, enter the desired width and height in
-pixels, then click the Resize Image button. When processing
-is complete, you can download your resized image.
+Select an image using the upload box above. Enter the
+desired width and height in pixels, then click Resize Image.
+When processing is complete, you can download the resized
+image.
 </p>
 
-<h2>Maintain Image Aspect Ratio</h2>
+<h2>What Does Maintain Aspect Ratio Mean?</h2>
 
 <p>
-The Maintain aspect ratio option helps prevent your image
-from becoming stretched or distorted. When enabled, changing
-one dimension automatically calculates the other dimension.
+The aspect ratio describes the relationship between an
+image's width and height. When Maintain aspect ratio is
+enabled, changing one dimension automatically calculates
+the other dimension based on the original proportions.
+</p>
+
+<p>
+Keeping the aspect ratio can help prevent an image from
+looking stretched or compressed in one direction.
 </p>
 
 <h2>Why Resize Images?</h2>
 
 <p>
-Different websites and applications may require images
-with specific dimensions. Resizing an image can help it
-fit those requirements and reduce unnecessary image
-dimensions.
+Different websites, applications and projects may require
+specific image dimensions. Resizing can help an image fit
+those requirements and can also reduce the pixel dimensions
+of an unnecessarily large image.
+</p>
+
+<h2>JPG, PNG and WebP Image Resizing</h2>
+
+<p>
+QuickPixel Tools supports JPG, JPEG, PNG and WebP images.
+The available output format is based on the selected image
+type, while the final file size can vary depending on the
+original image and new dimensions.
 </p>
 
 <h2>Is QuickPixel Image Resizer Free?</h2>
 
 <p>
-Yes. The QuickPixel image resizer is free to use.
+Yes. The QuickPixel image resizer is free to use for
+everyday image resizing tasks.
 </p>
 
 <h2>Are My Images Uploaded?</h2>
 
 <p>
-The resizing process is performed directly in your browser.
-Your selected image does not need to be uploaded to a
-QuickPixel Tools server.
+The resizing process is performed directly in your web
+browser. Your selected image does not need to be uploaded
+to a QuickPixel Tools server for processing.
+</p>
+
+<p>
+Because processing happens in the browser, performance can
+depend on your device, browser and the size of the selected
+image.
+</p>
+
+<h2>More Free Image Tools</h2>
+
+<p>
+You can also use our
+<a href="image-compressor.html">Image Compressor</a>
+to reduce image file size or our
+<a href="jpg-to-png.html">JPG to PNG Converter</a>
+to convert JPG and JPEG images to PNG format.
 </p>
 
 <h2>Frequently Asked Questions</h2>
@@ -457,7 +595,8 @@ QuickPixel Tools server.
 <h3>Can I resize JPG images online?</h3>
 
 <p>
-Yes. JPG and JPEG images are supported.
+Yes. JPG and JPEG images are supported by the QuickPixel
+image resizer.
 </p>
 
 </div>
@@ -467,7 +606,8 @@ Yes. JPG and JPEG images are supported.
 <h3>Can I resize PNG images?</h3>
 
 <p>
-Yes. PNG images can be selected and resized.
+Yes. PNG images can be selected and resized directly in
+your browser.
 </p>
 
 </div>
@@ -484,10 +624,11 @@ Yes. WebP images are supported by the image resizer.
 
 <div class="faq">
 
-<h3>Can I choose custom dimensions?</h3>
+<h3>Can I choose custom image dimensions?</h3>
 
 <p>
-Yes. Enter your desired width and height in pixels.
+Yes. Enter your desired width and height in pixels before
+resizing the image.
 </p>
 
 </div>
@@ -497,8 +638,8 @@ Yes. Enter your desired width and height in pixels.
 <h3>Can I maintain the original aspect ratio?</h3>
 
 <p>
-Yes. Enable the Maintain aspect ratio option before
-changing the dimensions.
+Yes. Enable the Maintain aspect ratio option to help keep
+the original image proportions.
 </p>
 
 </div>
@@ -508,7 +649,7 @@ changing the dimensions.
 <h3>Do I need to install software?</h3>
 
 <p>
-No. The tool works directly in a modern web browser.
+No. The image resizer works directly in a modern web browser.
 </p>
 
 </div>
@@ -518,21 +659,21 @@ No. The tool works directly in a modern web browser.
 <h3>Can I use the image resizer on my phone?</h3>
 
 <p>
-Yes. The page works on modern mobile browsers as well
-as desktop browsers.
+Yes. The page is designed to work on modern mobile browsers
+as well as desktop browsers.
 </p>
 
 </div>
 
 </section>
 
-<p style="text-align:center; margin-top:35px;">
+<div class="back-link">
 
 <a href="index.html">
 ← Back to QuickPixel Tools
 </a>
 
-</p>
+</div>
 
 </main>
 
@@ -574,6 +715,9 @@ document.getElementById("resizeResult");
 const resizeDownload =
 document.getElementById("resizeDownload");
 
+const resizeButton =
+document.getElementById("resizeButton");
+
 let originalWidth = 0;
 let originalHeight = 0;
 let currentObjectURL = null;
@@ -582,40 +726,61 @@ resizeInput.addEventListener("change", function() {
 
     const file = this.files[0];
 
+    resizeResult.textContent = "";
+    resizeDownload.style.display = "none";
+
     if (!file) {
+
         originalInfo.style.display = "none";
+
         return;
+
     }
 
-    if (!file.type.startsWith("image/")) {
+    if (
+        file.type !== "image/jpeg" &&
+        file.type !== "image/png" &&
+        file.type !== "image/webp"
+    ) {
 
-        alert("Please select a valid image file.");
+        alert("Please select a valid JPG, PNG or WebP image.");
 
         this.value = "";
+
         originalInfo.style.display = "none";
 
         return;
+
     }
 
     const image = new Image();
-    const imageURL = URL.createObjectURL(file);
+
+    const imageURL =
+        URL.createObjectURL(file);
 
     image.onload = function() {
 
-        originalWidth = image.naturalWidth;
-        originalHeight = image.naturalHeight;
+        originalWidth =
+            image.naturalWidth;
 
-        resizeWidth.value = originalWidth;
-        resizeHeight.value = originalHeight;
+        originalHeight =
+            image.naturalHeight;
 
-        originalInfo.innerHTML =
+        resizeWidth.value =
+            originalWidth;
+
+        resizeHeight.value =
+            originalHeight;
+
+        originalInfo.textContent =
             "Original dimensions: " +
             originalWidth +
             " × " +
             originalHeight +
             " pixels";
 
-        originalInfo.style.display = "block";
+        originalInfo.style.display =
+            "block";
 
         URL.revokeObjectURL(imageURL);
 
@@ -623,15 +788,19 @@ resizeInput.addEventListener("change", function() {
 
     image.onerror = function() {
 
-        alert("Unable to read this image. Please try another file.");
+        alert(
+            "Unable to read this image. Please try another file."
+        );
 
-        originalInfo.style.display = "none";
+        originalInfo.style.display =
+            "none";
 
         URL.revokeObjectURL(imageURL);
 
     };
 
-    image.src = imageURL;
+    image.src =
+        imageURL;
 
 });
 
@@ -643,16 +812,20 @@ resizeWidth.addEventListener("input", function() {
         originalHeight > 0
     ) {
 
-        const width = parseInt(this.value);
+        const width =
+            parseInt(this.value, 10);
 
         if (width > 0) {
 
             const newHeight =
                 Math.round(
-                    width * originalHeight / originalWidth
+                    width *
+                    originalHeight /
+                    originalWidth
                 );
 
-            resizeHeight.value = newHeight;
+            resizeHeight.value =
+                newHeight;
 
         }
 
@@ -668,16 +841,20 @@ resizeHeight.addEventListener("input", function() {
         originalHeight > 0
     ) {
 
-        const height = parseInt(this.value);
+        const height =
+            parseInt(this.value, 10);
 
         if (height > 0) {
 
             const newWidth =
                 Math.round(
-                    height * originalWidth / originalHeight
+                    height *
+                    originalWidth /
+                    originalHeight
                 );
 
-            resizeWidth.value = newWidth;
+            resizeWidth.value =
+                newWidth;
 
         }
 
@@ -687,7 +864,8 @@ resizeHeight.addEventListener("input", function() {
 
 function resizeImage() {
 
-    const file = resizeInput.files[0];
+    const file =
+        resizeInput.files[0];
 
     if (!file) {
 
@@ -698,10 +876,10 @@ function resizeImage() {
     }
 
     let width =
-        parseInt(resizeWidth.value);
+        parseInt(resizeWidth.value, 10);
 
     let height =
-        parseInt(resizeHeight.value);
+        parseInt(resizeHeight.value, 10);
 
     if (
         !width ||
@@ -710,15 +888,22 @@ function resizeImage() {
         height < 1
     ) {
 
-        alert("Please enter a valid width and height.");
+        alert(
+            "Please enter a valid width and height."
+        );
 
         return;
 
     }
 
-    if (width > 10000 || height > 10000) {
+    if (
+        width > 10000 ||
+        height > 10000
+    ) {
 
-        alert("Maximum image dimension is 10,000 pixels.");
+        alert(
+            "Maximum image dimension is 10,000 pixels."
+        );
 
         return;
 
@@ -730,15 +915,20 @@ function resizeImage() {
     resizeDownload.style.display =
         "none";
 
+    resizeButton.disabled =
+        true;
+
     const reader =
         new FileReader();
 
-    reader.onload = function(event) {
+    reader.onload =
+        function(event) {
 
         const image =
             new Image();
 
-        image.onload = function() {
+        image.onload =
+            function() {
 
             if (
                 aspectRatio.checked &&
@@ -747,27 +937,55 @@ function resizeImage() {
             ) {
 
                 const ratio =
-                    originalWidth / originalHeight;
+                    originalWidth /
+                    originalHeight;
 
                 if (
                     document.activeElement === resizeWidth
                 ) {
 
                     width =
-                        parseInt(resizeWidth.value);
+                        parseInt(
+                            resizeWidth.value,
+                            10
+                        );
 
                     height =
-                        Math.round(width / ratio);
+                        Math.round(
+                            width / ratio
+                        );
 
                 } else {
 
                     height =
-                        parseInt(resizeHeight.value);
+                        parseInt(
+                            resizeHeight.value,
+                            10
+                        );
 
                     width =
-                        Math.round(height * ratio);
+                        Math.round(
+                            height * ratio
+                        );
 
                 }
+
+            }
+
+            if (
+                !width ||
+                !height ||
+                width < 1 ||
+                height < 1
+            ) {
+
+                resizeButton.disabled =
+                    false;
+
+                resizeResult.textContent =
+                    "Please enter valid dimensions.";
+
+                return;
 
             }
 
@@ -775,6 +993,9 @@ function resizeImage() {
                 width > 10000 ||
                 height > 10000
             ) {
+
+                resizeButton.disabled =
+                    false;
 
                 resizeResult.textContent =
                     "The resulting dimensions cannot exceed 10,000 pixels.";
@@ -786,13 +1007,19 @@ function resizeImage() {
             const canvas =
                 document.createElement("canvas");
 
-            canvas.width = width;
-            canvas.height = height;
+            canvas.width =
+                width;
+
+            canvas.height =
+                height;
 
             const ctx =
                 canvas.getContext("2d");
 
             if (!ctx) {
+
+                resizeButton.disabled =
+                    false;
 
                 resizeResult.textContent =
                     "Your browser does not support image resizing.";
@@ -801,8 +1028,11 @@ function resizeImage() {
 
             }
 
-            ctx.imageSmoothingEnabled = true;
-            ctx.imageSmoothingQuality = "high";
+            ctx.imageSmoothingEnabled =
+                true;
+
+            ctx.imageSmoothingQuality =
+                "high";
 
             ctx.drawImage(
                 image,
@@ -812,23 +1042,40 @@ function resizeImage() {
                 height
             );
 
-            let outputType = "image/jpeg";
-            let extension = "jpg";
+            let outputType =
+                "image/jpeg";
 
-            if (file.type === "image/png") {
+            let extension =
+                "jpg";
 
-                outputType = "image/png";
-                extension = "png";
+            if (
+                file.type === "image/png"
+            ) {
 
-            } else if (file.type === "image/webp") {
+                outputType =
+                    "image/png";
 
-                outputType = "image/webp";
-                extension = "webp";
+                extension =
+                    "png";
+
+            } else if (
+                file.type === "image/webp"
+            ) {
+
+                outputType =
+                    "image/webp";
+
+                extension =
+                    "webp";
 
             }
 
             canvas.toBlob(
+
                 function(blob) {
+
+                    resizeButton.disabled =
+                        false;
 
                     if (!blob) {
 
@@ -840,7 +1087,11 @@ function resizeImage() {
                     }
 
                     if (currentObjectURL) {
-                        URL.revokeObjectURL(currentObjectURL);
+
+                        URL.revokeObjectURL(
+                            currentObjectURL
+                        );
+
                     }
 
                     currentObjectURL =
@@ -850,7 +1101,8 @@ function resizeImage() {
                         currentObjectURL;
 
                     resizeDownload.download =
-                        "resized-image." + extension;
+                        "resized-image." +
+                        extension;
 
                     resizeDownload.style.display =
                         "inline-block";
@@ -872,16 +1124,23 @@ function resizeImage() {
                         " KB";
 
                 },
+
                 outputType,
+
                 0.92
+
             );
 
         };
 
-        image.onerror = function() {
+        image.onerror =
+            function() {
+
+            resizeButton.disabled =
+                false;
 
             resizeResult.textContent =
-                "Unable to process this image. Please try another file.";
+                "Unable to process this image. Please try another image.";
 
         };
 
@@ -890,7 +1149,11 @@ function resizeImage() {
 
     };
 
-    reader.onerror = function() {
+    reader.onerror =
+        function() {
+
+        resizeButton.disabled =
+            false;
 
         resizeResult.textContent =
             "Could not read the selected image.";
