@@ -10,16 +10,68 @@
 
 <title>Free Image Compressor Online - Compress JPG, PNG & WebP | QuickPixel Tools</title>
 
-<meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size while maintaining good quality. Fast browser-based image compressor.">
+<meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce image file size while keeping good image quality. Fast, private browser-based image compression.">
+
+<meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/image-compressor.html">
 
-<!-- Google AdSense verification -->
+<!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
 crossorigin="anonymous"></script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I compress JPG images online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools supports JPG and JPEG images and processes them directly in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress PNG images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. PNG images can be selected and processed directly in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress WebP images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. WebP images are supported by the image compressor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does image compression reduce quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compression can affect image quality depending on the selected quality setting. Higher quality settings generally preserve more visual detail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The image compression process is performed directly in your browser. Your selected image does not need to be uploaded to a QuickPixel Tools server."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 
@@ -27,30 +79,34 @@ crossorigin="anonymous"></script>
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
     line-height: 1.6;
 }
 
 header {
-    background: white;
+    background: #ffffff;
     padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 nav {
-    background: white;
+    background: #ffffff;
     padding: 12px 10px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 nav a {
@@ -68,7 +124,7 @@ nav a:hover {
 
 main {
     max-width: 950px;
-    margin: auto;
+    margin: 0 auto;
     padding: 45px 20px 70px;
 }
 
@@ -80,18 +136,18 @@ main {
 .hero h1 {
     font-size: 42px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .hero p {
     color: #667085;
     font-size: 18px;
     max-width: 720px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .tool {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     border-radius: 18px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
@@ -105,6 +161,11 @@ main {
     margin: 25px 0;
 }
 
+.upload h2 {
+    font-size: 22px;
+    margin-top: 0;
+}
+
 input[type="file"] {
     margin: 15px;
     max-width: 100%;
@@ -112,18 +173,25 @@ input[type="file"] {
 
 label {
     display: block;
-    font-weight: bold;
+    font-weight: 700;
     margin: 20px 0 10px;
 }
 
 input[type="range"] {
     width: 80%;
     max-width: 500px;
+    cursor: pointer;
+}
+
+.quality-help {
+    color: #667085;
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 button {
     background: #111827;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 13px 25px;
     border-radius: 8px;
@@ -136,23 +204,32 @@ button:hover {
     opacity: 0.9;
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .result {
     margin-top: 25px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .download {
     display: none;
     text-decoration: none;
     background: #16a34a;
-    color: white;
+    color: #ffffff;
     padding: 12px 22px;
     border-radius: 8px;
     margin-top: 15px;
 }
 
+.download:hover {
+    opacity: 0.9;
+}
+
 .content-box {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     margin-top: 35px;
     border-radius: 18px;
@@ -160,7 +237,8 @@ button:hover {
 }
 
 .content-box h2 {
-    margin-top: 28px;
+    margin-top: 30px;
+    line-height: 1.3;
 }
 
 .content-box h2:first-child {
@@ -169,6 +247,19 @@ button:hover {
 
 .content-box p {
     color: #59636e;
+}
+
+.content-box ul {
+    color: #59636e;
+}
+
+.content-box li {
+    margin-bottom: 10px;
+}
+
+.content-box a {
+    color: #111827;
+    font-weight: 600;
 }
 
 .faq {
@@ -181,11 +272,27 @@ button:hover {
 }
 
 .faq h3 {
-    margin-bottom: 6px;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.back-link a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
-    background: white;
+    background: #ffffff;
     border-top: 1px solid #e5e7eb;
     text-align: center;
     padding: 35px 20px;
@@ -200,6 +307,10 @@ footer {
     color: #374151;
     text-decoration: none;
     margin: 0 8px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -218,6 +329,10 @@ footer {
         font-size: 14px;
     }
 
+    input[type="range"] {
+        width: 100%;
+    }
+
 }
 
 </style>
@@ -234,7 +349,7 @@ footer {
 
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
 <a href="image-compressor.html">Compressor</a>
@@ -255,6 +370,7 @@ footer {
 <p>
 Compress JPG, PNG and WebP images online for free.
 Reduce image file size while keeping good image quality.
+The compression process runs directly in your browser.
 </p>
 
 </section>
@@ -264,18 +380,24 @@ Reduce image file size while keeping good image quality.
 <h2>Compress Your Image</h2>
 
 <p>
-Choose an image and adjust the compression quality.
+Choose an image, select the compression quality and
+download your compressed image.
 </p>
 
 <div class="upload">
 
-<h3>Select an Image</h3>
+<h2>Select an Image</h2>
 
 <input
 type="file"
 id="imageInput"
 accept="image/jpeg,image/png,image/webp"
+aria-label="Select JPG, PNG or WebP image"
 >
+
+<p>
+Supported formats: JPG, JPEG, PNG and WebP.
+</p>
 
 </div>
 
@@ -292,15 +414,28 @@ id="quality"
 min="10"
 max="100"
 value="70"
+aria-label="Compression quality"
 >
 
-<br>
+<p class="quality-help">
+Higher quality keeps more image detail. Lower quality can
+produce a smaller file size.
+</p>
 
-<button onclick="compressImage()">
+<button
+type="button"
+id="compressButton"
+onclick="compressImage()">
+
 Compress Image
+
 </button>
 
-<div id="result" class="result"></div>
+<div
+id="result"
+class="result"
+aria-live="polite">
+</div>
 
 <a
 id="download"
@@ -318,41 +453,89 @@ Download Compressed Image
 <h2>What Is an Image Compressor?</h2>
 
 <p>
-An image compressor reduces the file size of an image.
+An image compressor reduces the file size of an image while
+trying to maintain an acceptable level of visual quality.
 Smaller image files can be easier to store, share and use
 on websites.
 </p>
 
-<h2>How to Compress an Image</h2>
+<p>
+Image compression can be especially useful when large images
+make a webpage slower to load or when a website has file-size
+requirements.
+</p>
+
+<h2>How to Compress an Image Online</h2>
 
 <p>
-Choose a JPG, PNG or WebP image above. Select the
-compression quality and click the Compress Image button.
-When processing is complete, you can download the
-compressed image.
+Using QuickPixel Tools is simple. Select a JPG, PNG or WebP
+image, choose your preferred compression quality and click
+the Compress Image button. After processing is complete,
+you can download the compressed image.
 </p>
+
+<h2>Choose the Right Compression Quality</h2>
+
+<p>
+The quality setting affects the balance between image quality
+and file size. A higher setting generally preserves more
+visual detail but may produce a larger file. A lower setting
+can reduce the file size further but may make compression
+artifacts more noticeable.
+</p>
+
+<ul>
+<li><strong>80–100%:</strong> Better visual quality with less compression.</li>
+<li><strong>50–79%:</strong> A balanced option for many everyday images.</li>
+<li><strong>10–49%:</strong> Smaller files with a greater chance of visible quality loss.</li>
+</ul>
 
 <h2>Why Compress Images?</h2>
 
 <p>
-Large image files can take longer to upload, download
-and share. Compressing images can help reduce file size
-while keeping the image suitable for many everyday uses.
+Large image files can take longer to upload, download and
+share. Reducing image file size can make images easier to
+manage and may help websites use fewer image data resources.
+</p>
+
+<h2>JPG, PNG and WebP Compression</h2>
+
+<p>
+QuickPixel Tools accepts JPG, JPEG, PNG and WebP images.
+Different image formats have different characteristics, so
+the final file size and visual result can vary depending on
+the original image and the selected quality.
 </p>
 
 <h2>Is QuickPixel Image Compressor Free?</h2>
 
 <p>
-Yes. The QuickPixel image compressor is available to use
-for free.
+Yes. QuickPixel Tools provides this image compressor free
+of charge for everyday image compression needs.
 </p>
 
 <h2>Are My Images Uploaded?</h2>
 
 <p>
-The image compression process is performed directly in
-your browser. Your selected image does not need to be
-uploaded to a QuickPixel Tools server.
+The image compression process is performed directly in your
+web browser. Your selected image does not need to be uploaded
+to a QuickPixel Tools server for processing.
+</p>
+
+<p>
+Because processing takes place in the browser, the speed of
+compression can depend on your device, browser and the size
+of the image you select.
+</p>
+
+<h2>More Free Image Tools</h2>
+
+<p>
+You can also use our other browser-based image tools:
+<a href="image-resizer.html">Image Resizer</a> for changing
+image dimensions and
+<a href="jpg-to-png.html">JPG to PNG Converter</a> for
+converting JPG and JPEG images to PNG format.
 </p>
 
 <h2>Frequently Asked Questions</h2>
@@ -362,7 +545,8 @@ uploaded to a QuickPixel Tools server.
 <h3>Can I compress JPG images online?</h3>
 
 <p>
-Yes. JPG and JPEG images are supported by this tool.
+Yes. JPG and JPEG images are supported by this tool and can
+be compressed directly in your browser.
 </p>
 
 </div>
@@ -372,8 +556,18 @@ Yes. JPG and JPEG images are supported by this tool.
 <h3>Can I compress PNG images?</h3>
 
 <p>
-Yes. PNG images can be selected and processed in the
-browser.
+Yes. PNG images can be selected and processed in the browser.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>Can I compress WebP images?</h3>
+
+<p>
+Yes. WebP images are supported by the QuickPixel image
+compressor.
 </p>
 
 </div>
@@ -392,10 +586,23 @@ keeps more visual detail.
 
 <div class="faq">
 
+<h3>Are my images uploaded to a server?</h3>
+
+<p>
+No image upload to a QuickPixel Tools processing server is
+required. The compression is performed directly in your
+browser.
+</p>
+
+</div>
+
+<div class="faq">
+
 <h3>Do I need to install software?</h3>
 
 <p>
-No. The tool works directly in a modern web browser.
+No. The tool works directly in a modern web browser, so no
+additional image compression software is required.
 </p>
 
 </div>
@@ -405,21 +612,21 @@ No. The tool works directly in a modern web browser.
 <h3>Can I use the compressor on my phone?</h3>
 
 <p>
-Yes. The page is designed to work on modern mobile
-browsers as well as desktop browsers.
+Yes. The page is designed to work on modern mobile browsers
+as well as desktop browsers.
 </p>
 
 </div>
 
 </section>
 
-<p style="text-align:center; margin-top:35px;">
+<div class="back-link">
 
 <a href="index.html">
 ← Back to QuickPixel Tools
 </a>
 
-</p>
+</div>
 
 </main>
 
@@ -446,137 +653,222 @@ document.getElementById("quality");
 const qualityValue =
 document.getElementById("qualityValue");
 
+const compressButton =
+document.getElementById("compressButton");
+
 qualitySlider.addEventListener(
 "input",
 function() {
 
-qualityValue.textContent =
-this.value;
+    qualityValue.textContent =
+        this.value;
 
 }
 );
 
 function compressImage() {
 
-const input =
-document.getElementById("imageInput");
+    const input =
+        document.getElementById("imageInput");
 
-const result =
-document.getElementById("result");
+    const result =
+        document.getElementById("result");
 
-const download =
-document.getElementById("download");
+    const download =
+        document.getElementById("download");
 
-if (
-!input.files ||
-!input.files[0]
-) {
+    if (!input.files || !input.files[0]) {
 
-alert(
-"Please choose an image first."
-);
+        alert("Please choose an image first.");
 
-return;
+        return;
 
-}
+    }
 
-const file =
-input.files[0];
+    const file =
+        input.files[0];
 
-const reader =
-new FileReader();
+    if (
+        file.type !== "image/jpeg" &&
+        file.type !== "image/png" &&
+        file.type !== "image/webp"
+    ) {
 
-reader.onload =
-function(event) {
+        alert("Please select a JPG, PNG or WebP image.");
 
-const image =
-new Image();
+        return;
 
-image.onload =
-function() {
+    }
 
-const canvas =
-document.createElement("canvas");
+    compressButton.disabled = true;
 
-canvas.width =
-image.width;
+    result.textContent =
+        "Compressing image...";
 
-canvas.height =
-image.height;
+    download.style.display =
+        "none";
 
-const ctx =
-canvas.getContext("2d");
+    const reader =
+        new FileReader();
 
-ctx.drawImage(
-image,
-0,
-0,
-canvas.width,
-canvas.height
-);
+    reader.onload =
+        function(event) {
 
-const quality =
-parseInt(
-qualitySlider.value
-) / 100;
+        const image =
+            new Image();
 
-canvas.toBlob(
+        image.onload =
+            function() {
 
-function(blob) {
+            const canvas =
+                document.createElement("canvas");
 
-if (!blob) {
+            canvas.width =
+                image.naturalWidth;
 
-result.textContent =
-"Compression failed. Please try another image.";
+            canvas.height =
+                image.naturalHeight;
 
-return;
+            const ctx =
+                canvas.getContext("2d");
 
-}
+            if (!ctx) {
 
-const originalSize =
-(
-file.size / 1024
-).toFixed(1);
+                result.textContent =
+                    "Your browser does not support image compression.";
 
-const compressedSize =
-(
-blob.size / 1024
-).toFixed(1);
+                compressButton.disabled = false;
 
-const url =
-URL.createObjectURL(blob);
+                return;
 
-download.href =
-url;
+            }
 
-download.style.display =
-"inline-block";
+            /*
+             * Use a white background for formats that may
+             * contain transparency when exporting to JPEG.
+             */
 
-result.innerHTML =
-"Original size: " +
-originalSize +
-" KB<br>" +
+            if (file.type === "image/png" || file.type === "image/webp") {
 
-"Compressed size: " +
-compressedSize +
-" KB";
+                ctx.fillStyle = "#ffffff";
 
-},
+                ctx.fillRect(
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
 
-"image/jpeg",
+            }
 
-quality
+            ctx.drawImage(
+                image,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
 
-);
+            const quality =
+                parseInt(qualitySlider.value, 10) / 100;
 
-};
+            canvas.toBlob(
 
-image.src =
-event.target.result;
+                function(blob) {
 
-};
+                    compressButton.disabled = false;
 
-reader.readAsDataURL(file);
+                    if (!blob) {
+
+                        result.textContent =
+                            "Compression failed. Please try another image.";
+
+                        return;
+
+                    }
+
+                    const originalSize =
+                        (file.size / 1024).toFixed(1);
+
+                    const compressedSize =
+                        (blob.size / 1024).toFixed(1);
+
+                    const url =
+                        URL.createObjectURL(blob);
+
+                    download.href =
+                        url;
+
+                    download.style.display =
+                        "inline-block";
+
+                    let message =
+                        "Compression completed successfully!<br>" +
+                        "Original size: " +
+                        originalSize +
+                        " KB<br>" +
+                        "Compressed size: " +
+                        compressedSize +
+                        " KB";
+
+                    if (blob.size < file.size) {
+
+                        const reduction =
+                            (
+                                (1 - blob.size / file.size) * 100
+                            ).toFixed(1);
+
+                        message +=
+                            "<br>Size reduced by: " +
+                            reduction +
+                            "%";
+
+                    } else {
+
+                        message +=
+                            "<br>The compressed file is not smaller than the original.";
+
+                    }
+
+                    result.innerHTML =
+                        message;
+
+                },
+
+                "image/jpeg",
+
+                quality
+
+            );
+
+        };
+
+        image.onerror =
+            function() {
+
+            compressButton.disabled = false;
+
+            result.textContent =
+                "Unable to process this image. Please try another file.";
+
+        };
+
+        image.src =
+            event.target.result;
+
+    };
+
+    reader.onerror =
+        function() {
+
+        compressButton.disabled = false;
+
+        result.textContent =
+            "Could not read the selected image.";
+
+    };
+
+    reader.readAsDataURL(file);
 
 }
 
