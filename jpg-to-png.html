@@ -8,17 +8,70 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JPG to PNG Converter Online - Free | QuickPixel Tools</title>
+<title>JPG to PNG Converter Online Free - Convert JPEG to PNG | QuickPixel Tools</title>
 
-<meta name="description" content="Convert JPG and JPEG images to PNG online for free. Convert images directly in your browser with QuickPixel Tools.">
+<meta name="description" content="Convert JPG and JPEG images to PNG online for free. Fast browser-based JPG to PNG converter with no software installation required. Your images are processed directly in your browser.">
+
+<meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://quickpixeltools.github.io/jpg-to-png.html">
 
+<!-- Google AdSense -->
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
 <script async
 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
 crossorigin="anonymous"></script>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I convert JPG to PNG online for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools lets you convert JPG and JPEG images to PNG format online for free."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert JPEG to PNG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. JPEG and JPG images can be converted to PNG using the QuickPixel JPG to PNG converter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my images uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The conversion process is performed directly in your web browser, so the selected image does not need to be uploaded to a QuickPixel Tools server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The JPG to PNG converter works directly in a modern web browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the JPG to PNG converter on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The converter is designed to work on modern mobile and desktop browsers."
+      }
+    }
+  ]
+}
+</script>
 
 <style>
 
@@ -32,28 +85,28 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
     line-height: 1.6;
 }
 
 header {
-    background: white;
+    background: #ffffff;
     padding: 18px 7%;
     border-bottom: 1px solid #e5e7eb;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 nav {
-    background: white;
+    background: #ffffff;
     padding: 12px 10px;
     text-align: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eeeeee;
 }
 
 nav a {
@@ -71,7 +124,7 @@ nav a:hover {
 
 main {
     max-width: 950px;
-    margin: auto;
+    margin: 0 auto;
     padding: 45px 20px 70px;
 }
 
@@ -83,18 +136,18 @@ main {
 .hero h1 {
     font-size: 42px;
     line-height: 1.2;
-    margin-bottom: 15px;
+    margin: 0 0 15px;
 }
 
 .hero p {
     color: #667085;
     font-size: 18px;
-    max-width: 720px;
-    margin: auto;
+    max-width: 740px;
+    margin: 0 auto;
 }
 
 .tool {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     border-radius: 18px;
     box-shadow: 0 5px 25px rgba(0,0,0,0.07);
@@ -108,14 +161,28 @@ main {
     margin: 25px 0;
 }
 
+.upload h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
 input[type="file"] {
     margin: 15px;
     max-width: 100%;
 }
 
+.file-info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    color: #59636e;
+}
+
 button {
     background: #111827;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 13px 25px;
     border-radius: 8px;
@@ -135,14 +202,14 @@ button:disabled {
 
 .result {
     margin-top: 25px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .download {
     display: none;
     text-decoration: none;
     background: #16a34a;
-    color: white;
+    color: #ffffff;
     padding: 12px 22px;
     border-radius: 8px;
     margin-top: 15px;
@@ -153,7 +220,7 @@ button:disabled {
 }
 
 .content-box {
-    background: white;
+    background: #ffffff;
     padding: 35px;
     margin-top: 35px;
     border-radius: 18px;
@@ -161,7 +228,8 @@ button:disabled {
 }
 
 .content-box h2 {
-    margin-top: 28px;
+    margin-top: 30px;
+    line-height: 1.3;
 }
 
 .content-box h2:first-child {
@@ -170,6 +238,19 @@ button:disabled {
 
 .content-box p {
     color: #59636e;
+}
+
+.content-box ul {
+    color: #59636e;
+}
+
+.content-box li {
+    margin-bottom: 10px;
+}
+
+.content-box a {
+    color: #111827;
+    font-weight: 600;
 }
 
 .faq {
@@ -182,11 +263,27 @@ button:disabled {
 }
 
 .faq h3 {
-    margin-bottom: 6px;
+    margin: 0 0 6px;
+    line-height: 1.4;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.back-link a {
+    color: #111827;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }
 
 footer {
-    background: white;
+    background: #ffffff;
     border-top: 1px solid #e5e7eb;
     text-align: center;
     padding: 35px 20px;
@@ -239,20 +336,14 @@ footer {
 
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
-
 <a href="image-compressor.html">Compressor</a>
-
 <a href="image-resizer.html">Resizer</a>
-
 <a href="jpg-to-png.html">JPG to PNG</a>
-
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
-
 <a href="privacy.html">Privacy</a>
 
 </nav>
@@ -264,8 +355,8 @@ footer {
 <h1>JPG to PNG Converter Online</h1>
 
 <p>
-Convert JPG and JPEG images to PNG format for free.
-The conversion happens directly in your browser.
+Convert JPG and JPEG images to PNG format quickly and
+for free, directly in your web browser.
 </p>
 
 </section>
@@ -275,19 +366,29 @@ The conversion happens directly in your browser.
 <h2>Convert JPG to PNG</h2>
 
 <p>
-Choose a JPG or JPEG image to get started.
+Select a JPG or JPEG image below and convert it to PNG.
 </p>
 
 <div class="upload">
 
-<h3>Select a JPG or JPEG Image</h3>
+<h2>Select a JPG Image</h2>
 
 <input
 type="file"
 id="jpgInput"
-accept="image/jpeg,.jpg,.jpeg"
+accept="image/jpeg"
+aria-label="Select JPG or JPEG image"
 >
 
+<p>
+Supported input formats: JPG and JPEG.
+</p>
+
+</div>
+
+<div
+id="fileInfo"
+class="file-info">
 </div>
 
 <button
@@ -301,11 +402,12 @@ Convert to PNG
 
 <div
 id="result"
-class="result">
+class="result"
+aria-live="polite">
 </div>
 
 <a
-id="download"
+id="downloadLink"
 class="download"
 download="converted-image.png">
 
@@ -320,60 +422,115 @@ Download PNG Image
 <h2>What Is a JPG to PNG Converter?</h2>
 
 <p>
-A JPG to PNG converter changes an image from JPG or JPEG
-format into PNG format. PNG images can be useful for
-websites, graphics, documents and other digital projects.
+A JPG to PNG converter changes an image from the JPG or
+JPEG format into the PNG format. Different image formats
+have different features, so converting an image can be
+useful when a project requires PNG instead of JPG.
 </p>
 
 <h2>How to Convert JPG to PNG</h2>
 
 <p>
 Choose a JPG or JPEG image using the upload box above.
-Click Convert to PNG and wait for the conversion to finish.
-Then click the download button to save your PNG image.
+Then click the Convert to PNG button. After the conversion
+is complete, use the download button to save the PNG image
+to your device.
 </p>
 
 <h2>Why Convert JPG to PNG?</h2>
 
 <p>
-Different websites, applications and design projects may
-require PNG files. Converting a JPG image gives you a PNG
-version without needing to install additional software.
+PNG can be useful when you need a lossless image format or
+when an image needs to be used in a project that specifically
+supports or requires PNG files.
+</p>
+
+<p>
+Converting JPG to PNG does not restore image quality that
+was already lost when the original JPG was compressed.
+The conversion mainly changes the file format.
+</p>
+
+<h2>JPG vs PNG</h2>
+
+<p>
+JPG is commonly used for photographs and other images where
+smaller file sizes are useful. PNG is a lossless format that
+is often useful for graphics, illustrations, screenshots
+and images where preserving image data is important.
 </p>
 
 <h2>Is This JPG to PNG Converter Free?</h2>
 
 <p>
 Yes. QuickPixel Tools provides this JPG to PNG converter
-for free.
+free of charge for everyday image conversion tasks.
 </p>
 
 <h2>Are My Images Uploaded?</h2>
 
 <p>
-The conversion is performed directly in your browser.
-Your selected image does not need to be uploaded to a
-QuickPixel Tools server.
+The conversion process is performed directly in your web
+browser. Your selected JPG image does not need to be
+uploaded to a QuickPixel Tools server for conversion.
+</p>
+
+<p>
+Because processing happens in the browser, conversion
+performance can depend on your device, browser and the
+size of the selected image.
+</p>
+
+<h2>Do I Need to Install Software?</h2>
+
+<p>
+No. You can use the converter directly from a modern web
+browser without installing additional image conversion
+software.
+</p>
+
+<h2>More Free Image Tools</h2>
+
+<p>
+You can also use our
+<a href="image-compressor.html">Image Compressor</a>
+to reduce image file size or our
+<a href="image-resizer.html">Image Resizer</a>
+to change image dimensions.
 </p>
 
 <h2>Frequently Asked Questions</h2>
 
 <div class="faq">
 
-<h3>Can I convert JPEG to PNG?</h3>
+<h3>Can I convert JPG to PNG online for free?</h3>
 
 <p>
-Yes. Both JPG and JPEG images are supported.
+Yes. QuickPixel Tools lets you convert JPG and JPEG images
+to PNG format online for free.
 </p>
 
 </div>
 
 <div class="faq">
 
-<h3>Is the JPG to PNG converter free?</h3>
+<h3>Can I convert JPEG to PNG?</h3>
 
 <p>
-Yes. You can use the converter for free.
+Yes. JPEG and JPG images can be converted to PNG using the
+QuickPixel JPG to PNG converter.
+</p>
+
+</div>
+
+<div class="faq">
+
+<h3>Are my images uploaded to a server?</h3>
+
+<p>
+The conversion process is performed directly in your web
+browser, so the selected image does not need to be uploaded
+to a QuickPixel Tools server.
 </p>
 
 </div>
@@ -383,41 +540,32 @@ Yes. You can use the converter for free.
 <h3>Do I need to install software?</h3>
 
 <p>
-No. The conversion works directly in a modern web browser.
+No. The JPG to PNG converter works directly in a modern
+web browser.
 </p>
 
 </div>
 
 <div class="faq">
 
-<h3>Can I use this converter on my phone?</h3>
+<h3>Can I use the converter on my phone?</h3>
 
 <p>
-Yes. The converter works on modern mobile browsers.
-</p>
-
-</div>
-
-<div class="faq">
-
-<h3>Is my image uploaded to a server?</h3>
-
-<p>
-The conversion happens directly in your browser, so the
-image does not need to be uploaded to our server.
+Yes. The converter is designed to work on modern mobile
+and desktop browsers.
 </p>
 
 </div>
 
 </section>
 
-<p style="text-align:center; margin-top:35px;">
+<div class="back-link">
 
 <a href="index.html">
 ← Back to QuickPixel Tools
 </a>
 
-</p>
+</div>
 
 </main>
 
@@ -426,11 +574,8 @@ image does not need to be uploaded to our server.
 <div class="footer-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="contact.html">Contact</a>
-
 <a href="privacy.html">Privacy</a>
 
 </div>
@@ -441,67 +586,114 @@ image does not need to be uploaded to our server.
 
 <script>
 
-let currentDownloadURL = null;
+const jpgInput =
+document.getElementById("jpgInput");
 
-function convertToPNG() {
+const fileInfo =
+document.getElementById("fileInfo");
 
-    const input =
-        document.getElementById("jpgInput");
+const result =
+document.getElementById("result");
 
-    const result =
-        document.getElementById("result");
+const downloadLink =
+document.getElementById("downloadLink");
 
-    const download =
-        document.getElementById("download");
+const convertButton =
+document.getElementById("convertButton");
 
-    const button =
-        document.getElementById("convertButton");
+let currentObjectURL = null;
 
-    if (!input.files || !input.files[0]) {
+jpgInput.addEventListener("change", function() {
 
-        alert("Please choose a JPG or JPEG image first.");
+    result.textContent = "";
 
+    downloadLink.style.display = "none";
+
+    fileInfo.style.display = "none";
+
+    const file =
+        this.files[0];
+
+    if (!file) {
         return;
     }
 
-    const file =
-        input.files[0];
+    if (
+        file.type !== "image/jpeg"
+    ) {
 
-    const fileName =
-        file.name.toLowerCase();
+        alert(
+            "Please select a JPG or JPEG image."
+        );
 
-    const isJPG =
-        file.type === "image/jpeg" ||
-        fileName.endsWith(".jpg") ||
-        fileName.endsWith(".jpeg");
-
-    if (!isJPG) {
-
-        alert("Please select a JPG or JPEG image.");
-
-        input.value = "";
+        this.value = "";
 
         return;
+
+    }
+
+    const size =
+        (file.size / 1024).toFixed(1);
+
+    fileInfo.textContent =
+        "Selected: " +
+        file.name +
+        " — " +
+        size +
+        " KB";
+
+    fileInfo.style.display =
+        "block";
+
+});
+
+function convertToPNG() {
+
+    const file =
+        jpgInput.files[0];
+
+    if (!file) {
+
+        alert(
+            "Please select a JPG or JPEG image first."
+        );
+
+        return;
+
+    }
+
+    if (
+        file.type !== "image/jpeg"
+    ) {
+
+        alert(
+            "Please select a valid JPG or JPEG image."
+        );
+
+        return;
+
     }
 
     result.textContent =
         "Converting image...";
 
-    download.style.display =
+    downloadLink.style.display =
         "none";
 
-    button.disabled =
+    convertButton.disabled =
         true;
 
     const reader =
         new FileReader();
 
-    reader.onload = function(event) {
+    reader.onload =
+        function(event) {
 
         const image =
             new Image();
 
-        image.onload = function() {
+        image.onload =
+            function() {
 
             const canvas =
                 document.createElement("canvas");
@@ -517,30 +709,15 @@ function convertToPNG() {
 
             if (!ctx) {
 
+                convertButton.disabled =
+                    false;
+
                 result.textContent =
                     "Your browser does not support image conversion.";
 
-                button.disabled =
-                    false;
-
                 return;
+
             }
-
-            /*
-             * Fill white background.
-             * This prevents unexpected transparency
-             * when converting JPG to PNG.
-             */
-
-            ctx.fillStyle =
-                "#ffffff";
-
-            ctx.fillRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
 
             ctx.drawImage(
                 image,
@@ -549,9 +726,10 @@ function convertToPNG() {
             );
 
             canvas.toBlob(
+
                 function(blob) {
 
-                    button.disabled =
+                    convertButton.disabled =
                         false;
 
                     if (!blob) {
@@ -560,57 +738,56 @@ function convertToPNG() {
                             "Conversion failed. Please try another image.";
 
                         return;
+
                     }
 
-                    if (currentDownloadURL) {
+                    if (currentObjectURL) {
 
                         URL.revokeObjectURL(
-                            currentDownloadURL
+                            currentObjectURL
                         );
 
                     }
 
-                    currentDownloadURL =
+                    currentObjectURL =
                         URL.createObjectURL(blob);
 
-                    download.href =
-                        currentDownloadURL;
+                    downloadLink.href =
+                        currentObjectURL;
 
-                    download.download =
+                    downloadLink.download =
                         "converted-image.png";
 
-                    download.style.display =
+                    downloadLink.style.display =
                         "inline-block";
 
-                    const size =
+                    const outputSize =
                         (
                             blob.size / 1024
                         ).toFixed(1);
 
                     result.innerHTML =
-                        "Conversion completed successfully!<br>" +
-                        "Original dimensions: " +
-                        image.naturalWidth +
-                        " × " +
-                        image.naturalHeight +
-                        " pixels<br>" +
+                        "Image converted successfully!<br>" +
                         "PNG file size: " +
-                        size +
+                        outputSize +
                         " KB";
 
                 },
+
                 "image/png"
+
             );
 
         };
 
-        image.onerror = function() {
+        image.onerror =
+            function() {
 
-            button.disabled =
+            convertButton.disabled =
                 false;
 
             result.textContent =
-                "Unable to read this image. Please try another JPG file.";
+                "Unable to process this image. Please try another JPG file.";
 
         };
 
@@ -619,9 +796,10 @@ function convertToPNG() {
 
     };
 
-    reader.onerror = function() {
+    reader.onerror =
+        function() {
 
-        button.disabled =
+        convertButton.disabled =
             false;
 
         result.textContent =
