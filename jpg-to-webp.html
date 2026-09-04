@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPG to WebP Converter Online Free | QuickPixel Tools</title>
+
+<meta name="description" content="Convert JPG and JPEG images to WebP online for free. Choose image quality, reduce file size and download WebP images directly in your browser with QuickPixel Tools.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://quickpixeltools.github.io/jpg-to-webp.html">
+
+<!-- Google AdSense -->
+<meta name="google-adsense-account" content="ca-pub-5655905002909310">
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+crossorigin="anonymous"></script>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fb;
+    color: #222;
+    line-height: 1.7;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 10px 20px;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    color: #111827;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+    color: #5b6472;
+    font-size: 17px;
+}
+
+.tool-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 30px;
+    margin: 25px auto 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.upload-label {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.upload-label:hover {
+    background: #1d4ed8;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-info {
+    margin: 10px 0 20px;
+    color: #555;
+    font-size: 14px;
+}
+
+.quality-box {
+    max-width: 450px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.quality-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.quality-value {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.notice {
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    padding: 12px 15px;
+    margin: 20px 0;
+    text-align: left;
+    font-size: 14px;
+}
+
+button {
+    border: none;
+    background: #16a34a;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #15803d;
+}
+
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.result {
+    display: none;
+    margin-top: 25px;
+    padding: 20px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+}
+
+.result h3 {
+    margin-top: 0;
+    color: #166534;
+}
+
+.result p {
+    margin: 6px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #7c3aed;
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.download-btn:hover {
+    background: #6d28d9;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 25px 0;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.content-section h2 {
+    color: #111827;
+    margin-top: 0;
+}
+
+.content-section h3 {
+    color: #1f2937;
+    margin-top: 25px;
+}
+
+.content-section ul,
+.content-section ol {
+    padding-left: 25px;
+}
+
+.related-tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.related-tools a {
+    display: block;
+    padding: 15px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+    text-align: center;
+}
+
+.related-tools a:hover {
+    background: #eff6ff;
+}
+
+.faq {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+}
+
+.faq:last-child {
+    border-bottom: none;
+}
+
+.faq h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+footer {
+    background: #111827;
+    color: #d1d5db;
+    margin-top: 40px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .tool-box,
+    .content-section {
+        padding: 20px;
+    }
+
+    .related-tools {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+<!-- FAQ Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is JPG to WebP conversion free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools provides a free JPG to WebP converter that works directly in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is WebP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebP is a modern image format designed to provide smaller image files while maintaining good visual quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does converting JPG to WebP reduce file size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WebP can produce a smaller file than JPG, although the final size depends on the original image and selected quality."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose the WebP quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can adjust the quality slider before converting the JPG image to WebP."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the image dimensions change?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The converter keeps the original image width and height unless the image itself is resized separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my JPG images uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The conversion is performed in the browser using JavaScript and the Canvas API, so the tool does not need to upload the image to a conversion server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the JPG to WebP converter on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The page is designed to work on modern mobile and desktop browsers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does JPG to WebP conversion improve image quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conversion does not restore quality already lost in the JPG. A suitable WebP quality setting can help preserve good visual quality while reducing file size."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <a href="index.html" class="logo">
+            QuickPixel Tools
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="image-compressor.html">Compressor</a>
+            <a href="image-resizer.html">Resizer</a>
+            <a href="jpg-to-png.html">JPG to PNG</a>
+            <a href="png-to-jpg.html">PNG to JPG</a>
+            <a href="jpg-to-webp.html">JPG to WebP</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="container">
+
+<section class="hero">
+
+    <h1>JPG to WebP Converter</h1>
+
+    <p>
+        Convert JPG and JPEG images to WebP online for free.
+        Choose your preferred quality and download the converted
+        WebP image directly from your browser.
+    </p>
+
+</section>
+
+
+<!-- TOOL -->
+
+<section class="tool-box">
+
+    <h2>Convert JPG to WebP</h2>
+
+    <label for="imageInput" class="upload-label">
+        Choose JPG Image
+    </label>
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/jpeg,.jpg,.jpeg"
+    >
+
+    <div id="fileInfo" class="file-info">
+        No image selected.
+    </div>
+
+
+    <div class="quality-box">
+
+        <label for="quality">
+            WebP Quality
+        </label>
+
+        <input
+            type="range"
+            id="quality"
+            min="50"
+            max="100"
+            value="90"
+        >
+
+        <div class="quality-value">
+            <span id="qualityValue">90</span>%
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+        <strong>Tip:</strong>
+        A quality around 80–90% is often a good balance between
+        image quality and file size. You can adjust the quality
+        depending on your needs.
+    </div>
+
+
+    <button
+        id="convertBtn"
+        onclick="convertToWebP()"
+        disabled
+    >
+        Convert to WebP
+    </button>
+
+
+    <div id="result" class="result">
+
+        <h3>Conversion Complete!</h3>
+
+        <p id="originalSize"></p>
+
+        <p id="outputSize"></p>
+
+        <p id="dimensions"></p>
+
+        <p id="selectedQuality"></p>
+
+        <a
+            id="downloadLink"
+            class="download-btn"
+            download="converted.webp"
+        >
+            Download WebP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<section class="content-section">
+
+    <h2>What Is a JPG to WebP Converter?</h2>
+
+    <p>
+        A JPG to WebP converter changes a JPG or JPEG image into
+        the modern WebP image format. WebP was designed for the web
+        and can provide good image quality with a smaller file size
+        in many situations.
+    </p>
+
+    <p>
+        QuickPixel Tools lets you perform the conversion directly
+        in your browser. You can select a JPG image, choose the
+        WebP quality and download the converted file.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>How to Convert JPG to WebP</h2>
+
+    <ol>
+
+        <li>
+            Click the <strong>Choose JPG Image</strong> button.
+        </li>
+
+        <li>
+            Select a JPG or JPEG image from your device.
+        </li>
+
+        <li>
+            Choose a WebP quality using the quality slider.
+        </li>
+
+        <li>
+            Click <strong>Convert to WebP</strong>.
+        </li>
+
+        <li>
+            Review the output information.
+        </li>
+
+        <li>
+            Click <strong>Download WebP</strong>.
+        </li>
+
+    </ol>
+
+    <p>
+        The conversion takes place inside your browser, so you
+        can convert the image without installing desktop software.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Why Convert JPG to WebP?</h2>
+
+    <p>
+        WebP is widely used for websites because it can provide
+        efficient image compression while maintaining good visual
+        quality.
+    </p>
+
+    <h3>Smaller Images for Websites</h3>
+
+    <p>
+        Depending on the image and quality setting, a WebP version
+        may be smaller than the original JPG. Smaller image files
+        can help reduce the amount of data a website needs to load.
+    </p>
+
+    <h3>Good Visual Quality</h3>
+
+    <p>
+        WebP supports lossy compression, allowing you to choose
+        a balance between image quality and file size.
+    </p>
+
+    <h3>Useful for Web Projects</h3>
+
+    <p>
+        WebP can be useful for website images, blog posts,
+        product images, thumbnails and other online content.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>JPG vs WebP</h2>
+
+    <p>
+        JPG is one of the most widely supported image formats.
+        WebP is a newer format designed with web performance
+        in mind.
+    </p>
+
+    <ul>
+
+        <li>
+            <strong>JPG:</strong>
+            widely supported and commonly used for photographs.
+        </li>
+
+        <li>
+            <strong>WebP:</strong>
+            often provides efficient compression for web images.
+        </li>
+
+        <li>
+            <strong>JPG:</strong>
+            uses lossy compression.
+        </li>
+
+        <li>
+            <strong>WebP:</strong>
+            supports both lossy and lossless compression.
+        </li>
+
+    </ul>
+
+    <p>
+        The best format depends on where the image will be used
+        and which formats your target platform supports.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Choosing the Right WebP Quality</h2>
+
+    <p>
+        The quality setting controls the balance between visual
+        quality and output file size.
+    </p>
+
+    <h3>90–100%</h3>
+
+    <p>
+        Suitable when preserving more visual detail is important
+        and a larger file is acceptable.
+    </p>
+
+    <h3>80–90%</h3>
+
+    <p>
+        Often a practical range for website photographs and
+        general-purpose images.
+    </p>
+
+    <h3>50–80%</h3>
+
+    <p>
+        Can produce smaller files when reducing file size is
+        more important than maintaining maximum image detail.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Does WebP Always Make the File Smaller?</h2>
+
+    <p>
+        Not necessarily. The final file size depends on the
+        original JPG, image dimensions, image complexity and
+        selected WebP quality.
+    </p>
+
+    <p>
+        If the output is larger than expected, try a lower
+        quality setting and compare the result visually.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Will JPG to WebP Change Image Dimensions?</h2>
+
+    <p>
+        No. This converter keeps the original width and height
+        of the JPG image.
+    </p>
+
+    <p>
+        For example, if your JPG is 1920 × 1080 pixels, the
+        converted WebP will also be 1920 × 1080 pixels.
+    </p>
+
+    <p>
+        If you need different dimensions, use our
+        <a href="image-resizer.html">Image Resizer</a>.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Does Conversion Restore Lost JPG Quality?</h2>
+
+    <p>
+        No. JPG uses lossy compression, so information that was
+        already removed from the original JPG cannot be recovered
+        simply by converting it to another format.
+    </p>
+
+    <p>
+        The goal of conversion is to create a WebP version while
+        maintaining an appropriate balance between quality and
+        file size.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Is the Image Uploaded to a Server?</h2>
+
+    <p>
+        The converter processes the selected image in your browser
+        using JavaScript and the Canvas API.
+    </p>
+
+    <p>
+        This means the basic conversion does not require sending
+        your image to an external image-conversion server.
+    </p>
+
+    <p>
+        Browser-based processing can be convenient when working
+        with personal or private images.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Can I Use This Converter on Mobile?</h2>
+
+    <p>
+        Yes. The converter is designed to work on modern mobile,
+        tablet and desktop browsers.
+    </p>
+
+    <p>
+        On a phone, simply select an image from your gallery or
+        available files, choose the quality and start the conversion.
+    </p>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Useful JPG to WebP Tips</h2>
+
+    <ul>
+
+        <li>
+            Keep the original JPG if you may need it later.
+        </li>
+
+        <li>
+            Start around 80–90% quality for general website images.
+        </li>
+
+        <li>
+            Compare the output visually before choosing a lower
+            quality setting.
+        </li>
+
+        <li>
+            Remember that converting formats does not increase
+            the original image resolution.
+        </li>
+
+        <li>
+            Use the Image Resizer when you need different dimensions.
+        </li>
+
+        <li>
+            Use the Image Compressor when you specifically want
+            to reduce the size of an existing image.
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>More Free Image Tools</h2>
+
+    <p>
+        QuickPixel Tools provides several browser-based image
+        utilities for common image tasks.
+    </p>
+
+    <div class="related-tools">
+
+        <a href="image-compressor.html">
+            Image Compressor
+        </a>
+
+        <a href="image-resizer.html">
+            Image Resizer
+        </a>
+
+        <a href="jpg-to-png.html">
+            JPG to PNG
+        </a>
+
+        <a href="png-to-jpg.html">
+            PNG to JPG
+        </a>
+
+        <a href="index.html">
+            All Tools
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="content-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+
+        <h3>
+            Is JPG to WebP conversion free?
+        </h3>
+
+        <p>
+            Yes. QuickPixel Tools provides a free JPG to WebP
+            converter that works directly in your browser.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            What is WebP?
+        </h3>
+
+        <p>
+            WebP is a modern image format designed to provide
+            efficient image compression while maintaining good
+            visual quality.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            Does JPG to WebP reduce file size?
+        </h3>
+
+        <p>
+            It can. The result depends on the original JPG and
+            the quality selected during conversion.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            Can I choose WebP quality?
+        </h3>
+
+        <p>
+            Yes. Use the quality slider before starting the
+            conversion.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            Will my image dimensions change?
+        </h3>
+
+        <p>
+            No. The converter keeps the original width and height.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            Do I need to install software?
+        </h3>
+
+        <p>
+            No. The converter works in a modern web browser.
+        </p>
+
+    </div>
+
+
+    <div class="faq">
+
+        <h3>
+            Can I convert JPG to WebP on my phone?
+        </h3>
+
+        <p>
+            Yes. The tool is designed to work on modern mobile
+            browsers as well as desktop browsers.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 QuickPixel Tools. All rights reserved.
+    </p>
+
+    <p>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="privacy.html">Privacy</a>
+
+        <a href="terms.html">Terms</a>
+
+    </p>
+
+</footer>
+
+
+<script>
+
+const imageInput = document.getElementById("imageInput");
+const fileInfo = document.getElementById("fileInfo");
+const convertBtn = document.getElementById("convertBtn");
+
+const quality = document.getElementById("quality");
+const qualityValue = document.getElementById("qualityValue");
+
+const result = document.getElementById("result");
+
+let selectedFile = null;
+let downloadUrl = null;
+
+
+/* Quality Slider */
+
+quality.addEventListener("input", function() {
+
+    qualityValue.textContent = this.value;
+
+});
+
+
+/* File Selection */
+
+imageInput.addEventListener("change", function() {
+
+    result.style.display = "none";
+
+    if (downloadUrl) {
+        URL.revokeObjectURL(downloadUrl);
+        downloadUrl = null;
+    }
+
+    const file = this.files[0];
+
+    if (!file) {
+
+        selectedFile = null;
+
+        fileInfo.textContent = "No image selected.";
+
+        convertBtn.disabled = true;
+
+        return;
+    }
+
+
+    const isJPG =
+        file.type === "image/jpeg" ||
+        /\.(jpg|jpeg)$/i.test(file.name);
+
+
+    if (!isJPG) {
+
+        selectedFile = null;
+
+        fileInfo.textContent =
+            "Please select a JPG or JPEG image.";
+
+        convertBtn.disabled = true;
+
+        imageInput.value = "";
+
+        return;
+    }
+
+
+    selectedFile = file;
+
+    fileInfo.textContent =
+        file.name +
+        " • " +
+        formatBytes(file.size);
+
+    convertBtn.disabled = false;
+
+});
+
+
+/* Convert JPG to WebP */
+
+function convertToWebP() {
+
+    if (!selectedFile) {
+
+        alert("Please select a JPG image first.");
+
+        return;
+    }
+
+
+    convertBtn.disabled = true;
+
+    convertBtn.textContent = "Converting...";
+
+
+    const reader = new FileReader();
+
+
+    reader.onload = function(event) {
+
+        const img = new Image();
+
+
+        img.onload = function() {
+
+            const canvas = document.createElement("canvas");
+
+            canvas.width = img.naturalWidth;
+            canvas.height = img.naturalHeight;
+
+
+            const ctx = canvas.getContext("2d");
+
+            ctx.drawImage(
+                img,
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            const qualityValueNumber =
+                Number(quality.value) / 100;
+
+
+            canvas.toBlob(
+
+                function(blob) {
+
+                    if (!blob) {
+
+                        alert(
+                            "Your browser could not create the WebP image."
+                        );
+
+                        convertBtn.disabled = false;
+                        convertBtn.textContent = "Convert to WebP";
+
+                        return;
+                    }
+
+
+                    if (downloadUrl) {
+
+                        URL.revokeObjectURL(downloadUrl);
+
+                    }
+
+
+                    downloadUrl =
+                        URL.createObjectURL(blob);
+
+
+                    const downloadLink =
+                        document.getElementById("downloadLink");
+
+
+                    downloadLink.href = downloadUrl;
+
+
+                    downloadLink.download =
+                        getOutputFileName(selectedFile.name);
+
+
+                    document.getElementById("originalSize").textContent =
+                        "Original size: " +
+                        formatBytes(selectedFile.size);
+
+
+                    document.getElementById("outputSize").textContent =
+                        "WebP size: " +
+                        formatBytes(blob.size);
+
+
+                    document.getElementById("dimensions").textContent =
+                        "Dimensions: " +
+                        img.naturalWidth +
+                        " × " +
+                        img.naturalHeight +
+                        " pixels";
+
+
+                    document.getElementById("selectedQuality").textContent =
+                        "WebP quality: " +
+                        quality.value +
+                        "%";
+
+
+                    result.style.display = "block";
+
+
+                    convertBtn.disabled = false;
+
+                    convertBtn.textContent =
+                        "Convert to WebP";
+
+                },
+
+                "image/webp",
+
+                qualityValueNumber
+
+            );
+
+        };
+
+
+        img.onerror = function() {
+
+            alert(
+                "The selected JPG image could not be read."
+            );
+
+            convertBtn.disabled = false;
+
+            convertBtn.textContent =
+                "Convert to WebP";
+
+        };
+
+
+        img.src = event.target.result;
+
+    };
+
+
+    reader.onerror = function() {
+
+        alert(
+            "There was a problem reading the image."
+        );
+
+        convertBtn.disabled = false;
+
+        convertBtn.textContent =
+            "Convert to WebP";
+
+    };
+
+
+    reader.readAsDataURL(selectedFile);
+
+}
+
+
+/* Output File Name */
+
+function getOutputFileName(filename) {
+
+    const lastDot =
+        filename.lastIndexOf(".");
+
+
+    let baseName = filename;
+
+    if (lastDot > 0) {
+
+        baseName =
+            filename.substring(0, lastDot);
+
+    }
+
+
+    return baseName + ".webp";
+
+}
+
+
+/* Format File Size */
+
+function formatBytes(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const i =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
+        );
+
+
+    return (
+        parseFloat(
+            (bytes / Math.pow(1024, i))
+            .toFixed(2)
+        ) +
+        " " +
+        units[i]
+    );
+
+}
+
+</script>
+
+</body>
+</html>
