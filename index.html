@@ -9,7 +9,7 @@
 
 <title>QuickPixel Tools - Free Online Image Compressor, Resizer & Converter</title>
 
-<meta name="description" content="Free online image compressor, resizer and JPG to PNG converter. Compress, resize and convert JPG, PNG and WebP images in your browser with simple, easy-to-use tools.">
+<meta name="description" content="Free online image compressor, resizer and image converter. Compress, resize and convert JPG, PNG and WebP images in your browser with simple, easy-to-use tools.">
 
 <meta name="robots" content="index, follow">
 
@@ -34,7 +34,7 @@ crossorigin="anonymous"></script>
       "name": "Is QuickPixel Tools free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. QuickPixel Tools provides free online image tools for common image processing tasks such as compression, resizing and JPG to PNG conversion."
+        "text": "Yes. QuickPixel Tools provides free online image tools for common image processing tasks such as compression, resizing and image format conversion."
       }
     },
     {
@@ -368,6 +368,65 @@ nav a:hover {
     margin: 0;
 }
 
+/* Articles */
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.article-card {
+    background: #f8fafc;
+    border: 1px solid #edf0f5;
+    border-radius: 14px;
+    padding: 25px;
+}
+
+.article-card h3 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.article-card p {
+    min-height: 90px;
+}
+
+.article-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #111827;
+}
+
+.article-card a:hover {
+    text-decoration: underline;
+}
+
+.converter-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.converter-link {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #edf0f5;
+    padding: 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 700;
+}
+
+.converter-link:hover {
+    text-decoration: underline;
+}
+
 .trust {
     text-align: center;
     padding: 30px 20px 65px;
@@ -407,7 +466,9 @@ footer {
 
     .tools,
     .steps,
-    .format-grid {
+    .format-grid,
+    .article-grid,
+    .converter-links {
         grid-template-columns: 1fr;
     }
 
@@ -471,6 +532,7 @@ footer {
 <a href="image-compressor.html">Compressor</a>
 <a href="image-resizer.html">Resizer</a>
 <a href="jpg-to-png.html">JPG to PNG</a>
+<a href="#articles">Articles</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
@@ -503,6 +565,8 @@ Learn More About Us
 
 </section>
 
+
+<!-- TOOLS -->
 
 <section id="tools" class="container">
 
@@ -582,8 +646,9 @@ Convert JPG to PNG →
 </section>
 
 
-<section class="container">
+<!-- HOW IT WORKS -->
 
+<section class="container">
 
 <div class="info-section">
 
@@ -607,7 +672,7 @@ requiring complicated desktop software.
 
 <p>
 Start by selecting the tool that matches your task,
-such as compression, resizing or JPG to PNG conversion.
+such as compression, resizing or image conversion.
 </p>
 
 </div>
@@ -646,6 +711,8 @@ resulting image file to your device.
 </div>
 
 
+<!-- CHOOSING A TOOL -->
+
 <div class="info-section">
 
 <h2>Which Image Tool Should You Use?</h2>
@@ -660,14 +727,25 @@ solve different problems.
 
 <ul class="check-list">
 
-<li>You want to reduce the file size of an image.</li>
+<li>
+You want to reduce the file size of an image.
+</li>
 
-<li>You need a smaller image file for sharing or storage.</li>
+<li>
+You need a smaller image file for sharing or storage.
+</li>
 
-<li>You want to optimize an image before using it online.</li>
+<li>
+You want to optimize an image before using it online.
+</li>
 
-<li>You want to reduce unnecessary file size while keeping
-reasonable visual quality.</li>
+<li>
+You want to learn more about reducing image file size.
+See our guide:
+<a href="how-to-reduce-image-file-size.html">
+How to Reduce Image File Size
+</a>.
+</li>
 
 </ul>
 
@@ -676,14 +754,22 @@ reasonable visual quality.</li>
 
 <ul class="check-list">
 
-<li>You need a specific width or height in pixels.</li>
+<li>
+You need a specific width or height in pixels.
+</li>
 
-<li>An image is too large for a website or digital project.</li>
+<li>
+An image is too large for a website or digital project.
+</li>
 
-<li>You need to prepare an image for a particular layout.</li>
+<li>
+You need to prepare an image for a particular layout.
+</li>
 
-<li>You want to change image dimensions without manually
-using desktop editing software.</li>
+<li>
+You want to change image dimensions without manually
+using desktop editing software.
+</li>
 
 </ul>
 
@@ -692,17 +778,32 @@ using desktop editing software.</li>
 
 <ul class="check-list">
 
-<li>You specifically need a PNG version of a JPG or JPEG image.</li>
+<li>
+You specifically need a PNG version of a JPG or JPEG image.
+</li>
 
-<li>An application or workflow requires PNG format.</li>
+<li>
+An application or workflow requires PNG format.
+</li>
 
-<li>You want to continue editing an image in a workflow
-that uses PNG files.</li>
+<li>
+You want to continue editing an image in a workflow
+that uses PNG files.
+</li>
 
 </ul>
 
+<p>
+For a detailed comparison of these formats, read:
+<a href="jpg-vs-png.html">
+JPG vs PNG: Which Image Format Should You Use?
+</a>.
+</p>
+
 </div>
 
+
+<!-- IMAGE FORMATS -->
 
 <div class="info-section">
 
@@ -730,9 +831,10 @@ reduce image quality when compression is increased.
 </p>
 
 <p>
-JPG is often a practical choice when keeping file size
-relatively small is more important than preserving every
-pixel of the original image.
+Read our detailed guide:
+<a href="jpg-vs-png.html">
+JPG vs PNG
+</a>.
 </p>
 
 </div>
@@ -769,9 +871,10 @@ transparency.
 </p>
 
 <p>
-WebP can be useful for websites where efficient image
-delivery is important, although compatibility should
-still be considered for your particular project.
+Learn more in:
+<a href="jpg-vs-webp.html">
+JPG vs WebP: Which Image Format Is Better?
+</a>.
 </p>
 
 </div>
@@ -781,6 +884,8 @@ still be considered for your particular project.
 
 </div>
 
+
+<!-- COMPRESSION VS RESIZING -->
 
 <div class="info-section">
 
@@ -800,6 +905,14 @@ several megabytes in size may be compressed to a smaller
 file while retaining acceptable visual quality.
 </p>
 
+<p>
+For a practical guide, read:
+<a href="how-to-compress-an-image.html">
+How to Compress an Image Without Losing Too Much Quality
+</a>.
+</p>
+
+
 <h3>Image Resizing</h3>
 
 <p>
@@ -818,6 +931,8 @@ appropriate compression process.
 
 </div>
 
+
+<!-- PRACTICAL TIPS -->
 
 <div class="info-section">
 
@@ -861,8 +976,18 @@ appearance and file size to make sure it meets your needs.
 
 </ul>
 
+<p>
+Need to reduce an image to a particular size?
+Read:
+<a href="how-to-reduce-image-file-size.html">
+How to Reduce Image File Size Without Losing Too Much Quality
+</a>.
+</p>
+
 </div>
 
+
+<!-- BROWSER PROCESSING -->
 
 <div class="info-section">
 
@@ -891,6 +1016,147 @@ a better experience.
 </div>
 
 
+<!-- CONVERTERS -->
+
+<div class="info-section">
+
+<h2>More Image Conversion Tools</h2>
+
+<p>
+QuickPixel Tools also provides several image conversion
+tools for common JPG, PNG and WebP workflows.
+</p>
+
+<div class="converter-links">
+
+<a class="converter-link" href="jpg-to-png.html">
+JPG → PNG
+</a>
+
+<a class="converter-link" href="png-to-jpg.html">
+PNG → JPG
+</a>
+
+<a class="converter-link" href="jpg-to-webp.html">
+JPG → WebP
+</a>
+
+<a class="converter-link" href="webp-to-jpg.html">
+WebP → JPG
+</a>
+
+</div>
+
+<p>
+Choose a converter based on the format you need. Remember
+that converting an image to another format does not restore
+image information that was already lost from previous
+lossy compression.
+</p>
+
+</div>
+
+
+<!-- ARTICLES -->
+
+<section id="articles" class="info-section">
+
+<div class="section-title">
+
+<h2>Image Guides & Helpful Articles</h2>
+
+<p>
+Learn more about image compression, formats, file sizes
+and practical image preparation.
+</p>
+
+</div>
+
+
+<div class="article-grid">
+
+
+<div class="article-card">
+
+<h3>
+How to Compress an Image Without Losing Too Much Quality
+</h3>
+
+<p>
+Learn how image compression works, understand lossy and
+lossless compression, and discover practical ways to
+reduce image file size while keeping useful visual quality.
+</p>
+
+<a href="how-to-compress-an-image.html">
+Read the Guide →
+</a>
+
+</div>
+
+
+<div class="article-card">
+
+<h3>
+JPG vs PNG: Which Image Format Should You Use?
+</h3>
+
+<p>
+Understand the differences between JPG and PNG, including
+file size, image quality, transparency and common use cases.
+</p>
+
+<a href="jpg-vs-png.html">
+Read the Comparison →
+</a>
+
+</div>
+
+
+<div class="article-card">
+
+<h3>
+JPG vs WebP: Which Image Format Is Better?
+</h3>
+
+<p>
+Compare JPG and WebP and learn how their compression,
+quality, transparency and common website uses differ.
+</p>
+
+<a href="jpg-vs-webp.html">
+Read the Comparison →
+</a>
+
+</div>
+
+
+<div class="article-card">
+
+<h3>
+How to Reduce Image File Size Without Losing Too Much Quality
+</h3>
+
+<p>
+Learn how compression, resizing and image formats can be
+used together to reduce image file size for websites,
+sharing, storage and online forms.
+</p>
+
+<a href="how-to-reduce-image-file-size.html">
+Read the Guide →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- EXPLORE TOOLS -->
+
 <div class="info-section">
 
 <h2>Explore Our Image Tools</h2>
@@ -906,13 +1172,15 @@ use the
 </p>
 
 <p>
-Each tool has its own instructions and explanations to
-help you understand what the tool does and when it may
-be useful.
+You can also explore our
+<a href="#articles">image guides and articles</a>
+to learn more about compression, resizing and image formats.
 </p>
 
 </div>
 
+
+<!-- FAQ -->
 
 <div class="info-section">
 
@@ -926,7 +1194,7 @@ be useful.
 <p>
 Yes. QuickPixel Tools provides free online image tools
 for common image processing tasks such as compression,
-resizing and JPG to PNG conversion.
+resizing and image conversion.
 </p>
 
 </div>
@@ -1035,7 +1303,7 @@ through previous JPG compression.
 <p>
 QuickPixel Tools is built to make everyday image preparation
 tasks straightforward, accessible and easy to understand.
-Choose a tool above and get started.
+Choose a tool above or explore our helpful image guides.
 </p>
 
 </section>
@@ -1052,6 +1320,8 @@ Choose a tool above and get started.
 <a href="image-resizer.html">Resizer</a>
 
 <a href="jpg-to-png.html">JPG to PNG</a>
+
+<a href="#articles">Articles</a>
 
 <a href="about.html">About</a>
 
