@@ -9,7 +9,7 @@
 
 <title>Free Image Resizer Online - Resize JPG, PNG & WebP | QuickPixel Tools</title>
 
-<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image width and height while maintaining aspect ratio. Fast browser-based image resizing with QuickPixel Tools.">
+<meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image dimensions, maintain aspect ratio and download resized images directly in your browser with QuickPixel Tools.">
 
 <meta name="robots" content="index, follow">
 
@@ -33,7 +33,7 @@ crossorigin="anonymous"></script>
       "name": "Can I resize JPG images online?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. JPG and JPEG images are supported by the QuickPixel image resizer."
+        "text": "Yes. JPG and JPEG images can be resized online using the QuickPixel Tools image resizer."
       }
     },
     {
@@ -41,7 +41,7 @@ crossorigin="anonymous"></script>
       "name": "Can I resize PNG images?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. PNG images can be resized directly in your browser."
+        "text": "Yes. PNG images can be resized directly in your browser without installing additional software."
       }
     },
     {
@@ -49,7 +49,15 @@ crossorigin="anonymous"></script>
       "name": "Can I resize WebP images?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. WebP images are supported by the image resizer."
+        "text": "Yes. WebP images are supported by the QuickPixel Tools image resizer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose custom image dimensions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can enter a custom width and height in pixels before resizing your image."
       }
     },
     {
@@ -57,15 +65,31 @@ crossorigin="anonymous"></script>
       "name": "Can I maintain the original aspect ratio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Enable the Maintain aspect ratio option to keep the original image proportions."
+        "text": "Yes. Keep the Maintain aspect ratio option enabled to preserve the original proportions of the image."
       }
     },
     {
       "@type": "Question",
-      "name": "Are my images uploaded?",
+      "name": "Are my images uploaded to a server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The resizing process is performed directly in your browser. Your selected image does not need to be uploaded to a QuickPixel Tools server."
+        "text": "The image resizing process takes place directly in your browser. The selected image does not need to be uploaded to a QuickPixel Tools processing server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does resizing reduce image quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reducing an image to smaller dimensions can preserve good visual quality when appropriate dimensions are selected. Enlarging a small image may make it appear less sharp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I resize images on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. QuickPixel Tools is designed to work with modern mobile and desktop browsers."
       }
     }
   ]
@@ -87,7 +111,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 header {
@@ -141,7 +165,7 @@ main {
 .hero p {
     color: #667085;
     font-size: 18px;
-    max-width: 720px;
+    max-width: 760px;
     margin: 0 auto;
 }
 
@@ -158,11 +182,16 @@ main {
     padding: 35px 20px;
     border-radius: 12px;
     margin: 25px 0;
+    background: #fafbfc;
 }
 
 .upload h2 {
     font-size: 22px;
     margin-top: 0;
+}
+
+.upload p {
+    color: #667085;
 }
 
 input[type="file"] {
@@ -265,7 +294,7 @@ button:disabled {
 }
 
 .content-box h2 {
-    margin-top: 30px;
+    margin-top: 35px;
     line-height: 1.3;
 }
 
@@ -279,6 +308,7 @@ button:disabled {
 
 .content-box ul {
     color: #59636e;
+    padding-left: 22px;
 }
 
 .content-box li {
@@ -347,6 +377,10 @@ footer {
         font-size: 32px;
     }
 
+    .hero p {
+        font-size: 16px;
+    }
+
     .tool,
     .content-box {
         padding: 25px 18px;
@@ -386,6 +420,7 @@ footer {
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </nav>
 
@@ -397,18 +432,22 @@ footer {
 
 <p>
 Resize JPG, PNG and WebP images to custom dimensions
-directly in your browser while maintaining the original
-aspect ratio when needed.
+directly in your browser. Choose the width and height
+you need while keeping the original aspect ratio when required.
 </p>
 
 </section>
+
+
+<!-- IMAGE RESIZER TOOL -->
 
 <section class="tool">
 
 <h2>Resize Your Image</h2>
 
 <p>
-Choose an image and enter the width and height you need.
+Select an image, choose your desired dimensions and download
+the resized version instantly.
 </p>
 
 <div class="upload">
@@ -430,6 +469,7 @@ Supported formats: JPG, JPEG, PNG and WebP.
 
 <div id="originalInfo" class="original-info"></div>
 
+
 <div class="input-group">
 
 <label for="resizeWidth">
@@ -445,6 +485,7 @@ max="10000"
 >
 
 </div>
+
 
 <div class="input-group">
 
@@ -462,6 +503,7 @@ max="10000"
 
 </div>
 
+
 <div class="checkbox-group">
 
 <label>
@@ -478,6 +520,7 @@ Maintain aspect ratio
 
 </div>
 
+
 <button
 type="button"
 id="resizeButton"
@@ -487,11 +530,13 @@ Resize Image
 
 </button>
 
+
 <div
 id="resizeResult"
 class="result"
 aria-live="polite">
 </div>
+
 
 <a
 id="resizeDownload"
@@ -504,88 +549,301 @@ Download Resized Image
 
 </section>
 
+
+<!-- MAIN CONTENT -->
+
 <section class="content-box">
 
 <h2>What Is an Image Resizer?</h2>
 
 <p>
-An image resizer changes the width and height of an image
-to specific pixel dimensions. Resizing can be useful when
-an image needs to fit a website, document, social media
-layout or other digital project.
-</p>
-
-<h2>How to Resize an Image</h2>
-
-<p>
-Select an image, enter the desired width and height in
-pixels, and click the Resize Image button. After processing
-is complete, you can download the resized image.
-</p>
-
-<h2>Maintain Aspect Ratio</h2>
-
-<p>
-The aspect ratio describes the relationship between an
-image's width and height. When Maintain aspect ratio is
-enabled, changing one dimension automatically adjusts the
-other dimension based on the original proportions.
+An image resizer is a tool that changes the width and height
+of an image while keeping the image content intact. Instead
+of manually editing an image with desktop software, you can
+enter the dimensions you need and create a new resized version.
 </p>
 
 <p>
-Keeping the original aspect ratio helps prevent an image
-from appearing stretched or distorted.
+Image dimensions are normally measured in pixels. For example,
+an image that is 1920 × 1080 pixels has a width of 1920 pixels
+and a height of 1080 pixels.
 </p>
 
-<h2>Why Resize Images?</h2>
+
+<h2>How to Resize an Image Online</h2>
 
 <p>
-Websites, applications and digital projects may require
-specific image dimensions. Resizing can help images fit
-those requirements and can also reduce the pixel dimensions
-of unnecessarily large images.
+QuickPixel Tools makes the resizing process simple. You do not
+need to install an image editing application for basic resizing.
 </p>
+
+<ol>
+<li>Select a JPG, PNG or WebP image using the upload button.</li>
+<li>Check the original width and height displayed by the tool.</li>
+<li>Enter the width and height you want in pixels.</li>
+<li>Keep "Maintain aspect ratio" enabled if you want to preserve the original proportions.</li>
+<li>Click the "Resize Image" button.</li>
+<li>Download the resized image when processing is complete.</li>
+</ol>
+
+
+<h2>What Does Maintain Aspect Ratio Mean?</h2>
+
+<p>
+Aspect ratio is the relationship between an image's width and
+height. For example, an image measuring 1600 × 900 pixels has
+a 16:9 aspect ratio.
+</p>
+
+<p>
+When you keep the Maintain aspect ratio option enabled, the
+resizer calculates the other dimension automatically. This
+helps prevent the image from becoming stretched or squeezed.
+</p>
+
+<p>
+If you need exact independent width and height values, you can
+turn this option off. However, changing the dimensions
+independently can distort the image.
+</p>
+
+
+<h2>Image Dimensions vs File Size</h2>
+
+<p>
+Image dimensions and file size are related, but they are not
+the same thing. Dimensions describe how many pixels an image
+contains, while file size describes how much storage space the
+image uses.
+</p>
+
+<p>
+Reducing the pixel dimensions can often make an image smaller,
+but the final file size also depends on the image format,
+compression settings, colors and image content.
+</p>
+
+<p>
+If your main goal is to reduce the file size without changing
+the dimensions, you may want to use the
+<a href="image-compressor.html">Image Compressor</a>
+instead.
+</p>
+
+
+<h2>Why Resize an Image?</h2>
+
+<p>
+Different websites, applications and digital platforms may
+recommend different image dimensions. Resizing an image can
+help it fit those requirements more effectively.
+</p>
+
+<ul>
+
+<li>Prepare images for websites and blogs.</li>
+
+<li>Reduce very large image dimensions before uploading.</li>
+
+<li>Prepare photos for documents and presentations.</li>
+
+<li>Create images with specific pixel dimensions.</li>
+
+<li>Adapt photos for social media layouts.</li>
+
+<li>Make large photographs easier to work with on mobile devices.</li>
+
+</ul>
+
+
+<h2>When Should You Resize an Image?</h2>
+
+<p>
+Consider resizing an image when its original dimensions are
+much larger than the space where it will be displayed.
+For example, uploading a very large photograph to a website
+when it will only be displayed at a much smaller size may be
+unnecessary.
+</p>
+
+<p>
+For best results, choose dimensions that are appropriate for
+the final location of the image rather than making an image
+larger than necessary.
+</p>
+
+
+<h2>Does Resizing Affect Image Quality?</h2>
+
+<p>
+Resizing can affect image quality, especially when a small
+image is enlarged significantly. Increasing the dimensions
+does not create additional original detail, so an enlarged
+image may appear softer or less sharp.
+</p>
+
+<p>
+Reducing dimensions is generally easier because the browser
+can scale the existing pixels down. Choosing reasonable output
+dimensions helps maintain a useful balance between image
+appearance and file size.
+</p>
+
+
+<h2>Tips for Better Image Resizing</h2>
+
+<ul>
+
+<li>Keep the aspect ratio enabled when you want to avoid distortion.</li>
+
+<li>Do not enlarge a very small image unnecessarily.</li>
+
+<li>Choose dimensions based on where the image will be used.</li>
+
+<li>For website images, avoid unnecessarily large pixel dimensions.</li>
+
+<li>Keep the original file if you may need to create another size later.</li>
+
+<li>After resizing, check the downloaded image before using it.</li>
+
+</ul>
+
 
 <h2>Supported Image Formats</h2>
 
 <p>
 QuickPixel Tools supports JPG, JPEG, PNG and WebP images.
-The resized image is provided in a format appropriate for
-the selected source image.
+The resized image is generated in a format based on the
+selected source image.
 </p>
+
+<p>
+JPG is commonly used for photographs, PNG is useful when
+lossless image data or transparency is important, and WebP
+is a modern format that can provide efficient image storage
+for websites.
+</p>
+
+
+<h2>JPG and JPEG</h2>
+
+<p>
+JPG and JPEG are essentially the same image format and are
+widely used for photographs. They are suitable when you need
+a compact image file for general web and digital use.
+</p>
+
+
+<h2>PNG</h2>
+
+<p>
+PNG is a lossless image format that can support transparency.
+It is commonly useful for graphics, logos, screenshots and
+images where preserving sharp edges is important.
+</p>
+
+
+<h2>WebP</h2>
+
+<p>
+WebP is a modern image format designed for efficient web
+delivery. It can provide good image quality while often
+using less storage than comparable traditional formats.
+</p>
+
 
 <h2>Free Browser-Based Image Resizing</h2>
 
 <p>
 QuickPixel Tools provides this image resizer free of charge.
-The resizing process takes place directly in your web
-browser without requiring additional software.
+The tool works inside your web browser and does not require
+you to install additional image editing software.
 </p>
+
+<p>
+The actual processing can depend on your browser, device
+performance and the size of the selected image.
+Very large images may require more memory and processing time.
+</p>
+
 
 <h2>Are My Images Uploaded?</h2>
 
 <p>
-The resizing process is performed directly in your browser.
-Your selected image does not need to be uploaded to a
-QuickPixel Tools server for processing.
+The image resizing process is performed directly in your
+browser. Your selected image does not need to be uploaded
+to a QuickPixel Tools processing server.
 </p>
 
 <p>
-Processing speed can depend on your device, browser and
-the size of the image you select.
+Browser-based processing can be useful when you want to resize
+an image without sending the original file to an online image
+processing service.
 </p>
+
+
+<h2>Image Resizer for Mobile and Desktop</h2>
+
+<p>
+The QuickPixel image resizer is designed to work on modern
+desktop and mobile browsers. You can select an image from
+your device, enter the required dimensions and download the
+result.
+</p>
+
+<p>
+On mobile devices, available image size and processing speed
+can depend on the phone's storage, memory and browser.
+</p>
+
+
+<h2>What Dimensions Should I Use?</h2>
+
+<p>
+There is no single width or height that is correct for every
+image. The best dimensions depend on where you plan to use
+the image.
+</p>
+
+<p>
+If a website requires a specific image size, use the dimensions
+recommended by that website. If no exact requirement exists,
+choose dimensions that are large enough for the intended display
+but avoid unnecessary oversized images.
+</p>
+
+
+<h2>Resizing vs Compressing an Image</h2>
+
+<p>
+Resizing changes the pixel dimensions of an image. Compression
+mainly focuses on reducing the amount of data stored in the
+image file.
+</p>
+
+<p>
+These two processes can be used separately or together.
+If your image is too large in both dimensions and file size,
+you may first resize it and then use the
+<a href="image-compressor.html">Image Compressor</a>
+to reduce its file size further.
+</p>
+
 
 <h2>More Free Image Tools</h2>
 
 <p>
-You can also use the
+QuickPixel Tools includes several browser-based image tools.
+You can use the
 <a href="image-compressor.html">Image Compressor</a>
 to reduce image file size or the
 <a href="jpg-to-png.html">JPG to PNG Converter</a>
-to convert JPG and JPEG images to PNG format.
+to convert JPG and JPEG images into PNG format.
 </p>
 
+
 <h2>Frequently Asked Questions</h2>
+
 
 <div class="faq">
 
@@ -598,6 +856,7 @@ image resizer.
 
 </div>
 
+
 <div class="faq">
 
 <h3>Can I resize PNG images?</h3>
@@ -608,6 +867,7 @@ Yes. PNG images can be resized directly in your browser.
 
 </div>
 
+
 <div class="faq">
 
 <h3>Can I resize WebP images?</h3>
@@ -617,6 +877,7 @@ Yes. WebP images are supported by the image resizer.
 </p>
 
 </div>
+
 
 <div class="faq">
 
@@ -629,6 +890,7 @@ resizing the image.
 
 </div>
 
+
 <div class="faq">
 
 <h3>Can I maintain the original aspect ratio?</h3>
@@ -639,6 +901,7 @@ original image proportions.
 </p>
 
 </div>
+
 
 <div class="faq">
 
@@ -652,6 +915,20 @@ to a QuickPixel Tools processing server.
 
 </div>
 
+
+<div class="faq">
+
+<h3>Does resizing reduce image quality?</h3>
+
+<p>
+Resizing to smaller dimensions can maintain good visual
+quality when suitable dimensions are selected. Enlarging
+a small image significantly may make it appear less sharp.
+</p>
+
+</div>
+
+
 <div class="faq">
 
 <h3>Do I need to install software?</h3>
@@ -661,6 +938,7 @@ No. The image resizer works directly in a modern web browser.
 </p>
 
 </div>
+
 
 <div class="faq">
 
@@ -673,7 +951,9 @@ as well as desktop browsers.
 
 </div>
 
+
 </section>
+
 
 <div class="back-link">
 
@@ -685,6 +965,7 @@ as well as desktop browsers.
 
 </main>
 
+
 <footer>
 
 <div class="footer-links">
@@ -693,12 +974,14 @@ as well as desktop browsers.
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </div>
 
 © 2026 QuickPixel Tools — Free Online Image Tools
 
 </footer>
+
 
 <script>
 
@@ -730,6 +1013,9 @@ let originalWidth = 0;
 let originalHeight = 0;
 let currentObjectURL = null;
 
+
+/* Image selection */
+
 resizeInput.addEventListener("change", function() {
 
     const file = this.files[0];
@@ -744,6 +1030,7 @@ resizeInput.addEventListener("change", function() {
         return;
 
     }
+
 
     if (
         file.type !== "image/jpeg" &&
@@ -761,10 +1048,12 @@ resizeInput.addEventListener("change", function() {
 
     }
 
+
     const image = new Image();
 
     const imageURL =
         URL.createObjectURL(file);
+
 
     image.onload = function() {
 
@@ -774,11 +1063,13 @@ resizeInput.addEventListener("change", function() {
         originalHeight =
             image.naturalHeight;
 
+
         resizeWidth.value =
             originalWidth;
 
         resizeHeight.value =
             originalHeight;
+
 
         originalInfo.textContent =
             "Original dimensions: " +
@@ -787,12 +1078,15 @@ resizeInput.addEventListener("change", function() {
             originalHeight +
             " pixels";
 
+
         originalInfo.style.display =
             "block";
+
 
         URL.revokeObjectURL(imageURL);
 
     };
+
 
     image.onerror = function() {
 
@@ -807,10 +1101,14 @@ resizeInput.addEventListener("change", function() {
 
     };
 
+
     image.src =
         imageURL;
 
 });
+
+
+/* Maintain aspect ratio when width changes */
 
 resizeWidth.addEventListener("input", function() {
 
@@ -823,6 +1121,7 @@ resizeWidth.addEventListener("input", function() {
         const width =
             parseInt(this.value, 10);
 
+
         if (width > 0) {
 
             const newHeight =
@@ -832,6 +1131,7 @@ resizeWidth.addEventListener("input", function() {
                     originalWidth
                 );
 
+
             resizeHeight.value =
                 newHeight;
 
@@ -840,6 +1140,9 @@ resizeWidth.addEventListener("input", function() {
     }
 
 });
+
+
+/* Maintain aspect ratio when height changes */
 
 resizeHeight.addEventListener("input", function() {
 
@@ -852,6 +1155,7 @@ resizeHeight.addEventListener("input", function() {
         const height =
             parseInt(this.value, 10);
 
+
         if (height > 0) {
 
             const newWidth =
@@ -860,6 +1164,7 @@ resizeHeight.addEventListener("input", function() {
                     originalWidth /
                     originalHeight
                 );
+
 
             resizeWidth.value =
                 newWidth;
@@ -870,10 +1175,14 @@ resizeHeight.addEventListener("input", function() {
 
 });
 
+
+/* Resize image */
+
 function resizeImage() {
 
     const file =
         resizeInput.files[0];
+
 
     if (!file) {
 
@@ -883,11 +1192,13 @@ function resizeImage() {
 
     }
 
+
     let width =
         parseInt(resizeWidth.value, 10);
 
     let height =
         parseInt(resizeHeight.value, 10);
+
 
     if (
         !width ||
@@ -904,6 +1215,7 @@ function resizeImage() {
 
     }
 
+
     if (
         width > 10000 ||
         height > 10000
@@ -917,23 +1229,29 @@ function resizeImage() {
 
     }
 
+
     resizeResult.textContent =
         "Processing image...";
+
 
     resizeDownload.style.display =
         "none";
 
+
     resizeButton.disabled =
         true;
 
+
     const reader =
         new FileReader();
+
 
     reader.onload =
         function(event) {
 
         const image =
             new Image();
+
 
         image.onload =
             function() {
@@ -948,6 +1266,7 @@ function resizeImage() {
                     originalWidth /
                     originalHeight;
 
+
                 if (
                     document.activeElement === resizeWidth
                 ) {
@@ -957,6 +1276,7 @@ function resizeImage() {
                             resizeWidth.value,
                             10
                         );
+
 
                     height =
                         Math.round(
@@ -971,6 +1291,7 @@ function resizeImage() {
                             10
                         );
 
+
                     width =
                         Math.round(
                             height * ratio
@@ -979,6 +1300,7 @@ function resizeImage() {
                 }
 
             }
+
 
             if (
                 !width ||
@@ -997,6 +1319,7 @@ function resizeImage() {
 
             }
 
+
             if (
                 width > 10000 ||
                 height > 10000
@@ -1012,8 +1335,10 @@ function resizeImage() {
 
             }
 
+
             const canvas =
                 document.createElement("canvas");
+
 
             canvas.width =
                 width;
@@ -1021,8 +1346,10 @@ function resizeImage() {
             canvas.height =
                 height;
 
+
             const ctx =
                 canvas.getContext("2d");
+
 
             if (!ctx) {
 
@@ -1036,11 +1363,13 @@ function resizeImage() {
 
             }
 
+
             ctx.imageSmoothingEnabled =
                 true;
 
             ctx.imageSmoothingQuality =
                 "high";
+
 
             ctx.drawImage(
                 image,
@@ -1050,11 +1379,13 @@ function resizeImage() {
                 height
             );
 
+
             let outputType =
                 "image/jpeg";
 
             let extension =
                 "jpg";
+
 
             if (
                 file.type === "image/png"
@@ -1078,12 +1409,14 @@ function resizeImage() {
 
             }
 
+
             canvas.toBlob(
 
                 function(blob) {
 
                     resizeButton.disabled =
                         false;
+
 
                     if (!blob) {
 
@@ -1094,6 +1427,7 @@ function resizeImage() {
 
                     }
 
+
                     if (currentObjectURL) {
 
                         URL.revokeObjectURL(
@@ -1102,23 +1436,29 @@ function resizeImage() {
 
                     }
 
+
                     currentObjectURL =
                         URL.createObjectURL(blob);
 
+
                     resizeDownload.href =
                         currentObjectURL;
+
 
                     resizeDownload.download =
                         "resized-image." +
                         extension;
 
+
                     resizeDownload.style.display =
                         "inline-block";
+
 
                     const size =
                         (
                             blob.size / 1024
                         ).toFixed(1);
+
 
                     resizeResult.innerHTML =
                         "Image resized successfully!<br>" +
@@ -1141,6 +1481,7 @@ function resizeImage() {
 
         };
 
+
         image.onerror =
             function() {
 
@@ -1152,10 +1493,12 @@ function resizeImage() {
 
         };
 
+
         image.src =
             event.target.result;
 
     };
+
 
     reader.onerror =
         function() {
@@ -1167,6 +1510,7 @@ function resizeImage() {
             "Could not read the selected image.";
 
     };
+
 
     reader.readAsDataURL(file);
 
