@@ -9,7 +9,7 @@
 
 <title>JPG to PNG Converter Online Free - Convert JPEG to PNG | QuickPixel Tools</title>
 
-<meta name="description" content="Convert JPG and JPEG images to PNG online for free. Preserve image dimensions and download your converted PNG directly in your browser with QuickPixel Tools.">
+<meta name="description" content="Convert JPG and JPEG images to PNG online for free. Keep the original image dimensions and download your converted PNG directly in your browser with QuickPixel Tools.">
 
 <meta name="robots" content="index, follow">
 
@@ -49,7 +49,7 @@ crossorigin="anonymous"></script>
       "name": "Will the image dimensions change during conversion?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The conversion keeps the original pixel dimensions of the JPG image."
+        "text": "No. The converter keeps the original pixel dimensions of the selected JPG image."
       }
     },
     {
@@ -57,7 +57,7 @@ crossorigin="anonymous"></script>
       "name": "Are my images uploaded to a server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The conversion is performed directly in your browser and does not require uploading the selected image to a QuickPixel Tools processing server."
+        "text": "No. The conversion is performed directly in your browser and does not require uploading the selected image to a QuickPixel Tools processing server."
       }
     },
     {
@@ -65,7 +65,15 @@ crossorigin="anonymous"></script>
       "name": "Does JPG to PNG conversion improve image quality?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Converting JPG to PNG does not restore image data that was already lost through JPG compression. It changes the file format but cannot recover lost detail."
+        "text": "No. Converting JPG to PNG does not restore image data that was already lost through JPG compression."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my PNG file larger than the JPG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PNG and JPG use different compression methods. PNG files can be larger than JPG files, particularly when converting photographs."
       }
     },
     {
@@ -73,7 +81,7 @@ crossorigin="anonymous"></script>
       "name": "Do I need to install software?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The converter works directly in a modern web browser without additional software."
+        "text": "No. The converter works directly in a modern web browser."
       }
     },
     {
@@ -198,6 +206,14 @@ input[type="file"] {
     background: #f8fafc;
     border-radius: 10px;
     color: #59636e;
+    overflow-wrap: anywhere;
+}
+
+.tool-note {
+    max-width: 700px;
+    margin: 18px auto 0;
+    color: #667085;
+    font-size: 14px;
 }
 
 button {
@@ -354,6 +370,7 @@ footer {
 
 </header>
 
+
 <nav aria-label="Main navigation">
 
 <a href="index.html">Home</a>
@@ -367,6 +384,7 @@ footer {
 
 </nav>
 
+
 <main>
 
 <section class="hero">
@@ -374,10 +392,9 @@ footer {
 <h1>JPG to PNG Converter Online</h1>
 
 <p>
-Convert JPG and JPEG images to PNG format quickly and
-for free. The conversion happens directly in your browser,
-so you can create a PNG file without installing image
-conversion software.
+Convert JPG and JPEG images to PNG format for free.
+The conversion happens directly in your browser and
+keeps the original image dimensions.
 </p>
 
 </section>
@@ -385,13 +402,15 @@ conversion software.
 
 <!-- CONVERTER TOOL -->
 
-<section class="tool">
+<section class="tool" aria-labelledby="converter-heading">
 
-<h2>Convert JPG to PNG</h2>
+<h2 id="converter-heading">Convert JPG to PNG</h2>
 
 <p>
-Select a JPG or JPEG image below and convert it to PNG.
+Select a JPG or JPEG image to create a PNG copy with
+the same pixel dimensions.
 </p>
+
 
 <div class="upload">
 
@@ -410,19 +429,23 @@ Supported input formats: JPG and JPEG.
 
 </div>
 
+
 <div
 id="fileInfo"
 class="file-info"
 aria-live="polite">
 </div>
 
+
 <button
 type="button"
-id="convertButton">
+id="convertButton"
+disabled>
 
 Convert to PNG
 
 </button>
+
 
 <div
 id="result"
@@ -430,14 +453,23 @@ class="result"
 aria-live="polite">
 </div>
 
+
 <a
 id="downloadLink"
 class="download"
-download="converted-image.png">
+download
+rel="noopener">
 
 Download PNG Image
 
 </a>
+
+
+<p class="tool-note">
+JPG to PNG conversion changes the file format but does not
+restore image detail that was already lost through JPG compression.
+PNG files can also be larger than the original JPG.
+</p>
 
 </section>
 
@@ -450,23 +482,22 @@ Download PNG Image
 
 <p>
 A JPG to PNG converter changes an image stored in JPG or
-JPEG format into PNG format. The conversion creates a new
-PNG file that can be opened and used in applications that
-support PNG images.
+JPEG format into PNG format. The result is a new PNG file
+that can be opened and used in applications that support PNG.
 </p>
 
 <p>
-JPG and PNG are both common image formats, but they are
-designed for different purposes. Choosing between them
-depends on the type of image and how you plan to use it.
+JPG and PNG are both common image formats, but they use
+different approaches to storing image data. JPG is commonly
+used for photographs, while PNG is often useful for graphics,
+screenshots and images where lossless storage is preferred.
 </p>
 
 
 <h2>How to Convert JPG to PNG</h2>
 
 <p>
-Converting an image with QuickPixel Tools only requires a
-few steps:
+QuickPixel Tools keeps the conversion process simple:
 </p>
 
 <ol>
@@ -477,28 +508,42 @@ few steps:
 
 <li>Click the "Convert to PNG" button.</li>
 
-<li>Wait for the browser to finish processing the image.</li>
+<li>Wait for the browser to process the image.</li>
 
 <li>Click "Download PNG Image" to save the converted file.</li>
 
 </ol>
 
 
+<h2>What Happens During Conversion?</h2>
+
+<p>
+The selected JPG image is decoded by your browser and drawn
+onto an HTML canvas at its original pixel dimensions. The
+canvas is then exported as a PNG file.
+</p>
+
+<p>
+This means the converter changes the container format without
+changing the image dimensions. It does not perform artificial
+sharpening, enlargement or quality restoration.
+</p>
+
+
 <h2>Why Convert JPG to PNG?</h2>
 
 <p>
 PNG can be useful when a project specifically requires PNG
-format or when you want to work with a lossless image format.
-PNG is commonly used for graphics, screenshots, interface
-elements, illustrations and other images where preserving
-image data is useful.
+format or when lossless image storage is preferred. PNG is
+commonly used for graphics, screenshots, interface elements,
+illustrations and other images where sharp details are useful.
 </p>
 
 <p>
 However, converting a JPG to PNG does not restore quality
 that was already lost when the original JPG was compressed.
-The conversion changes the file format but cannot recreate
-missing image details.
+The conversion changes the format but cannot recreate missing
+image information.
 </p>
 
 
@@ -506,28 +551,28 @@ missing image details.
 
 <p>
 JPG is a lossy image format that is commonly used for
-photographs. JPG files are often smaller because the format
-uses compression that can discard some image information.
+photographs. JPG compression can reduce file size by
+discarding some image information.
 </p>
 
 <p>
-PNG uses lossless compression. It is often a better choice
-for graphics, screenshots, logos and images where maintaining
+PNG uses lossless compression. It is often useful for
+graphics, screenshots, logos and other images where preserving
 image data is important.
 </p>
 
 <p>
-PNG files can also support transparency, while standard JPG
-images do not support transparent backgrounds.
+PNG can support transparent backgrounds. Standard JPG images
+do not support transparency.
 </p>
 
 
 <h2>When Should You Use JPG?</h2>
 
 <p>
-JPG is often a practical choice for photographs and other
-images with many colors or complex details. Its compression
-can help keep file sizes relatively manageable.
+JPG is often a practical choice for photographs and images
+with many colors or complex details. Its compression can
+produce relatively small files for many photographic images.
 </p>
 
 <ul>
@@ -538,7 +583,7 @@ can help keep file sizes relatively manageable.
 
 <li>Website photographs</li>
 
-<li>Images where a smaller file size is important</li>
+<li>Images where smaller file size is important</li>
 
 </ul>
 
@@ -546,8 +591,8 @@ can help keep file sizes relatively manageable.
 <h2>When Should You Use PNG?</h2>
 
 <p>
-PNG can be useful for images where lossless storage,
-transparency or sharp graphical details are important.
+PNG can be useful when lossless storage or transparent
+backgrounds are important.
 </p>
 
 <ul>
@@ -573,18 +618,18 @@ details that were previously removed by JPG compression.
 </p>
 
 <p>
-For example, if a JPG was already compressed heavily, the
-converted PNG will contain the visual information available
-in that JPG. Saving it as PNG cannot recreate the original
-uncompressed photograph.
+For example, if a JPG was heavily compressed before conversion,
+the PNG will contain the visual information available in that
+JPG. Saving it as PNG cannot recreate the original uncompressed
+photograph.
 </p>
 
 
 <h2>Does the Conversion Change Image Dimensions?</h2>
 
 <p>
-The QuickPixel converter keeps the original pixel dimensions
-of the selected JPG image during conversion.
+No. This converter keeps the original pixel dimensions of the
+selected JPG image.
 </p>
 
 <p>
@@ -594,29 +639,27 @@ converted PNG will also be 1200 × 800 pixels.
 
 <p>
 If you need to change the dimensions, use the
-<a href="image-resizer.html">Image Resizer</a>
-before or after converting the image.
+<a href="image-resizer.html">Image Resizer</a>.
 </p>
 
 
 <h2>Why Can the PNG File Be Larger?</h2>
 
 <p>
-PNG and JPG use different compression methods. A JPG photograph
-can often be considerably smaller than a PNG version of the
-same photograph.
+PNG and JPG use different compression methods. A JPG
+photograph can often be considerably smaller than a PNG
+version of the same photograph.
 </p>
 
 <p>
-This means converting JPG to PNG may increase the file size.
-A larger PNG file does not necessarily mean that the image
-has better visual quality.
+For this reason, converting JPG to PNG may increase the file
+size. A larger PNG file does not mean that the image has
+better visual quality.
 </p>
 
 <p>
-If your goal is to reduce the file size of an image, use the
-<a href="image-compressor.html">Image Compressor</a>
-instead.
+If your goal is to reduce image file size, use the
+<a href="image-compressor.html">Image Compressor</a>.
 </p>
 
 
@@ -629,9 +672,9 @@ QuickPixel Tools processing server.
 </p>
 
 <p>
-Because the conversion happens on your device, processing
-time can vary depending on your browser, device performance
-and the size of the image.
+Because processing happens on your device, conversion speed
+can vary depending on the browser, device performance and
+image dimensions.
 </p>
 
 
@@ -643,8 +686,8 @@ free of charge for everyday image conversion tasks.
 </p>
 
 <p>
-There is no requirement to install desktop image conversion
-software to use the browser-based converter.
+There is no requirement to install desktop conversion software
+to use the browser-based converter.
 </p>
 
 
@@ -653,7 +696,7 @@ software to use the browser-based converter.
 <p>
 No. The converter works directly in a modern web browser.
 You can select your image, convert it and download the PNG
-file without installing additional conversion software.
+without installing additional conversion software.
 </p>
 
 
@@ -683,9 +726,9 @@ especially on devices with limited resources.
 
 <li>Remember that PNG files can be larger than JPG files, especially for photographs.</li>
 
-<li>If you need different dimensions, use the image resizer.</li>
+<li>If you need different dimensions, use the Image Resizer.</li>
 
-<li>If you need a smaller file size, use the image compressor.</li>
+<li>If you need a smaller file size, use the Image Compressor.</li>
 
 </ul>
 
@@ -694,7 +737,7 @@ especially on devices with limited resources.
 
 <p>
 QuickPixel Tools provides additional browser-based image
-utilities for common tasks.
+utilities for common image tasks.
 </p>
 
 <p>
@@ -727,7 +770,7 @@ to PNG format online for free.
 
 <p>
 Yes. JPEG and JPG images can be converted to PNG using
-this converter.
+this browser-based converter.
 </p>
 
 </div>
@@ -838,22 +881,75 @@ and desktop browsers.
 
 <script>
 
-const jpgInput =
-document.getElementById("jpgInput");
-
-const fileInfo =
-document.getElementById("fileInfo");
-
-const result =
-document.getElementById("result");
-
-const downloadLink =
-document.getElementById("downloadLink");
-
-const convertButton =
-document.getElementById("convertButton");
+const jpgInput = document.getElementById("jpgInput");
+const fileInfo = document.getElementById("fileInfo");
+const result = document.getElementById("result");
+const downloadLink = document.getElementById("downloadLink");
+const convertButton = document.getElementById("convertButton");
 
 let currentObjectURL = null;
+
+
+/* Convert bytes into a readable file size */
+
+function formatFileSize(bytes) {
+
+    if (bytes < 1024) {
+        return bytes + " B";
+    }
+
+    if (bytes < 1024 * 1024) {
+        return (bytes / 1024).toFixed(1) + " KB";
+    }
+
+    return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+
+}
+
+
+/* Check JPG / JPEG input */
+
+function isJPEG(file) {
+
+    return (
+        file &&
+        (
+            file.type === "image/jpeg" ||
+            /\.jpe?g$/i.test(file.name)
+        )
+    );
+
+}
+
+
+/* Create a safe filename */
+
+function getBaseName(filename) {
+
+    return filename
+        .replace(/\.[^/.]+$/, "")
+        .replace(/[<>:"/\\|?*\x00-\x1F]/g, "")
+        .trim() || "converted-image";
+
+}
+
+
+/* Clean generated object URL */
+
+function clearDownload() {
+
+    if (currentObjectURL) {
+
+        URL.revokeObjectURL(currentObjectURL);
+
+        currentObjectURL = null;
+
+    }
+
+    downloadLink.removeAttribute("href");
+    downloadLink.style.display = "none";
+
+}
 
 
 /* File selection */
@@ -862,44 +958,25 @@ jpgInput.addEventListener("change", function () {
 
     result.textContent = "";
 
-    downloadLink.style.display = "none";
-
-
-    if (currentObjectURL) {
-
-        URL.revokeObjectURL(
-            currentObjectURL
-        );
-
-        currentObjectURL = null;
-
-    }
-
+    clearDownload();
 
     fileInfo.style.display = "none";
 
+    convertButton.disabled = true;
 
-    const file =
-        this.files[0];
-
+    const file = this.files[0];
 
     if (!file) {
-
         return;
-
     }
 
 
-    const isJPEG =
-        file.type === "image/jpeg" ||
-        /\.jpe?g$/i.test(file.name);
+    if (!isJPEG(file)) {
 
+        fileInfo.textContent =
+            "Please select a valid JPG or JPEG image.";
 
-    if (!isJPEG) {
-
-        alert(
-            "Please select a JPG or JPEG image."
-        );
+        fileInfo.style.display = "block";
 
         this.value = "";
 
@@ -908,20 +985,16 @@ jpgInput.addEventListener("change", function () {
     }
 
 
-    const size =
-        (file.size / 1024).toFixed(1);
-
-
     fileInfo.textContent =
         "Selected: " +
         file.name +
         " — " +
-        size +
-        " KB";
+        formatFileSize(file.size);
 
 
-    fileInfo.style.display =
-        "block";
+    fileInfo.style.display = "block";
+
+    convertButton.disabled = false;
 
 });
 
@@ -936,222 +1009,245 @@ convertButton.addEventListener(
 
 function convertToPNG() {
 
-    const file =
-        jpgInput.files[0];
-
+    const file = jpgInput.files[0];
 
     if (!file) {
 
-        alert(
-            "Please select a JPG or JPEG image first."
-        );
+        result.textContent =
+            "Please select a JPG or JPEG image first.";
 
         return;
 
     }
 
 
-    const isJPEG =
-        file.type === "image/jpeg" ||
-        /\.jpe?g$/i.test(file.name);
+    if (!isJPEG(file)) {
 
-
-    if (!isJPEG) {
-
-        alert(
-            "Please select a valid JPG or JPEG image."
-        );
+        result.textContent =
+            "Please select a valid JPG or JPEG image.";
 
         return;
 
     }
 
 
-    convertButton.disabled =
-        true;
-
+    convertButton.disabled = true;
 
     result.textContent =
         "Converting image...";
 
-
-    downloadLink.style.display =
-        "none";
+    clearDownload();
 
 
-    const reader =
-        new FileReader();
+    const objectURL =
+        URL.createObjectURL(file);
 
 
-    reader.onload =
-        function (event) {
-
-        const image =
-            new Image();
+    const image =
+        new Image();
 
 
-        image.onload =
-            function () {
+    image.onload = function () {
 
-            if (
-                !image.naturalWidth ||
-                !image.naturalHeight
-            ) {
-
-                convertButton.disabled =
-                    false;
-
-                result.textContent =
-                    "Unable to read the image dimensions.";
-
-                return;
-
-            }
+        URL.revokeObjectURL(objectURL);
 
 
-            const canvas =
-                document.createElement("canvas");
+        const width =
+            image.naturalWidth;
+
+        const height =
+            image.naturalHeight;
 
 
-            canvas.width =
-                image.naturalWidth;
+        if (!width || !height) {
 
-            canvas.height =
-                image.naturalHeight;
-
-
-            const ctx =
-                canvas.getContext("2d");
-
-
-            if (!ctx) {
-
-                convertButton.disabled =
-                    false;
-
-                result.textContent =
-                    "Your browser does not support image conversion.";
-
-                return;
-
-            }
-
-
-            ctx.drawImage(
-                image,
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
-
-
-            canvas.toBlob(
-                function (blob) {
-
-                    convertButton.disabled =
-                        false;
-
-
-                    if (!blob) {
-
-                        result.textContent =
-                            "Conversion failed. Please try another JPG image.";
-
-                        return;
-
-                    }
-
-
-                    if (currentObjectURL) {
-
-                        URL.revokeObjectURL(
-                            currentObjectURL
-                        );
-
-                    }
-
-
-                    currentObjectURL =
-                        URL.createObjectURL(blob);
-
-
-                    downloadLink.href =
-                        currentObjectURL;
-
-
-                    downloadLink.download =
-                        "converted-image.png";
-
-
-                    downloadLink.style.display =
-                        "inline-block";
-
-
-                    const originalSize =
-                        (
-                            file.size / 1024
-                        ).toFixed(1);
-
-
-                    const outputSize =
-                        (
-                            blob.size / 1024
-                        ).toFixed(1);
-
-
-                    result.innerHTML =
-                        "Image converted successfully!<br>" +
-                        "Original JPG size: " +
-                        originalSize +
-                        " KB<br>" +
-                        "PNG file size: " +
-                        outputSize +
-                        " KB<br>" +
-                        "Dimensions: " +
-                        image.naturalWidth +
-                        " × " +
-                        image.naturalHeight +
-                        " pixels";
-
-                },
-                "image/png"
-            );
-
-        };
-
-
-        image.onerror =
-            function () {
-
-            convertButton.disabled =
-                false;
+            convertButton.disabled = false;
 
             result.textContent =
-                "Unable to process this JPG image. Please try another file.";
+                "Unable to read the image dimensions.";
 
-        };
+            return;
+
+        }
 
 
-        image.src =
-            event.target.result;
+        /*
+         * Very large images can exceed browser canvas
+         * memory limits. This gives a clearer message
+         * instead of silently failing.
+         */
+
+        if (
+            width > 20000 ||
+            height > 20000 ||
+            width * height > 160000000
+        ) {
+
+            convertButton.disabled = false;
+
+            result.textContent =
+                "This image is too large for reliable browser processing. Please try a smaller image.";
+
+            return;
+
+        }
+
+
+        const canvas =
+            document.createElement("canvas");
+
+
+        canvas.width =
+            width;
+
+        canvas.height =
+            height;
+
+
+        const ctx =
+            canvas.getContext("2d");
+
+
+        if (!ctx) {
+
+            convertButton.disabled = false;
+
+            result.textContent =
+                "Your browser does not support image conversion.";
+
+            return;
+
+        }
+
+
+        /*
+         * JPG images do not contain transparency.
+         * Drawing directly onto the canvas preserves
+         * the visible image without adding artificial
+         * processing.
+         */
+
+        ctx.drawImage(
+            image,
+            0,
+            0,
+            width,
+            height
+        );
+
+
+        canvas.toBlob(
+            function (blob) {
+
+                convertButton.disabled = false;
+
+
+                if (!blob) {
+
+                    result.textContent =
+                        "Conversion failed. Please try another JPG image.";
+
+                    return;
+
+                }
+
+
+                if (blob.type !== "image/png") {
+
+                    result.textContent =
+                        "Your browser could not create a PNG file. Please try a current version of Chrome, Edge, Firefox or Safari.";
+
+                    return;
+
+                }
+
+
+                clearDownload();
+
+
+                currentObjectURL =
+                    URL.createObjectURL(blob);
+
+
+                downloadLink.href =
+                    currentObjectURL;
+
+
+                downloadLink.download =
+                    getBaseName(file.name) +
+                    "-converted.png";
+
+
+                downloadLink.style.display =
+                    "inline-block";
+
+
+                const originalSize =
+                    formatFileSize(file.size);
+
+
+                const outputSize =
+                    formatFileSize(blob.size);
+
+
+                let sizeMessage =
+                    "PNG file size: " +
+                    outputSize;
+
+
+                if (blob.size > file.size) {
+
+                    sizeMessage +=
+                        " (larger than the original JPG)";
+
+                }
+                else if (blob.size < file.size) {
+
+                    sizeMessage +=
+                        " (smaller than the original JPG)";
+
+                }
+                else {
+
+                    sizeMessage +=
+                        " (about the same as the original JPG)";
+
+                }
+
+
+                result.textContent =
+                    "Image converted successfully! " +
+                    "Original JPG: " +
+                    originalSize +
+                    " | " +
+                    sizeMessage +
+                    " | Dimensions: " +
+                    width +
+                    " × " +
+                    height +
+                    " pixels.";
+
+            },
+            "image/png"
+        );
 
     };
 
 
-    reader.onerror =
-        function () {
+    image.onerror = function () {
 
-        convertButton.disabled =
-            false;
+        URL.revokeObjectURL(objectURL);
+
+        convertButton.disabled = false;
 
         result.textContent =
-            "Could not read the selected image.";
+            "Unable to process this JPG image. Please try another file.";
 
     };
 
 
-    reader.readAsDataURL(file);
+    image.src =
+        objectURL;
 
 }
 
@@ -1162,13 +1258,7 @@ window.addEventListener(
     "beforeunload",
     function () {
 
-        if (currentObjectURL) {
-
-            URL.revokeObjectURL(
-                currentObjectURL
-            );
-
-        }
+        clearDownload();
 
     }
 );
