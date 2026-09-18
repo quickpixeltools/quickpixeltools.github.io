@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -9,7 +8,7 @@
 
 <title>Contact QuickPixel Tools - Questions, Feedback & Support</title>
 
-<meta name="description" content="Contact QuickPixel Tools for questions, feedback, suggestions or technical issues related to our free online image compressor, resizer and JPG to PNG converter.">
+<meta name="description" content="Contact QuickPixel Tools for questions, feedback, suggestions, or technical issues related to our free browser-based image tools.">
 
 <meta name="robots" content="index, follow">
 
@@ -17,7 +16,9 @@
 
 <meta name="google-adsense-account" content="ca-pub-5655905002909310">
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310" crossorigin="anonymous"></script>
+<script async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5655905002909310"
+crossorigin="anonymous"></script>
 
 <script type="application/ld+json">
 {
@@ -25,7 +26,12 @@
   "@type": "ContactPage",
   "name": "Contact QuickPixel Tools",
   "url": "https://quickpixeltools.github.io/contact.html",
-  "description": "Contact QuickPixel Tools for questions, suggestions, feedback and technical issues."
+  "description": "Contact QuickPixel Tools for questions, feedback, suggestions, and technical issues related to the website and its browser-based image tools.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "QuickPixel Tools",
+    "url": "https://quickpixeltools.github.io/"
+  }
 }
 </script>
 
@@ -44,8 +50,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f6f8fc;
     color: #1f2937;
-    line-height: 1.6;
+    line-height: 1.7;
 }
+
+/* Header */
 
 header {
     background: #ffffff;
@@ -56,7 +64,10 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 700;
+    color: #111827;
 }
+
+/* Navigation */
 
 nav {
     background: #ffffff;
@@ -69,7 +80,7 @@ nav a {
     color: #374151;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 8px;
     display: inline-block;
     padding: 5px;
 }
@@ -78,11 +89,15 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Main */
+
 main {
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px 20px 70px;
+    padding: 55px 20px 75px;
 }
+
+/* Hero */
 
 .hero {
     text-align: center;
@@ -93,43 +108,51 @@ main {
     font-size: 42px;
     line-height: 1.2;
     margin: 0 0 15px;
+    color: #111827;
 }
 
 .hero p {
     color: #667085;
     font-size: 18px;
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
 }
+
+/* Contact Card */
 
 .contact-card {
     background: #ffffff;
     padding: 40px;
     border-radius: 18px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-    text-align: center;
 }
 
 .contact-card h2 {
     margin-top: 0;
     font-size: 30px;
+    color: #111827;
 }
 
 .contact-card p {
     color: #59636e;
 }
 
+/* Email Box */
+
 .email-box {
     margin: 30px auto;
     padding: 25px;
     background: #f8fafc;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    max-width: 550px;
+    max-width: 600px;
+    text-align: center;
 }
 
 .email-label {
     font-weight: 700;
     margin-bottom: 10px;
+    color: #1f2937 !important;
 }
 
 .email-link {
@@ -145,21 +168,77 @@ main {
     text-decoration: underline;
 }
 
+/* Information Sections */
+
 .info-box {
     margin-top: 30px;
     padding: 25px;
     background: #f8fafc;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    text-align: left;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    color: #111827;
+    font-size: 22px;
 }
 
 .info-box p {
-    margin: 8px 0;
+    margin: 12px 0;
 }
 
 .info-box strong {
     color: #1f2937;
 }
+
+/* Helpful Information */
+
+.help-section {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.help-section h2 {
+    font-size: 25px;
+    color: #111827;
+}
+
+.help-section p {
+    color: #59636e;
+}
+
+.tool-links {
+    margin-top: 20px;
+}
+
+.tool-links a {
+    display: inline-block;
+    margin: 6px 8px 6px 0;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.tool-links a:hover {
+    text-decoration: underline;
+}
+
+/* Response Information */
+
+.response-note {
+    margin-top: 30px;
+    padding: 20px;
+    background: #ffffff;
+    border-left: 4px solid #d1d5db;
+    color: #59636e;
+}
+
+/* Back Link */
 
 .back-link {
     text-align: center;
@@ -175,6 +254,8 @@ main {
 .back-link a:hover {
     text-decoration: underline;
 }
+
+/* Footer */
 
 footer {
     background: #ffffff;
@@ -198,7 +279,13 @@ footer {
     text-decoration: underline;
 }
 
+/* Mobile */
+
 @media (max-width: 600px) {
+
+    main {
+        padding: 40px 16px 60px;
+    }
 
     .hero h1 {
         font-size: 32px;
@@ -212,9 +299,17 @@ footer {
         padding: 28px 20px;
     }
 
+    .contact-card h2 {
+        font-size: 26px;
+    }
+
     nav a {
-        margin: 0 5px;
+        margin: 3px 4px;
         font-size: 14px;
+    }
+
+    .email-link {
+        font-size: 16px;
     }
 
 }
@@ -235,7 +330,14 @@ footer {
 
 <nav aria-label="Main navigation">
 
-<a href="index.html">Home</a> <a href="image-compressor.html">Compressor</a> <a href="image-resizer.html">Resizer</a> <a href="jpg-to-png.html">JPG to PNG</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> <a href="privacy.html">Privacy</a>
+<a href="index.html">Home</a>
+<a href="image-compressor.html">Compressor</a>
+<a href="image-resizer.html">Resizer</a>
+<a href="jpg-to-png.html">JPG to PNG</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </nav>
 
@@ -246,8 +348,8 @@ footer {
 <h1>Contact QuickPixel Tools</h1>
 
 <p>
-Have a question, suggestion, feedback or technical issue?
-We would be happy to hear from you.
+Have a question, suggestion, or technical issue?
+Contact us by email and tell us how we can help.
 </p>
 
 </section>
@@ -257,9 +359,10 @@ We would be happy to hear from you.
 <h2>Get in Touch</h2>
 
 <p>
-If you have a question about QuickPixel Tools, want to
-suggest an improvement, or have found an issue with one
-of our image tools, you can contact us by email.
+QuickPixel Tools provides free browser-based image tools
+for common image tasks. If you have a question about a
+tool, notice a technical problem, or have an idea that
+could improve the website, you can contact us directly.
 </p>
 
 <div class="email-box">
@@ -273,7 +376,7 @@ class="email-link"
 href="mailto:ujala.ayaz407@gmail.com"
 aria-label="Email QuickPixel Tools">
 
-[ujala.ayaz407@gmail.com](mailto:ujala.ayaz407@gmail.com)
+ujala.ayaz407@gmail.com
 
 </a>
 
@@ -281,34 +384,86 @@ aria-label="Email QuickPixel Tools">
 
 <div class="info-box">
 
-<p>
-<strong>Questions:</strong>
-Feel free to contact us if you need help using one of
-our image tools.
-</p>
+<h3>What You Can Contact Us About</h3>
 
 <p>
-<strong>Suggestions:</strong>
-We welcome ideas and feedback that can help improve
-QuickPixel Tools.
+<strong>Questions:</strong>
+Ask about how to use the image compressor, image resizer,
+or JPG to PNG converter.
 </p>
 
 <p>
 <strong>Technical Issues:</strong>
-If an image compressor, resizer or converter is not
-working correctly, please let us know what happened.
+If a tool does not behave as expected, describe the problem
+and, if possible, mention the type and format of the image
+you were using.
+</p>
+
+<p>
+<strong>Suggestions:</strong>
+You can share ideas for improving existing tools or
+suggest useful features that would make the website easier
+to use.
 </p>
 
 <p>
 <strong>General Feedback:</strong>
-You can also contact us with comments about your
-experience using the website.
+We welcome feedback about the website's usability,
+clarity, and overall experience.
 </p>
 
 </div>
 
+<section class="help-section">
+
+<h2>Before Contacting Us</h2>
+
 <p>
-We will try to respond as soon as possible.
+If your question is related to using a particular tool,
+you can first visit the relevant page below. Each tool page
+includes instructions and information about how the tool
+works.
+</p>
+
+<div class="tool-links">
+
+<a href="image-compressor.html">
+Image Compressor
+</a>
+
+<a href="image-resizer.html">
+Image Resizer
+</a>
+
+<a href="jpg-to-png.html">
+JPG to PNG Converter
+</a>
+
+<a href="about.html">
+About QuickPixel Tools
+</a>
+
+<a href="privacy.html">
+Privacy Policy
+</a>
+
+</div>
+
+</section>
+
+<div class="response-note">
+
+<strong>Response time:</strong>
+We will review messages and try to respond as soon as
+reasonably possible. Response times may vary depending
+on the nature and number of messages received.
+
+</div>
+
+<p>
+For information about how this website handles information,
+please read our
+<a href="privacy.html">Privacy Policy</a>.
 </p>
 
 </section>
@@ -327,7 +482,11 @@ We will try to respond as soon as possible.
 
 <div class="footer-links">
 
-<a href="index.html">Home</a> <a href="about.html">About</a> <a href="contact.html">Contact</a> <a href="privacy.html">Privacy</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </div>
 
