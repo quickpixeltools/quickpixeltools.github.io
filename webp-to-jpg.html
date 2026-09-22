@@ -55,12 +55,14 @@ header {
     font-size: 22px;
     font-weight: bold;
     color: #2563eb;
+    white-space: nowrap;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
+    justify-content: flex-end;
 }
 
 nav a {
@@ -88,6 +90,7 @@ nav a:hover {
     margin-bottom: 10px;
     font-size: 36px;
     color: #111827;
+    line-height: 1.25;
 }
 
 .hero p {
@@ -105,6 +108,11 @@ nav a:hover {
     margin: 25px auto 40px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     text-align: center;
+}
+
+.tool-box h2 {
+    margin-top: 0;
+    color: #111827;
 }
 
 .upload-label {
@@ -130,6 +138,24 @@ input[type="file"] {
     margin: 10px 0 20px;
     color: #555;
     font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.status-message {
+    min-height: 24px;
+    margin: 8px 0 12px;
+    color: #555;
+    font-size: 14px;
+}
+
+.status-message.error {
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+.status-message.success {
+    color: #166534;
+    font-weight: bold;
 }
 
 .quality-box {
@@ -142,6 +168,13 @@ input[type="file"] {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
+}
+
+.quality-help {
+    display: block;
+    margin-top: 6px;
+    color: #6b7280;
+    font-size: 13px;
 }
 
 input[type="range"] {
@@ -190,6 +223,7 @@ button:disabled {
     background: #f0fdf4;
     border: 1px solid #bbf7d0;
     border-radius: 10px;
+    text-align: left;
 }
 
 .result h3 {
@@ -227,16 +261,22 @@ button:disabled {
 .content-section h2 {
     color: #111827;
     margin-top: 0;
+    line-height: 1.35;
 }
 
 .content-section h3 {
     color: #1f2937;
     margin-top: 25px;
+    line-height: 1.4;
 }
 
 .content-section ul,
 .content-section ol {
     padding-left: 25px;
+}
+
+.content-section a {
+    color: #2563eb;
 }
 
 .related-tools {
@@ -302,6 +342,11 @@ footer a:hover {
 
     nav {
         justify-content: center;
+        gap: 10px 13px;
+    }
+
+    .hero {
+        padding-top: 25px;
     }
 
     .hero h1 {
@@ -319,6 +364,12 @@ footer a:hover {
 
     .related-tools {
         grid-template-columns: 1fr;
+    }
+
+    button,
+    .download-btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -372,10 +423,18 @@ footer a:hover {
     },
     {
       "@type": "Question",
+      "name": "Can WebP to JPG reduce file size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can, but the result depends on the original WebP image, its dimensions, image content and the selected JPG quality."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Are my WebP images uploaded to a server?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The conversion is performed in your browser using JavaScript and the Canvas API, so the basic conversion does not require uploading the image to an external conversion server."
+        "text": "The basic conversion is performed in your browser using JavaScript and the Canvas API, so the conversion does not require uploading the image to an external image-conversion server."
       }
     },
     {
@@ -438,6 +497,10 @@ footer a:hover {
                 WebP to JPG
             </a>
 
+            <a href="index.html#articles">
+                Articles
+            </a>
+
             <a href="about.html">
                 About
             </a>
@@ -487,7 +550,6 @@ footer a:hover {
         Convert WebP to JPG
     </h2>
 
-
     <label
         for="imageInput"
         class="upload-label"
@@ -495,21 +557,26 @@ footer a:hover {
         Choose WebP Image
     </label>
 
-
     <input
         type="file"
         id="imageInput"
         accept="image/webp,.webp"
     >
 
-
     <div
         id="fileInfo"
         class="file-info"
+        aria-live="polite"
     >
         No image selected.
     </div>
 
+    <div
+        id="statusMessage"
+        class="status-message"
+        role="status"
+        aria-live="polite"
+    ></div>
 
     <div class="quality-box">
 
@@ -517,26 +584,24 @@ footer a:hover {
             JPG Quality
         </label>
 
-
         <input
             type="range"
             id="quality"
             min="50"
             max="100"
             value="90"
+            aria-describedby="qualityHelp"
         >
 
-
         <div class="quality-value">
-
-            <span id="qualityValue">
-                90
-            </span>%
-
+            <span id="qualityValue">90</span>%
         </div>
 
-    </div>
+        <small id="qualityHelp" class="quality-help">
+            Higher quality usually preserves more visual detail but may create a larger JPG file.
+        </small>
 
+    </div>
 
     <div class="notice">
 
@@ -547,34 +612,33 @@ footer a:hover {
 
     </div>
 
-
     <button
         id="convertBtn"
-        onclick="convertToJPG()"
+        type="button"
         disabled
     >
         Convert to JPG
     </button>
 
-
     <div
         id="result"
         class="result"
+        aria-live="polite"
     >
 
         <h3>
             Conversion Complete!
         </h3>
 
-
         <p id="originalSize"></p>
 
         <p id="outputSize"></p>
 
+        <p id="sizeComparison"></p>
+
         <p id="dimensions"></p>
 
         <p id="selectedQuality"></p>
-
 
         <a
             id="downloadLink"
@@ -601,7 +665,7 @@ footer a:hover {
     </p>
 
     <p>
-        WebP is a modern format commonly used for websites,
+        WebP is a modern image format commonly used for websites,
         while JPG is one of the most widely supported image
         formats and is commonly used for photographs.
     </p>
@@ -658,11 +722,10 @@ footer a:hover {
     </h2>
 
     <p>
-        WebP is useful for modern websites, but some older
-        applications, websites or image workflows may work
-        better with JPG.
+        WebP is useful for modern websites, but some applications,
+        websites or image workflows may require or work more
+        conveniently with JPG.
     </p>
-
 
     <h3>
         Wider Compatibility
@@ -673,7 +736,6 @@ footer a:hover {
         programs, websites and devices for many years.
     </p>
 
-
     <h3>
         Easier Sharing
     </h3>
@@ -683,14 +745,13 @@ footer a:hover {
         converting the image to JPG can make it easier to use.
     </p>
 
-
     <h3>
         Common Photograph Format
     </h3>
 
     <p>
         JPG is widely used for photographs and general-purpose
-        images because it provides good visual quality with
+        images because it can provide good visual quality with
         relatively compact files.
     </p>
 
@@ -704,38 +765,45 @@ footer a:hover {
     </h2>
 
     <p>
-        Both formats can be useful, but they are designed for
-        somewhat different purposes.
+        Both formats can be useful, but they have different
+        characteristics.
     </p>
 
     <ul>
 
         <li>
             <strong>WebP:</strong>
-            modern format designed for efficient web images.
+            a modern format designed for efficient web images.
         </li>
 
         <li>
             <strong>JPG:</strong>
-            widely supported format commonly used for photographs.
+            a widely supported format commonly used for photographs.
         </li>
 
         <li>
             <strong>WebP:</strong>
-            supports transparency and multiple compression modes.
+            supports lossy and lossless compression and can support transparency.
         </li>
 
         <li>
             <strong>JPG:</strong>
-            does not support transparency.
+            uses lossy compression and does not support transparency.
         </li>
 
         <li>
             <strong>JPG:</strong>
-            is often useful when compatibility is the priority.
+            can be useful when broad compatibility is important.
         </li>
 
     </ul>
+
+    <p>
+        For a more detailed comparison, see our
+        <a href="jpg-vs-webp.html">
+            JPG vs WebP guide
+        </a>.
+    </p>
 
 </section>
 
@@ -776,7 +844,6 @@ footer a:hover {
         detail and output file size.
     </p>
 
-
     <h3>
         90–100%
     </h3>
@@ -786,16 +853,14 @@ footer a:hover {
         and file size is less important.
     </p>
 
-
     <h3>
         80–90%
     </h3>
 
     <p>
-        A practical range for many photographs and general
-        purpose images.
+        A practical range for many photographs and general-purpose
+        images.
     </p>
-
 
     <h3>
         50–80%
@@ -823,8 +888,14 @@ footer a:hover {
     </p>
 
     <p>
-        If your goal is specifically to reduce the size of an
-        image, you can also use the
+        A WebP file can sometimes already be highly optimized,
+        so converting it to JPG may produce a file that is
+        similar in size or even larger.
+    </p>
+
+    <p>
+        If your main goal is specifically to reduce the size of
+        an image, you can also use the
         <a href="image-compressor.html">
             Image Compressor
         </a>.
@@ -872,8 +943,10 @@ footer a:hover {
 
     <p>
         Because JPG uses lossy compression, selecting a very low
-        quality setting can reduce visual detail. For most uses,
-        a higher setting provides a better balance.
+        quality setting can reduce visual detail. A higher setting
+        can help preserve more of the available visual information,
+        but it cannot restore detail that was already lost in the
+        original WebP image.
     </p>
 
 </section>
@@ -897,7 +970,8 @@ footer a:hover {
 
     <p>
         Browser-based processing can be convenient when working
-        with personal images.
+        with personal images because the basic conversion happens
+        locally in the browser.
     </p>
 
 </section>
@@ -919,6 +993,11 @@ footer a:hover {
         desired quality and convert it to JPG.
     </p>
 
+    <p>
+        Very large images may require more memory and processing
+        time on mobile devices than on desktop computers.
+    </p>
+
 </section>
 
 
@@ -935,7 +1014,7 @@ footer a:hover {
         </li>
 
         <li>
-            Use around 80–90% quality for general photographs.
+            Use around 80–90% quality for many general photographs.
         </li>
 
         <li>
@@ -955,6 +1034,11 @@ footer a:hover {
             an image's file size.
         </li>
 
+        <li>
+            Compare the downloaded JPG with the original before
+            deleting the original WebP file.
+        </li>
+
     </ul>
 
 </section>
@@ -970,7 +1054,6 @@ footer a:hover {
         Explore other browser-based image tools from
         QuickPixel Tools.
     </p>
-
 
     <div class="related-tools">
 
@@ -994,6 +1077,14 @@ footer a:hover {
             JPG to WebP
         </a>
 
+        <a href="jpg-vs-webp.html">
+            JPG vs WebP Guide
+        </a>
+
+        <a href="how-to-reduce-image-file-size.html">
+            Reduce Image File Size Guide
+        </a>
+
         <a href="index.html">
             All Tools
         </a>
@@ -1009,7 +1100,6 @@ footer a:hover {
         Frequently Asked Questions
     </h2>
 
-
     <div class="faq">
 
         <h3>
@@ -1022,7 +1112,6 @@ footer a:hover {
         </p>
 
     </div>
-
 
     <div class="faq">
 
@@ -1037,7 +1126,6 @@ footer a:hover {
 
     </div>
 
-
     <div class="faq">
 
         <h3>
@@ -1046,10 +1134,11 @@ footer a:hover {
 
         <p>
             Yes. You can select a quality between 50% and 100%.
+            Higher quality generally preserves more visual detail
+            but can result in a larger file.
         </p>
 
     </div>
-
 
     <div class="faq">
 
@@ -1062,7 +1151,6 @@ footer a:hover {
         </p>
 
     </div>
-
 
     <div class="faq">
 
@@ -1078,6 +1166,34 @@ footer a:hover {
 
     </div>
 
+    <div class="faq">
+
+        <h3>
+            Can WebP to JPG reduce the file size?
+        </h3>
+
+        <p>
+            It can, but the result depends on the original WebP,
+            image dimensions, image content and selected JPG quality.
+            The output can also be similar in size or larger.
+        </p>
+
+    </div>
+
+    <div class="faq">
+
+        <h3>
+            Are my WebP images uploaded to a server?
+        </h3>
+
+        <p>
+            The basic conversion is performed directly in your
+            browser using JavaScript and the Canvas API. It does
+            not require uploading the image to an external
+            image-conversion server.
+        </p>
+
+    </div>
 
     <div class="faq">
 
@@ -1091,7 +1207,6 @@ footer a:hover {
 
     </div>
 
-
     <div class="faq">
 
         <h3>
@@ -1099,7 +1214,8 @@ footer a:hover {
         </h3>
 
         <p>
-            Yes. The tool works on modern mobile and desktop browsers.
+            Yes. The tool works on modern mobile, tablet and
+            desktop browsers.
         </p>
 
     </div>
@@ -1150,6 +1266,9 @@ const imageInput =
 const fileInfo =
     document.getElementById("fileInfo");
 
+const statusMessage =
+    document.getElementById("statusMessage");
+
 const convertBtn =
     document.getElementById("convertBtn");
 
@@ -1162,9 +1281,33 @@ const qualityValue =
 const result =
     document.getElementById("result");
 
-let selectedFile = null;
+const downloadLink =
+    document.getElementById("downloadLink");
 
+const originalSize =
+    document.getElementById("originalSize");
+
+const outputSize =
+    document.getElementById("outputSize");
+
+const sizeComparison =
+    document.getElementById("sizeComparison");
+
+const dimensions =
+    document.getElementById("dimensions");
+
+const selectedQuality =
+    document.getElementById("selectedQuality");
+
+let selectedFile = null;
 let downloadUrl = null;
+
+
+/*
+ * Maximum pixel count used as a practical protection
+ * against browser memory problems with extremely large images.
+ */
+const MAX_PIXELS = 40000000;
 
 
 /* Quality Slider */
@@ -1180,38 +1323,66 @@ quality.addEventListener(
 );
 
 
+/* Status Helper */
+
+function showStatus(message, type = "") {
+
+    statusMessage.textContent =
+        message;
+
+    statusMessage.className =
+        "status-message" +
+        (type ? " " + type : "");
+
+}
+
+
+/* Clean Download URL */
+
+function clearDownloadUrl() {
+
+    if (downloadUrl) {
+
+        URL.revokeObjectURL(
+            downloadUrl
+        );
+
+        downloadUrl = null;
+
+    }
+
+    downloadLink.removeAttribute(
+        "href"
+    );
+
+}
+
+
 /* File Selection */
 
 imageInput.addEventListener(
     "change",
     function() {
 
-        result.style.display = "none";
+        result.style.display =
+            "none";
 
+        showStatus("");
 
-        if (downloadUrl) {
-
-            URL.revokeObjectURL(
-                downloadUrl
-            );
-
-            downloadUrl = null;
-
-        }
-
+        clearDownloadUrl();
 
         const file =
             this.files[0];
 
+        selectedFile = null;
+
+        convertBtn.disabled =
+            true;
 
         if (!file) {
 
-            selectedFile = null;
-
             fileInfo.textContent =
                 "No image selected.";
-
-            convertBtn.disabled = true;
 
             return;
 
@@ -1225,21 +1396,42 @@ imageInput.addEventListener(
 
         if (!isWebP) {
 
-            selectedFile = null;
-
             fileInfo.textContent =
                 "Please select a WebP image.";
 
-            convertBtn.disabled = true;
+            showStatus(
+                "The selected file is not a WebP image.",
+                "error"
+            );
 
-            imageInput.value = "";
+            imageInput.value =
+                "";
 
             return;
 
         }
 
 
-        selectedFile = file;
+        if (file.size === 0) {
+
+            fileInfo.textContent =
+                "The selected file is empty.";
+
+            showStatus(
+                "Please select a valid WebP image.",
+                "error"
+            );
+
+            imageInput.value =
+                "";
+
+            return;
+
+        }
+
+
+        selectedFile =
+            file;
 
 
         fileInfo.textContent =
@@ -1248,7 +1440,14 @@ imageInput.addEventListener(
             formatBytes(file.size);
 
 
-        convertBtn.disabled = false;
+        showStatus(
+            "WebP image selected. Choose a quality and convert it to JPG.",
+            "success"
+        );
+
+
+        convertBtn.disabled =
+            false;
 
     }
 );
@@ -1260,8 +1459,9 @@ function convertToJPG() {
 
     if (!selectedFile) {
 
-        alert(
-            "Please select a WebP image first."
+        showStatus(
+            "Please select a WebP image first.",
+            "error"
         );
 
         return;
@@ -1269,10 +1469,22 @@ function convertToJPG() {
     }
 
 
-    convertBtn.disabled = true;
+    convertBtn.disabled =
+        true;
 
     convertBtn.textContent =
         "Converting...";
+
+    result.style.display =
+        "none";
+
+    showStatus(
+        "Processing the image in your browser..."
+    );
+
+
+    const fileToConvert =
+        selectedFile;
 
 
     const reader =
@@ -1289,6 +1501,45 @@ function convertToJPG() {
             img.onload =
                 function() {
 
+                    const width =
+                        img.naturalWidth;
+
+                    const height =
+                        img.naturalHeight;
+
+
+                    if (
+                        !width ||
+                        !height
+                    ) {
+
+                        finishWithError(
+                            "The selected WebP image has invalid dimensions."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const pixelCount =
+                        width * height;
+
+
+                    if (
+                        pixelCount >
+                        MAX_PIXELS
+                    ) {
+
+                        finishWithError(
+                            "This image is very large and may exceed browser memory limits. Please use a smaller image or resize it first."
+                        );
+
+                        return;
+
+                    }
+
+
                     const canvas =
                         document.createElement(
                             "canvas"
@@ -1296,16 +1547,27 @@ function convertToJPG() {
 
 
                     canvas.width =
-                        img.naturalWidth;
+                        width;
 
                     canvas.height =
-                        img.naturalHeight;
+                        height;
 
 
                     const ctx =
                         canvas.getContext(
                             "2d"
                         );
+
+
+                    if (!ctx) {
+
+                        finishWithError(
+                            "Your browser could not create the image-processing canvas."
+                        );
+
+                        return;
+
+                    }
 
 
                     /*
@@ -1319,8 +1581,8 @@ function convertToJPG() {
                     ctx.fillRect(
                         0,
                         0,
-                        canvas.width,
-                        canvas.height
+                        width,
+                        height
                     );
 
 
@@ -1328,12 +1590,12 @@ function convertToJPG() {
                         img,
                         0,
                         0,
-                        canvas.width,
-                        canvas.height
+                        width,
+                        height
                     );
 
 
-                    const selectedQuality =
+                    const selectedQualityValue =
                         Number(
                             quality.value
                         ) / 100;
@@ -1345,39 +1607,21 @@ function convertToJPG() {
 
                             if (!blob) {
 
-                                alert(
-                                    "Your browser could not create the JPG image."
+                                finishWithError(
+                                    "Your browser could not create the JPG image. Please try another modern browser."
                                 );
-
-                                convertBtn.disabled =
-                                    false;
-
-                                convertBtn.textContent =
-                                    "Convert to JPG";
 
                                 return;
 
                             }
 
 
-                            if (downloadUrl) {
-
-                                URL.revokeObjectURL(
-                                    downloadUrl
-                                );
-
-                            }
+                            clearDownloadUrl();
 
 
                             downloadUrl =
                                 URL.createObjectURL(
                                     blob
-                                );
-
-
-                            const downloadLink =
-                                document.getElementById(
-                                    "downloadLink"
                                 );
 
 
@@ -1387,41 +1631,40 @@ function convertToJPG() {
 
                             downloadLink.download =
                                 getOutputFileName(
-                                    selectedFile.name
+                                    fileToConvert.name
                                 );
 
 
-                            document.getElementById(
-                                "originalSize"
-                            ).textContent =
+                            originalSize.textContent =
                                 "Original size: " +
                                 formatBytes(
-                                    selectedFile.size
+                                    fileToConvert.size
                                 );
 
 
-                            document.getElementById(
-                                "outputSize"
-                            ).textContent =
+                            outputSize.textContent =
                                 "JPG size: " +
                                 formatBytes(
                                     blob.size
                                 );
 
 
-                            document.getElementById(
-                                "dimensions"
-                            ).textContent =
+                            sizeComparison.textContent =
+                                getSizeComparison(
+                                    fileToConvert.size,
+                                    blob.size
+                                );
+
+
+                            dimensions.textContent =
                                 "Dimensions: " +
-                                img.naturalWidth +
+                                width +
                                 " × " +
-                                img.naturalHeight +
+                                height +
                                 " pixels";
 
 
-                            document.getElementById(
-                                "selectedQuality"
-                            ).textContent =
+                            selectedQuality.textContent =
                                 "JPG quality: " +
                                 quality.value +
                                 "%";
@@ -1431,17 +1674,30 @@ function convertToJPG() {
                                 "block";
 
 
+                            showStatus(
+                                "Conversion completed successfully.",
+                                "success"
+                            );
+
+
                             convertBtn.disabled =
                                 false;
 
                             convertBtn.textContent =
                                 "Convert to JPG";
 
+
+                            /*
+                             * Release canvas resources where possible.
+                             */
+                            canvas.width = 1;
+                            canvas.height = 1;
+
                         },
 
                         "image/jpeg",
 
-                        selectedQuality
+                        selectedQualityValue
 
                     );
 
@@ -1451,17 +1707,9 @@ function convertToJPG() {
             img.onerror =
                 function() {
 
-                    alert(
-                        "The selected WebP image could not be read."
+                    finishWithError(
+                        "The selected WebP image could not be read. Please choose a valid WebP file."
                     );
-
-
-                    convertBtn.disabled =
-                        false;
-
-
-                    convertBtn.textContent =
-                        "Convert to JPG";
 
                 };
 
@@ -1475,24 +1723,36 @@ function convertToJPG() {
     reader.onerror =
         function() {
 
-            alert(
-                "There was a problem reading the image."
+            finishWithError(
+                "There was a problem reading the selected image."
             );
-
-
-            convertBtn.disabled =
-                false;
-
-
-            convertBtn.textContent =
-                "Convert to JPG";
 
         };
 
 
     reader.readAsDataURL(
-        selectedFile
+        fileToConvert
     );
+
+}
+
+
+/* Error Handler */
+
+function finishWithError(
+    message
+) {
+
+    showStatus(
+        message,
+        "error"
+    );
+
+    convertBtn.disabled =
+        false;
+
+    convertBtn.textContent =
+        "Convert to JPG";
 
 }
 
@@ -1527,13 +1787,97 @@ function getOutputFileName(
 }
 
 
+/* File Size Comparison */
+
+function getSizeComparison(
+    originalBytes,
+    outputBytes
+) {
+
+    if (
+        !originalBytes ||
+        !outputBytes
+    ) {
+
+        return "";
+
+    }
+
+
+    if (
+        outputBytes <
+        originalBytes
+    ) {
+
+        const reduction =
+            (
+                (
+                    originalBytes -
+                    outputBytes
+                ) /
+                originalBytes
+            ) *
+            100;
+
+
+        return (
+            "File size change: " +
+            reduction.toFixed(1) +
+            "% smaller than the original."
+        );
+
+    }
+
+
+    if (
+        outputBytes >
+        originalBytes
+    ) {
+
+        const increase =
+            (
+                (
+                    outputBytes -
+                    originalBytes
+                ) /
+                originalBytes
+            ) *
+            100;
+
+
+        return (
+            "File size change: " +
+            increase.toFixed(1) +
+            "% larger than the original."
+        );
+
+    }
+
+
+    return "File size change: approximately the same as the original.";
+
+}
+
+
 /* Format File Size */
 
 function formatBytes(
     bytes
 ) {
 
-    if (bytes === 0) {
+    if (
+        !Number.isFinite(bytes) ||
+        bytes < 0
+    ) {
+
+        return "0 Bytes";
+
+    }
+
+
+    if (
+        bytes === 0
+    ) {
 
         return "0 Bytes";
 
@@ -1548,28 +1892,45 @@ function formatBytes(
     ];
 
 
-    const i =
-        Math.floor(
-            Math.log(bytes) /
-            Math.log(1024)
+    const exponent =
+        Math.min(
+            Math.floor(
+                Math.log(bytes) /
+                Math.log(1024)
+            ),
+            units.length - 1
+        );
+
+
+    const value =
+        bytes /
+        Math.pow(
+            1024,
+            exponent
         );
 
 
     return (
         parseFloat(
-            (
-                bytes /
-                Math.pow(
-                    1024,
-                    i
-                )
-            ).toFixed(2)
+            value.toFixed(2)
         ) +
         " " +
-        units[i]
+        units[exponent]
     );
 
 }
+
+
+/* Cleanup when leaving the page */
+
+window.addEventListener(
+    "beforeunload",
+    function() {
+
+        clearDownloadUrl();
+
+    }
+);
 
 </script>
 
