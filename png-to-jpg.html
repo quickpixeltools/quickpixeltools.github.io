@@ -41,7 +41,7 @@ crossorigin="anonymous"></script>
       "name": "Can I convert PNG to JPEG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. JPG and JPEG refer to the same image format, so a PNG image can be converted to either JPG or JPEG format."
+        "text": "Yes. JPG and JPEG refer to the same image format, so a PNG image can be converted to JPG format."
       }
     },
     {
@@ -57,7 +57,7 @@ crossorigin="anonymous"></script>
       "name": "Will PNG to JPG conversion reduce image quality?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "JPG uses lossy compression, so converting PNG to JPG can reduce some image information. The converter provides a quality setting to help control the output."
+        "text": "JPG uses lossy compression, so converting PNG to JPG can remove some image information. The converter provides a quality setting to help control the output."
       }
     },
     {
@@ -66,6 +66,14 @@ crossorigin="anonymous"></script>
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The converter keeps the original pixel dimensions of the selected PNG image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can PNG to JPG make the file smaller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can, especially for photographic images, but the final file size depends on the image content, dimensions and selected JPG quality."
       }
     },
     {
@@ -136,7 +144,7 @@ nav a {
     color: #374151;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 9px;
+    margin: 0 7px;
     display: inline-block;
     padding: 5px;
 }
@@ -177,6 +185,10 @@ main {
     text-align: center;
 }
 
+.tool h2 {
+    margin-top: 0;
+}
+
 .upload {
     border: 2px dashed #b8bec8;
     padding: 35px 20px;
@@ -206,6 +218,7 @@ input[type="file"] {
     background: #f8fafc;
     border-radius: 10px;
     color: #59636e;
+    overflow-wrap: anywhere;
 }
 
 .quality-box {
@@ -268,6 +281,7 @@ button:disabled {
 .result {
     margin-top: 25px;
     font-weight: 700;
+    color: #374151;
 }
 
 .download {
@@ -293,7 +307,7 @@ button:disabled {
 }
 
 .content-box h2 {
-    margin-top: 35px;
+    margin-top: 38px;
     line-height: 1.3;
 }
 
@@ -314,6 +328,28 @@ button:disabled {
 .content-box a {
     color: #111827;
     font-weight: 600;
+}
+
+.toc {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 25px 0 35px;
+}
+
+.toc h2 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.toc li {
+    margin-bottom: 7px;
 }
 
 .faq {
@@ -356,7 +392,7 @@ footer {
 .footer-links a {
     color: #374151;
     text-decoration: none;
-    margin: 0 8px;
+    margin: 0 7px;
 }
 
 .footer-links a:hover {
@@ -379,8 +415,17 @@ footer {
     }
 
     nav a {
-        margin: 0 5px;
+        margin: 0 4px;
         font-size: 14px;
+    }
+
+    .upload {
+        padding: 25px 15px;
+    }
+
+    input[type="file"] {
+        width: 100%;
+        margin: 15px 0;
     }
 
 }
@@ -407,6 +452,7 @@ footer {
 <a href="image-resizer.html">Resizer</a>
 <a href="jpg-to-png.html">JPG to PNG</a>
 <a href="png-to-jpg.html">PNG to JPG</a>
+<a href="how-to-compress-an-image.html">Articles</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
@@ -416,7 +462,6 @@ footer {
 
 
 <main>
-
 
 <section class="hero">
 
@@ -433,9 +478,9 @@ the converted image directly in your browser.
 
 <!-- CONVERTER TOOL -->
 
-<section class="tool">
+<section class="tool" aria-labelledby="converter-heading">
 
-<h2>Convert PNG to JPG</h2>
+<h2 id="converter-heading">Convert PNG to JPG</h2>
 
 <p>
 Select a PNG image, choose the JPG quality and convert it
@@ -481,11 +526,13 @@ min="0.5"
 max="1"
 step="0.05"
 value="0.9"
+aria-label="JPG quality"
 >
 
 <div
 id="qualityValue"
-class="quality-value">
+class="quality-value"
+aria-live="polite">
 90%
 </div>
 
@@ -521,7 +568,7 @@ aria-live="polite">
 <a
 id="downloadLink"
 class="download"
-download="converted-image.jpg">
+download>
 
 Download JPG Image
 
@@ -534,8 +581,36 @@ Download JPG Image
 
 <section class="content-box">
 
+<div class="toc">
 
-<h2>What Is a PNG to JPG Converter?</h2>
+<h2>On This Page</h2>
+
+<ul>
+
+<li><a href="#what-is-png-jpg">What Is a PNG to JPG Converter?</a></li>
+
+<li><a href="#how-to-convert">How to Convert PNG to JPG</a></li>
+
+<li><a href="#why-convert">Why Convert PNG to JPG?</a></li>
+
+<li><a href="#png-vs-jpg">PNG vs JPG</a></li>
+
+<li><a href="#transparency">What Happens to Transparency?</a></li>
+
+<li><a href="#quality">Does Conversion Reduce Quality?</a></li>
+
+<li><a href="#file-size">Can PNG to JPG Reduce File Size?</a></li>
+
+<li><a href="#privacy-processing">Are My Images Uploaded?</a></li>
+
+<li><a href="#faq">Frequently Asked Questions</a></li>
+
+</ul>
+
+</div>
+
+
+<h2 id="what-is-png-jpg">What Is a PNG to JPG Converter?</h2>
 
 <p>
 A PNG to JPG converter changes an image stored in PNG format
@@ -553,7 +628,7 @@ file size is useful.
 </p>
 
 
-<h2>How to Convert PNG to JPG</h2>
+<h2 id="how-to-convert">How to Convert PNG to JPG</h2>
 
 <p>
 You can convert a PNG image using these simple steps:
@@ -588,7 +663,7 @@ Click "Download JPG Image" to save the converted file.
 </ol>
 
 
-<h2>Why Convert PNG to JPG?</h2>
+<h2 id="why-convert">Why Convert PNG to JPG?</h2>
 
 <p>
 There are several reasons why someone may want to convert
@@ -608,7 +683,7 @@ remove some image information.
 </p>
 
 
-<h2>PNG vs JPG: What Is the Difference?</h2>
+<h2 id="png-vs-jpg">PNG vs JPG: What Is the Difference?</h2>
 
 <p>
 PNG uses lossless compression and supports transparency.
@@ -676,7 +751,7 @@ image storage is important.
 </ul>
 
 
-<h2>What Happens to PNG Transparency?</h2>
+<h2 id="transparency">What Happens to PNG Transparency?</h2>
 
 <p>
 One important difference between PNG and JPG is transparency.
@@ -696,7 +771,7 @@ keep the original PNG file rather than converting it to JPG.
 </p>
 
 
-<h2>Does PNG to JPG Conversion Reduce Quality?</h2>
+<h2 id="quality">Does PNG to JPG Conversion Reduce Quality?</h2>
 
 <p>
 PNG uses lossless compression, while JPG uses lossy compression.
@@ -766,7 +841,7 @@ instead.
 </p>
 
 
-<h2>Can PNG to JPG Reduce File Size?</h2>
+<h2 id="file-size">Can PNG to JPG Reduce File Size?</h2>
 
 <p>
 It can, especially when converting photographic PNG images
@@ -788,7 +863,7 @@ also try the
 </p>
 
 
-<h2>Are My Images Uploaded?</h2>
+<h2 id="privacy-processing">Are My Images Uploaded?</h2>
 
 <p>
 The conversion is performed directly in your browser. The
@@ -897,7 +972,7 @@ to change image dimensions.
 </p>
 
 
-<h2>Frequently Asked Questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 
 
 <div class="faq">
@@ -1032,6 +1107,7 @@ and desktop browsers.
 <a href="image-resizer.html">Resizer</a>
 <a href="jpg-to-png.html">JPG to PNG</a>
 <a href="png-to-jpg.html">PNG to JPG</a>
+<a href="how-to-compress-an-image.html">Articles</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
@@ -1046,118 +1122,103 @@ and desktop browsers.
 
 <script>
 
-const pngInput =
-document.getElementById("pngInput");
-
-const fileInfo =
-document.getElementById("fileInfo");
-
-const quality =
-document.getElementById("quality");
-
-const qualityValue =
-document.getElementById("qualityValue");
-
-const result =
-document.getElementById("result");
-
-const downloadLink =
-document.getElementById("downloadLink");
-
-const convertButton =
-document.getElementById("convertButton");
+const pngInput = document.getElementById("pngInput");
+const fileInfo = document.getElementById("fileInfo");
+const quality = document.getElementById("quality");
+const qualityValue = document.getElementById("qualityValue");
+const result = document.getElementById("result");
+const downloadLink = document.getElementById("downloadLink");
+const convertButton = document.getElementById("convertButton");
 
 let currentObjectURL = null;
 
 
 /* Quality display */
 
-quality.addEventListener(
-    "input",
-    function () {
+quality.addEventListener("input", function () {
 
-        qualityValue.textContent =
-            Math.round(
-                Number(this.value) * 100
-            ) + "%";
+    qualityValue.textContent =
+        Math.round(Number(this.value) * 100) + "%";
+
+});
+
+
+/* Clear previous generated file */
+
+function clearGeneratedFile() {
+
+    if (currentObjectURL) {
+
+        URL.revokeObjectURL(currentObjectURL);
+        currentObjectURL = null;
 
     }
-);
+
+    downloadLink.removeAttribute("href");
+    downloadLink.removeAttribute("download");
+    downloadLink.style.display = "none";
+
+}
 
 
 /* File selection */
 
-pngInput.addEventListener(
-    "change",
-    function () {
+pngInput.addEventListener("change", function () {
 
-        result.textContent = "";
+    result.textContent = "";
+    clearGeneratedFile();
 
-        downloadLink.style.display =
-            "none";
+    fileInfo.style.display = "none";
 
+    const file = this.files[0];
 
-        if (currentObjectURL) {
+    if (!file) {
+        return;
+    }
 
-            URL.revokeObjectURL(
-                currentObjectURL
-            );
+    const isPNG =
+        file.type === "image/png" ||
+        /\.png$/i.test(file.name);
 
-            currentObjectURL = null;
-
-        }
-
-
-        fileInfo.style.display =
-            "none";
-
-
-        const file =
-            this.files[0];
-
-
-        if (!file) {
-
-            return;
-
-        }
-
-
-        const isPNG =
-            file.type === "image/png" ||
-            /\.png$/i.test(file.name);
-
-
-        if (!isPNG) {
-
-            alert(
-                "Please select a PNG image."
-            );
-
-            this.value = "";
-
-            return;
-
-        }
-
-
-        const size =
-            (file.size / 1024).toFixed(1);
-
+    if (!isPNG) {
 
         fileInfo.textContent =
-            "Selected: " +
-            file.name +
-            " — " +
-            size +
-            " KB";
+            "Please select a valid PNG image.";
 
+        fileInfo.style.display = "block";
 
-        fileInfo.style.display =
-            "block";
+        this.value = "";
+
+        return;
 
     }
-);
+
+    const sizeKB =
+        file.size / 1024;
+
+    let sizeText;
+
+    if (sizeKB >= 1024) {
+
+        sizeText =
+            (sizeKB / 1024).toFixed(2) + " MB";
+
+    } else {
+
+        sizeText =
+            sizeKB.toFixed(1) + " KB";
+
+    }
+
+    fileInfo.textContent =
+        "Selected: " +
+        file.name +
+        " — " +
+        sizeText;
+
+    fileInfo.style.display = "block";
+
+});
 
 
 /* Convert button */
@@ -1170,15 +1231,12 @@ convertButton.addEventListener(
 
 function convertToJPG() {
 
-    const file =
-        pngInput.files[0];
-
+    const file = pngInput.files[0];
 
     if (!file) {
 
-        alert(
-            "Please select a PNG image first."
-        );
+        result.textContent =
+            "Please select a PNG image first.";
 
         return;
 
@@ -1189,51 +1247,41 @@ function convertToJPG() {
         file.type === "image/png" ||
         /\.png$/i.test(file.name);
 
-
     if (!isPNG) {
 
-        alert(
-            "Please select a valid PNG image."
-        );
+        result.textContent =
+            "Please select a valid PNG image.";
 
         return;
 
     }
 
 
-    convertButton.disabled =
-        true;
+    clearGeneratedFile();
 
+    convertButton.disabled = true;
 
     result.textContent =
         "Converting image...";
-
-
-    downloadLink.style.display =
-        "none";
 
 
     const reader =
         new FileReader();
 
 
-    reader.onload =
-        function (event) {
+    reader.onload = function (event) {
 
-        const image =
-            new Image();
+        const image = new Image();
 
 
-        image.onload =
-            function () {
+        image.onload = function () {
 
             if (
                 !image.naturalWidth ||
                 !image.naturalHeight
             ) {
 
-                convertButton.disabled =
-                    false;
+                convertButton.disabled = false;
 
                 result.textContent =
                     "Unable to read the image dimensions.";
@@ -1246,7 +1294,6 @@ function convertToJPG() {
             const canvas =
                 document.createElement("canvas");
 
-
             canvas.width =
                 image.naturalWidth;
 
@@ -1257,11 +1304,9 @@ function convertToJPG() {
             const ctx =
                 canvas.getContext("2d");
 
-
             if (!ctx) {
 
-                convertButton.disabled =
-                    false;
+                convertButton.disabled = false;
 
                 result.textContent =
                     "Your browser does not support image conversion.";
@@ -1277,8 +1322,7 @@ function convertToJPG() {
              * drawing the PNG image.
              */
 
-            ctx.fillStyle =
-                "#ffffff";
+            ctx.fillStyle = "#ffffff";
 
             ctx.fillRect(
                 0,
@@ -1304,8 +1348,7 @@ function convertToJPG() {
             canvas.toBlob(
                 function (blob) {
 
-                    convertButton.disabled =
-                        false;
+                    convertButton.disabled = false;
 
 
                     if (!blob) {
@@ -1318,15 +1361,6 @@ function convertToJPG() {
                     }
 
 
-                    if (currentObjectURL) {
-
-                        URL.revokeObjectURL(
-                            currentObjectURL
-                        );
-
-                    }
-
-
                     currentObjectURL =
                         URL.createObjectURL(blob);
 
@@ -1335,58 +1369,104 @@ function convertToJPG() {
                         currentObjectURL;
 
 
+                    /*
+                     * Keep the original filename
+                     * while changing the extension.
+                     */
+
+                    const originalName =
+                        file.name.replace(
+                            /\.png$/i,
+                            ""
+                        );
+
+
                     downloadLink.download =
-                        "converted-image.jpg";
+                        (originalName || "converted-image") +
+                        ".jpg";
 
 
                     downloadLink.style.display =
                         "inline-block";
 
 
-                    const originalSize =
-                        (
-                            file.size / 1024
-                        ).toFixed(1);
+                    const originalSizeKB =
+                        file.size / 1024;
+
+                    const outputSizeKB =
+                        blob.size / 1024;
 
 
-                    const outputSize =
-                        (
-                            blob.size / 1024
-                        ).toFixed(1);
+                    const originalSizeText =
+                        originalSizeKB >= 1024
+                            ? (originalSizeKB / 1024).toFixed(2) + " MB"
+                            : originalSizeKB.toFixed(1) + " KB";
+
+
+                    const outputSizeText =
+                        outputSizeKB >= 1024
+                            ? (outputSizeKB / 1024).toFixed(2) + " MB"
+                            : outputSizeKB.toFixed(1) + " KB";
+
+
+                    let sizeComparison = "";
+
+                    if (blob.size < file.size) {
+
+                        sizeComparison =
+                            "The JPG file is smaller than the original PNG.";
+
+                    } else if (blob.size > file.size) {
+
+                        sizeComparison =
+                            "The JPG file is larger than the original PNG.";
+
+                    } else {
+
+                        sizeComparison =
+                            "The JPG and PNG files have approximately the same file size.";
+
+                    }
 
 
                     result.innerHTML =
                         "Image converted successfully!<br>" +
                         "Original PNG size: " +
-                        originalSize +
-                        " KB<br>" +
+                        originalSizeText +
+                        "<br>" +
                         "JPG file size: " +
-                        outputSize +
-                        " KB<br>" +
+                        outputSizeText +
+                        "<br>" +
                         "JPG quality: " +
-                        Math.round(
-                            selectedQuality * 100
-                        ) +
-                        "%<br>" +
+                        Math.round(selectedQuality * 100) +
+                        "%" +
+                        "<br>" +
                         "Dimensions: " +
                         image.naturalWidth +
                         " × " +
                         image.naturalHeight +
-                        " pixels";
+                        " pixels" +
+                        "<br>" +
+                        sizeComparison;
 
                 },
                 "image/jpeg",
                 selectedQuality
             );
 
+
+            /*
+             * Release the canvas when possible.
+             */
+
+            image.src = "";
+
         };
 
 
-        image.onerror =
-            function () {
+        image.onerror = function () {
 
-            convertButton.disabled =
-                false;
+            convertButton.disabled = false;
 
             result.textContent =
                 "Unable to process this PNG image. Please try another file.";
@@ -1400,11 +1480,9 @@ function convertToJPG() {
     };
 
 
-    reader.onerror =
-        function () {
+    reader.onerror = function () {
 
-        convertButton.disabled =
-            false;
+        convertButton.disabled = false;
 
         result.textContent =
             "Could not read the selected image.";
@@ -1423,13 +1501,7 @@ window.addEventListener(
     "beforeunload",
     function () {
 
-        if (currentObjectURL) {
-
-            URL.revokeObjectURL(
-                currentObjectURL
-            );
-
-        }
+        clearGeneratedFile();
 
     }
 );
