@@ -6,7 +6,7 @@
 
 <title>JPG vs PNG: Which Image Format Should You Use? | QuickPixel Tools</title>
 
-<meta name="description" content="Learn the difference between JPG and PNG images, including quality, file size, transparency, photographs, logos and website use.">
+<meta name="description" content="Learn the difference between JPG and PNG, including image quality, file size, transparency, photographs, logos, screenshots and website use.">
 
 <meta name="robots" content="index, follow">
 
@@ -21,6 +21,10 @@ crossorigin="anonymous"></script>
 <style>
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -40,7 +44,7 @@ header {
 }
 
 .navbar {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
     padding: 15px 20px;
     display: flex;
@@ -60,7 +64,7 @@ header {
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 12px;
     justify-content: flex-end;
 }
 
@@ -75,7 +79,7 @@ nav a:hover {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 920px;
     margin: auto;
     padding: 30px 20px 60px;
 }
@@ -111,9 +115,11 @@ nav a:hover {
 
 .article h2 {
     color: #111827;
-    margin-top: 35px;
+    margin-top: 38px;
     margin-bottom: 12px;
     font-size: 27px;
+    line-height: 1.35;
+    scroll-margin-top: 100px;
 }
 
 .article h3 {
@@ -121,6 +127,8 @@ nav a:hover {
     margin-top: 25px;
     margin-bottom: 10px;
     font-size: 21px;
+    line-height: 1.4;
+    scroll-margin-top: 100px;
 }
 
 .article p {
@@ -164,10 +172,43 @@ nav a:hover {
     border-radius: 6px;
 }
 
+.toc {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 25px 0 30px;
+}
+
+.toc h2 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.toc ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.toc li {
+    margin-bottom: 6px;
+}
+
+.toc a {
+    text-decoration: none;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 25px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
 .compare-table {
     width: 100%;
+    min-width: 650px;
     border-collapse: collapse;
-    margin: 25px 0;
     background: #ffffff;
 }
 
@@ -187,7 +228,7 @@ nav a:hover {
 .tool-link {
     display: inline-block;
     background: #2563eb;
-    color: white !important;
+    color: #ffffff !important;
     text-decoration: none;
     padding: 11px 18px;
     border-radius: 7px;
@@ -197,6 +238,10 @@ nav a:hover {
 
 .tool-link:hover {
     background: #1d4ed8;
+}
+
+.faq-section {
+    margin-top: 38px;
 }
 
 .faq {
@@ -209,10 +254,23 @@ nav a:hover {
     font-size: 18px;
 }
 
+.faq p {
+    margin-bottom: 0;
+}
+
 .related-tools {
     margin-top: 35px;
     padding-top: 25px;
     border-top: 1px solid #e5e7eb;
+}
+
+.back-top {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.back-top a {
+    text-decoration: none;
 }
 
 footer {
@@ -229,7 +287,7 @@ footer a {
 }
 
 footer a:hover {
-    color: white;
+    color: #ffffff;
 }
 
 footer p {
@@ -246,7 +304,11 @@ footer p {
 
     nav {
         justify-content: center;
-        gap: 10px;
+        gap: 9px 11px;
+    }
+
+    nav a {
+        font-size: 13px;
     }
 
     .article-header,
@@ -256,6 +318,10 @@ footer p {
 
     .article-header h1 {
         font-size: 30px;
+    }
+
+    .article-header p {
+        font-size: 16px;
     }
 
     .article h2 {
@@ -278,6 +344,13 @@ footer p {
     .container {
         padding: 20px 12px 40px;
     }
+
+    .tool-link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
 }
 </style>
 
@@ -292,7 +365,7 @@ footer p {
       "name": "What is the difference between JPG and PNG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "JPG commonly uses lossy compression and is often suitable for photographs. PNG supports lossless compression and transparency, making it useful for logos, screenshots and graphics."
+        "text": "JPG commonly uses lossy compression and is often suitable for photographs. PNG supports lossless compression and transparency, making it useful for graphics, screenshots and logos."
       }
     },
     {
@@ -300,7 +373,7 @@ footer p {
       "name": "Is JPG smaller than PNG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "JPG is often smaller than PNG for photographs, but file size depends on the image content, dimensions and compression settings."
+        "text": "JPG is often smaller than PNG for photographs, but the actual file size depends on the image, dimensions and compression settings."
       }
     },
     {
@@ -308,7 +381,7 @@ footer p {
       "name": "Is PNG better quality than JPG?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PNG can preserve image data through lossless compression, while JPG can discard some information during lossy compression. Whether PNG is better depends on the type and purpose of the image."
+        "text": "PNG can preserve image data through lossless compression, while JPG can discard some information during lossy compression. Whether PNG is better depends on the image and its purpose."
       }
     },
     {
@@ -357,23 +430,25 @@ footer p {
 
 </head>
 
-<body>
+<body id="top">
 
 <header>
     <div class="navbar">
 
-        <a href="index.html" class="logo">QuickPixel Tools</a>
+        <a href="https://quickpixeltools.github.io/" class="logo">
+            QuickPixel Tools
+        </a>
 
         <nav>
-            <a href="index.html">Home</a>
-            <a href="image-compressor.html">Compressor</a>
-            <a href="image-resizer.html">Resizer</a>
-            <a href="jpg-to-png.html">JPG to PNG</a>
-            <a href="png-to-jpg.html">PNG to JPG</a>
-            <a href="jpg-to-webp.html">JPG to WebP</a>
-            <a href="webp-to-jpg.html">WebP to JPG</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="https://quickpixeltools.github.io/">Home</a>
+            <a href="https://quickpixeltools.github.io/image-compressor.html">Compressor</a>
+            <a href="https://quickpixeltools.github.io/image-resizer.html">Resizer</a>
+            <a href="https://quickpixeltools.github.io/jpg-to-png.html">JPG to PNG</a>
+            <a href="https://quickpixeltools.github.io/#articles">Articles</a>
+            <a href="https://quickpixeltools.github.io/about.html">About</a>
+            <a href="https://quickpixeltools.github.io/contact.html">Contact</a>
+            <a href="https://quickpixeltools.github.io/privacy.html">Privacy</a>
+            <a href="https://quickpixeltools.github.io/terms.html">Terms</a>
         </nav>
 
     </div>
@@ -387,8 +462,9 @@ footer p {
         <h1>JPG vs PNG: Which Image Format Should You Use?</h1>
 
         <p>
-            Understand the difference between JPG and PNG, including quality,
-            file size, transparency, photographs, logos and website use.
+            Understand the difference between JPG and PNG, including image
+            quality, file size, transparency, photographs, logos, screenshots
+            and website use.
         </p>
 
     </section>
@@ -398,20 +474,19 @@ footer p {
 
         <p>
             JPG and PNG are two of the most commonly encountered image formats
-            on the web. Both can store high-quality images, but they are designed
-            with different strengths in mind.
+            on the web. Both can store high-quality images, but they use different
+            approaches to compression and have different strengths.
         </p>
 
         <p>
-            Choosing between JPG and PNG depends on the type of image you have
-            and what you need to do with it. A photograph, a transparent logo
-            and a screenshot may benefit from different formats.
+            Choosing between JPG and PNG depends on the type of image and what
+            you need the image to do. A photograph, transparent logo and screenshot
+            may each benefit from a different format.
         </p>
 
         <p>
-            If you are also interested in reducing the size of your images,
-            read our guide on
-            <a href="how-to-compress-an-image.html">
+            If you are also interested in reducing image size, read our guide on
+            <a href="https://quickpixeltools.github.io/how-to-compress-an-image.html">
                 how to compress an image without losing too much quality
             </a>.
         </p>
@@ -419,12 +494,33 @@ footer p {
         <div class="info-box">
             <strong>Quick answer:</strong>
             JPG is usually a practical choice for photographs and many
-            full-color images. PNG is often a better choice when transparency,
-            sharp graphics or lossless image data is important.
+            full-color images. PNG is often useful when transparency, sharp
+            graphics or lossless image data is important.
         </div>
 
 
-        <h2>What Is JPG?</h2>
+        <div class="toc">
+
+            <h2>On This Page</h2>
+
+            <ul>
+                <li><a href="#what-is-jpg">What Is JPG?</a></li>
+                <li><a href="#what-is-png">What Is PNG?</a></li>
+                <li><a href="#main-differences">JPG vs PNG: Main Differences</a></li>
+                <li><a href="#photos">Which Format Is Better for Photos?</a></li>
+                <li><a href="#logos">Which Format Is Better for Logos?</a></li>
+                <li><a href="#conversion">JPG and PNG Conversion</a></li>
+                <li><a href="#websites">JPG vs PNG for Websites</a></li>
+                <li><a href="#screenshots">JPG vs PNG for Screenshots</a></li>
+                <li><a href="#webp">What About WebP?</a></li>
+                <li><a href="#choose">How to Choose Between JPG and PNG</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+
+        </div>
+
+
+        <h2 id="what-is-jpg">What Is JPG?</h2>
 
         <p>
             JPG, also written as JPEG, is a widely used image format. It is
@@ -439,12 +535,12 @@ footer p {
         </p>
 
         <p>
-            For everyday photos, the visual difference can be small when a
-            suitable quality setting is used.
+            For everyday photographs, the visual difference can be small when
+            an appropriate quality setting is used.
         </p>
 
 
-        <h2>What Is PNG?</h2>
+        <h2 id="what-is-png">What Is PNG?</h2>
 
         <p>
             PNG is an image format that supports lossless compression and
@@ -452,9 +548,9 @@ footer p {
         </p>
 
         <p>
-            Because PNG can preserve image data without the same type of lossy
-            compression used by JPG, it is commonly useful for graphics where
-            sharp edges and accurate details are important.
+            Because PNG can preserve image data through lossless compression,
+            it is commonly useful for graphics where sharp edges and accurate
+            details are important.
         </p>
 
         <p>
@@ -463,60 +559,66 @@ footer p {
         </p>
 
 
-        <h2>JPG vs PNG: Main Differences</h2>
+        <h2 id="main-differences">JPG vs PNG: Main Differences</h2>
 
-        <table class="compare-table">
+        <div class="table-wrap">
 
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>JPG</th>
-                    <th>PNG</th>
-                </tr>
-            </thead>
+            <table class="compare-table">
 
-            <tbody>
-                <tr>
-                    <td>Compression</td>
-                    <td>Usually lossy</td>
-                    <td>Lossless</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>JPG</th>
+                        <th>PNG</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td>Transparency</td>
-                    <td>Not supported</td>
-                    <td>Supported</td>
-                </tr>
+                <tbody>
 
-                <tr>
-                    <td>Photographs</td>
-                    <td>Usually a good choice</td>
-                    <td>Can work, but may produce larger files</td>
-                </tr>
+                    <tr>
+                        <td>Compression</td>
+                        <td>Usually lossy</td>
+                        <td>Lossless</td>
+                    </tr>
 
-                <tr>
-                    <td>Logos and graphics</td>
-                    <td>Can work for some uses</td>
-                    <td>Often a useful choice</td>
-                </tr>
+                    <tr>
+                        <td>Transparency</td>
+                        <td>Not supported</td>
+                        <td>Supported</td>
+                    </tr>
 
-                <tr>
-                    <td>File size</td>
-                    <td>Often smaller for photos</td>
-                    <td>Can be larger depending on the image</td>
-                </tr>
+                    <tr>
+                        <td>Photographs</td>
+                        <td>Usually a practical choice</td>
+                        <td>Can work, but may produce larger files</td>
+                    </tr>
 
-                <tr>
-                    <td>Repeated lossy editing</td>
-                    <td>Can reduce quality</td>
-                    <td>Lossless compression avoids this type of quality loss</td>
-                </tr>
-            </tbody>
+                    <tr>
+                        <td>Logos and graphics</td>
+                        <td>Can work for some uses</td>
+                        <td>Often useful for graphics and transparency</td>
+                    </tr>
 
-        </table>
+                    <tr>
+                        <td>File size</td>
+                        <td>Often smaller for photographs</td>
+                        <td>Can be larger depending on the image</td>
+                    </tr>
+
+                    <tr>
+                        <td>Repeated lossy editing</td>
+                        <td>Can reduce image quality</td>
+                        <td>Lossless compression avoids this type of quality loss</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
 
-        <h2>Which Format Is Better for Photos?</h2>
+        <h2 id="photos">Which Format Is Better for Photos?</h2>
 
         <p>
             For most ordinary photographs, JPG is often a practical option.
@@ -530,34 +632,36 @@ footer p {
         </p>
 
         <p>
-            The ideal JPG quality still depends on the image and its intended use.
-            Excessive compression can make details look soft or create visible
-            artifacts.
+            The appropriate JPG quality still depends on the image and its
+            intended use. Excessive compression can make details look soft
+            or create visible compression artifacts.
         </p>
 
         <p>
             If your JPG files are larger than necessary, you can use the
-            <a href="image-compressor.html">Image Compressor</a>
+            <a href="https://quickpixeltools.github.io/image-compressor.html">
+                Image Compressor
+            </a>
             to reduce their file size.
         </p>
 
 
-        <h2>Which Format Is Better for Logos?</h2>
+        <h2 id="logos">Which Format Is Better for Logos?</h2>
 
         <p>
-            PNG is often useful for logos, particularly when the logo needs a
-            transparent background.
+            PNG is often useful for logos, particularly when the logo needs
+            a transparent background.
         </p>
 
         <p>
             For example, a logo may need to appear on both a white and a dark
-            website background. A transparent PNG can allow the background behind
-            the logo to remain visible.
+            website background. A transparent PNG can allow the background
+            behind the logo to remain visible.
         </p>
 
         <p>
-            JPG cannot store transparency, so it is not ideal when a transparent
-            background is required.
+            JPG cannot store transparency, so it is not suitable when a
+            transparent background is required.
         </p>
 
 
@@ -565,7 +669,7 @@ footer p {
 
         <p>
             Lossless compression is useful, but it does not automatically mean
-            the file will be smaller.
+            that the resulting file will be smaller.
         </p>
 
         <p>
@@ -574,14 +678,14 @@ footer p {
         </p>
 
         <p>
-            Therefore, "better quality" and "smaller file" are separate goals.
-            The correct format depends on what matters most for the particular
+            Therefore, image quality and file size are separate considerations.
+            The appropriate format depends on what matters most for the particular
             image.
         </p>
 
         <p>
             For more information about reducing image file size, see:
-            <a href="how-to-reduce-image-file-size.html">
+            <a href="https://quickpixeltools.github.io/how-to-reduce-image-file-size.html">
                 How to Reduce Image File Size Without Losing Too Much Quality
             </a>.
         </p>
@@ -590,7 +694,7 @@ footer p {
         <h2>When Should You Choose JPG?</h2>
 
         <p>
-            JPG may be a good choice when:
+            JPG may be a practical choice when:
         </p>
 
         <ul>
@@ -605,7 +709,7 @@ footer p {
         <h2>When Should You Choose PNG?</h2>
 
         <p>
-            PNG may be a better choice when:
+            PNG may be useful when:
         </p>
 
         <ul>
@@ -617,7 +721,7 @@ footer p {
         </ul>
 
 
-        <h2>What Happens When You Convert JPG to PNG?</h2>
+        <h2 id="conversion">What Happens When You Convert JPG to PNG?</h2>
 
         <p>
             Converting a JPG image to PNG changes the file format, but it does
@@ -626,12 +730,13 @@ footer p {
         </p>
 
         <p>
-            The resulting PNG can be useful if you need PNG features such as
-            transparency for later editing, but simply converting a JPG to PNG
-            does not magically improve the original image quality.
+            The resulting PNG can be useful if you need PNG features for a later
+            workflow, but simply converting a JPG to PNG does not improve the
+            original image quality.
         </p>
 
-        <a href="jpg-to-png.html" class="tool-link">
+        <a href="https://quickpixeltools.github.io/jpg-to-png.html"
+           class="tool-link">
             Convert JPG to PNG
         </a>
 
@@ -645,21 +750,22 @@ footer p {
 
         <p>
             However, JPG does not support transparency. If the original PNG has
-            transparent areas, those areas need to be represented by a solid
-            background in the JPG.
+            transparent areas, those areas need to be represented by a background
+            in the JPG.
         </p>
 
         <p>
-            JPG conversion also introduces lossy compression, depending on the
-            quality setting used.
+            JPG conversion also uses a lossy format, so some image information
+            may be discarded depending on the quality setting.
         </p>
 
-        <a href="png-to-jpg.html" class="tool-link">
+        <a href="https://quickpixeltools.github.io/png-to-jpg.html"
+           class="tool-link">
             Convert PNG to JPG
         </a>
 
 
-        <h2>JPG vs PNG for Websites</h2>
+        <h2 id="websites">JPG vs PNG for Websites</h2>
 
         <p>
             When using images on a website, both visual quality and file size
@@ -667,8 +773,8 @@ footer p {
         </p>
 
         <p>
-            Large image files can require more data to download. On image-heavy
-            pages, using unnecessarily large files can make the page less efficient.
+            Large image files require more data to download. On image-heavy
+            pages, unnecessarily large files can make the page less efficient.
         </p>
 
         <p>
@@ -678,18 +784,18 @@ footer p {
 
         <p>
             There is no rule that every website should use only JPG or only PNG.
-            The best choice depends on the individual image.
+            The appropriate choice depends on the individual image and its purpose.
         </p>
 
         <p>
             You can also learn more about image compression in our guide:
-            <a href="how-to-compress-an-image.html">
+            <a href="https://quickpixeltools.github.io/how-to-compress-an-image.html">
                 How to Compress an Image Without Losing Too Much Quality
             </a>.
         </p>
 
 
-        <h2>JPG vs PNG for Screenshots</h2>
+        <h2 id="screenshots">JPG vs PNG for Screenshots</h2>
 
         <p>
             Screenshots often contain text, interface elements and sharp lines.
@@ -698,9 +804,9 @@ footer p {
         </p>
 
         <p>
-            However, if the screenshot is primarily photographic or file size
-            is more important than perfect preservation, JPG may also be suitable
-            for some situations.
+            If a screenshot is mainly photographic or reducing file size is more
+            important than preserving every detail, JPG may also be suitable in
+            some situations.
         </p>
 
 
@@ -712,8 +818,8 @@ footer p {
 
         <p>
             Converting JPG to PNG does not recover quality that was already lost
-            from the JPG. Converting PNG to JPG introduces a lossy format and may
-            remove some image information depending on the quality setting.
+            from the JPG. Converting PNG to JPG changes the image to a lossy format
+            and may remove some image information depending on the quality setting.
         </p>
 
         <div class="warning-box">
@@ -724,13 +830,14 @@ footer p {
         </div>
 
 
-        <h2>How to Choose Between JPG and PNG</h2>
+        <h2 id="choose">How to Choose Between JPG and PNG</h2>
 
         <p>
-            A simple decision process can help:
+            A simple decision process can help you choose a suitable format:
         </p>
 
         <ol>
+
             <li>
                 If the image is mainly a photograph, consider JPG.
             </li>
@@ -751,39 +858,43 @@ footer p {
             <li>
                 Compare the final image visually before publishing or sharing it.
             </li>
+
         </ol>
 
 
-        <h2>What About WebP?</h2>
+        <h2 id="webp">What About WebP?</h2>
 
         <p>
-            JPG and PNG are not the only options. WebP is another modern image
-            format that can provide efficient compression for many types of web
-            images.
+            JPG and PNG are not the only image formats available for web use.
+            WebP is another image format designed to provide efficient compression
+            for many types of images.
         </p>
 
         <p>
-            Depending on the image and settings, WebP can sometimes provide a
+            Depending on the image and settings, WebP can sometimes produce a
             smaller file than JPG or PNG while maintaining useful visual quality.
         </p>
 
         <p>
-            If you are preparing images specifically for a website, it can be
-            worth testing WebP as another option.
+            If you are preparing images specifically for a website, testing WebP
+            alongside JPG and PNG can help you compare the resulting file size
+            and visual appearance.
         </p>
 
         <p>
             For a detailed comparison between JPG and WebP, read:
-            <a href="jpg-vs-webp.html">
+            <a href="https://quickpixeltools.github.io/jpg-vs-webp.html">
                 JPG vs WebP: Which Image Format Is Better?
             </a>.
         </p>
 
-        <a href="jpg-to-webp.html" class="tool-link">
+        <a href="https://quickpixeltools.github.io/jpg-to-webp.html"
+           class="tool-link">
             JPG to WebP
         </a>
 
-        <a href="webp-to-jpg.html" class="tool-link">
+        <a href="https://quickpixeltools.github.io/webp-to-jpg.html"
+           class="tool-link">
             WebP to JPG
         </a>
 
@@ -791,6 +902,7 @@ footer p {
         <h2>Tips for Choosing the Right Image Format</h2>
 
         <ul>
+
             <li>
                 Start with the original image instead of repeatedly converting
                 an already compressed copy.
@@ -816,87 +928,135 @@ footer p {
             <li>
                 Keep an original backup before making major format changes.
             </li>
+
         </ul>
 
         <div class="tip-box">
-            <strong>Simple rule:</strong>
+
+            <strong>Simple rule:</strong><br>
+
             Photos → usually JPG.<br>
+
             Transparent logos and graphics → often PNG.<br>
+
             Web-focused images → consider WebP as well.
+
         </div>
 
 
-        <h2>Frequently Asked Questions</h2>
+        <section id="faq" class="faq-section">
 
-        <div class="faq">
-            <h3>What is the difference between JPG and PNG?</h3>
-            <p>
-                JPG commonly uses lossy compression and is often suitable for
-                photographs. PNG supports lossless compression and transparency,
-                making it useful for graphics, screenshots and logos.
-            </p>
-        </div>
+            <h2>Frequently Asked Questions</h2>
 
-        <div class="faq">
-            <h3>Is JPG smaller than PNG?</h3>
-            <p>
-                JPG is often smaller than PNG for photographs, but the actual
-                file size depends on the image, dimensions and compression settings.
-            </p>
-        </div>
+            <div class="faq">
 
-        <div class="faq">
-            <h3>Is PNG better quality than JPG?</h3>
-            <p>
-                PNG can preserve image data through lossless compression, while
-                JPG can discard some information during lossy compression.
-                Whether PNG is better depends on the image and its purpose.
-            </p>
-        </div>
+                <h3>What is the difference between JPG and PNG?</h3>
 
-        <div class="faq">
-            <h3>Does PNG support transparency?</h3>
-            <p>
-                Yes. PNG supports transparency, which is one reason it is commonly
-                used for logos, icons and graphics.
-            </p>
-        </div>
+                <p>
+                    JPG commonly uses lossy compression and is often suitable
+                    for photographs. PNG supports lossless compression and
+                    transparency, making it useful for graphics, screenshots
+                    and logos.
+                </p>
 
-        <div class="faq">
-            <h3>Is JPG or PNG better for photographs?</h3>
-            <p>
-                JPG is commonly a practical choice for photographs because it can
-                store photographic images efficiently with relatively small files.
-            </p>
-        </div>
+            </div>
 
-        <div class="faq">
-            <h3>Is JPG or PNG better for logos?</h3>
-            <p>
-                PNG is often useful for logos when transparency or crisp graphic
-                details are important.
-            </p>
-        </div>
 
-        <div class="faq">
-            <h3>Can I convert JPG to PNG?</h3>
-            <p>
-                Yes. You can use the
-                <a href="jpg-to-png.html">JPG to PNG converter</a>.
-                Remember that conversion does not restore image information
-                already lost from the original JPG.
-            </p>
-        </div>
+            <div class="faq">
 
-        <div class="faq">
-            <h3>Can I convert PNG to JPG?</h3>
-            <p>
-                Yes. You can use the
-                <a href="png-to-jpg.html">PNG to JPG converter</a>.
-                Because JPG does not support transparency, transparent areas
-                need to be represented by a background.
-            </p>
-        </div>
+                <h3>Is JPG smaller than PNG?</h3>
+
+                <p>
+                    JPG is often smaller than PNG for photographs, but the actual
+                    file size depends on the image, dimensions and compression
+                    settings.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Is PNG better quality than JPG?</h3>
+
+                <p>
+                    PNG can preserve image data through lossless compression,
+                    while JPG can discard some information during lossy compression.
+                    Whether PNG is better depends on the image and its purpose.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Does PNG support transparency?</h3>
+
+                <p>
+                    Yes. PNG supports transparency, which is one reason it is
+                    commonly used for logos, icons and graphics.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Is JPG or PNG better for photographs?</h3>
+
+                <p>
+                    JPG is commonly a practical choice for photographs because
+                    it can store photographic images efficiently with relatively
+                    small file sizes.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Is JPG or PNG better for logos?</h3>
+
+                <p>
+                    PNG is often useful for logos when transparency or crisp
+                    graphic details are important.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Can I convert JPG to PNG?</h3>
+
+                <p>
+                    Yes. You can use the
+                    <a href="https://quickpixeltools.github.io/jpg-to-png.html">
+                        JPG to PNG converter
+                    </a>.
+                    Remember that conversion does not restore image information
+                    already lost from the original JPG.
+                </p>
+
+            </div>
+
+
+            <div class="faq">
+
+                <h3>Can I convert PNG to JPG?</h3>
+
+                <p>
+                    Yes. You can use the
+                    <a href="https://quickpixeltools.github.io/png-to-jpg.html">
+                        PNG to JPG converter
+                    </a>.
+                    Because JPG does not support transparency, transparent areas
+                    need to be represented by a background.
+                </p>
+
+            </div>
+
+        </section>
 
 
         <div class="related-tools">
@@ -908,29 +1068,37 @@ footer p {
             </p>
 
             <p>
-                <a href="image-compressor.html" class="tool-link">
+
+                <a href="https://quickpixeltools.github.io/image-compressor.html"
+                   class="tool-link">
                     Image Compressor
                 </a>
 
-                <a href="image-resizer.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/image-resizer.html"
+                   class="tool-link">
                     Image Resizer
                 </a>
 
-                <a href="jpg-to-png.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/jpg-to-png.html"
+                   class="tool-link">
                     JPG to PNG
                 </a>
 
-                <a href="png-to-jpg.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/png-to-jpg.html"
+                   class="tool-link">
                     PNG to JPG
                 </a>
 
-                <a href="jpg-to-webp.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/jpg-to-webp.html"
+                   class="tool-link">
                     JPG to WebP
                 </a>
 
-                <a href="webp-to-jpg.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/webp-to-jpg.html"
+                   class="tool-link">
                     WebP to JPG
                 </a>
+
             </p>
 
         </div>
@@ -941,24 +1109,34 @@ footer p {
             <h2>More Helpful Image Guides</h2>
 
             <p>
-                Continue learning about image compression, file size and
-                different image formats with these related guides:
+                Continue learning about image compression, file size and image
+                formats with these related guides:
             </p>
 
             <p>
-                <a href="how-to-compress-an-image.html" class="tool-link">
+
+                <a href="https://quickpixeltools.github.io/how-to-compress-an-image.html"
+                   class="tool-link">
                     How to Compress an Image
                 </a>
 
-                <a href="how-to-reduce-image-file-size.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/how-to-reduce-image-file-size.html"
+                   class="tool-link">
                     How to Reduce Image File Size
                 </a>
 
-                <a href="jpg-vs-webp.html" class="tool-link">
+                <a href="https://quickpixeltools.github.io/jpg-vs-webp.html"
+                   class="tool-link">
                     JPG vs WebP
                 </a>
+
             </p>
 
+        </div>
+
+
+        <div class="back-top">
+            <a href="#top">↑ Back to top</a>
         </div>
 
     </article>
@@ -969,11 +1147,11 @@ footer p {
 <footer>
 
     <p>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
+        <a href="https://quickpixeltools.github.io/">Home</a>
+        <a href="https://quickpixeltools.github.io/about.html">About</a>
+        <a href="https://quickpixeltools.github.io/contact.html">Contact</a>
+        <a href="https://quickpixeltools.github.io/privacy.html">Privacy</a>
+        <a href="https://quickpixeltools.github.io/terms.html">Terms</a>
     </p>
 
     <p>
