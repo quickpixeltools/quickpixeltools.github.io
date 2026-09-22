@@ -51,6 +51,8 @@ body {
     line-height: 1.7;
 }
 
+/* Header */
+
 header {
     background: #ffffff;
     padding: 18px 7%;
@@ -60,7 +62,10 @@ header {
 .logo {
     font-size: 24px;
     font-weight: 700;
+    color: #111827;
 }
+
+/* Navigation */
 
 nav {
     background: #ffffff;
@@ -73,7 +78,7 @@ nav a {
     color: #374151;
     text-decoration: none;
     font-weight: 600;
-    margin: 0 10px;
+    margin: 0 8px;
     display: inline-block;
     padding: 5px;
 }
@@ -82,11 +87,15 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Main */
+
 main {
     max-width: 900px;
     margin: 0 auto;
     padding: 50px 20px 70px;
 }
+
+/* Hero */
 
 .hero {
     text-align: center;
@@ -97,6 +106,7 @@ main {
     font-size: 42px;
     line-height: 1.2;
     margin: 0 0 12px;
+    color: #111827;
 }
 
 .hero p {
@@ -106,21 +116,30 @@ main {
     margin: 0 auto;
 }
 
+/* Content */
+
 .content {
     background: #ffffff;
     padding: 40px;
     border-radius: 18px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
 }
 
 .content h2 {
-    margin-top: 30px;
+    margin-top: 32px;
     margin-bottom: 10px;
     line-height: 1.3;
+    color: #111827;
 }
 
 .content h2:first-of-type {
     margin-top: 0;
+}
+
+.content h3 {
+    color: #111827;
+    margin-top: 25px;
+    margin-bottom: 10px;
 }
 
 .content p {
@@ -137,18 +156,44 @@ main {
     margin-bottom: 10px;
 }
 
-.updated {
-    text-align: center;
-    color: #777 !important;
-    font-size: 14px;
-    margin-top: -15px;
-    margin-bottom: 35px !important;
-}
-
 .content a {
     color: #111827;
     font-weight: 700;
 }
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Updated Date */
+
+.updated {
+    text-align: center;
+    color: #777 !important;
+    font-size: 14px;
+    margin-top: -5px;
+    margin-bottom: 35px !important;
+}
+
+/* Important Information Box */
+
+.policy-note {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 25px 0;
+}
+
+.policy-note p {
+    margin-bottom: 10px;
+}
+
+.policy-note p:last-child {
+    margin-bottom: 0;
+}
+
+/* Back Link */
 
 .back-link {
     text-align: center;
@@ -164,6 +209,8 @@ main {
 .back-link a:hover {
     text-decoration: underline;
 }
+
+/* Footer */
 
 footer {
     background: #ffffff;
@@ -187,6 +234,8 @@ footer {
     text-decoration: underline;
 }
 
+/* Mobile */
+
 @media (max-width: 600px) {
 
     .hero h1 {
@@ -198,7 +247,7 @@ footer {
     }
 
     nav a {
-        margin: 0 5px;
+        margin: 3px 4px;
         font-size: 14px;
     }
 
@@ -227,6 +276,7 @@ footer {
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </nav>
 
@@ -238,7 +288,7 @@ footer {
 
 <p>
 Learn how QuickPixel Tools handles information when you
-use our website and online image tools.
+visit our website and use our browser-based image tools.
 </p>
 
 </section>
@@ -246,16 +296,23 @@ use our website and online image tools.
 <section class="content">
 
 <p class="updated">
-Last updated: August 28, 2026
+Last updated: September 21, 2026
 </p>
 
 <h2>1. Introduction</h2>
 
 <p>
 Welcome to QuickPixel Tools. We respect your privacy and aim
-to keep our website and online tools simple and transparent.
-This Privacy Policy explains how information may be handled
-when you visit or use QuickPixel Tools.
+to explain clearly how information may be handled when you
+visit or use this website.
+</p>
+
+<p>
+This Privacy Policy describes the types of information that
+may be provided directly to QuickPixel Tools, how our browser-
+based image tools handle selected files, and how cookies,
+advertising services and other third-party services may
+operate on the website.
 </p>
 
 <h2>2. Images Processed by Our Tools</h2>
@@ -267,153 +324,243 @@ inside your web browser.
 </p>
 
 <p>
-The images selected for these tools do not need to be uploaded
-to a QuickPixel Tools server for the basic processing provided
-by these tools.
+For the basic processing provided by these tools, selected
+images do not need to be uploaded to a QuickPixel Tools server.
+The processing is performed by your browser using your device's
+available resources.
 </p>
 
 <p>
 Because processing takes place on your device, performance may
-depend on your browser, device and the size of the selected
-image.
+depend on your browser, device capabilities, available memory
+and the size and dimensions of the selected image.
 </p>
 
-<h2>3. Information You Provide</h2>
+<p>
+QuickPixel Tools does not claim that every future feature or
+third-party service will operate entirely in the browser.
+If the technical design of a tool changes, this Privacy Policy
+may be updated accordingly.
+</p>
+
+<h2>3. Information You Provide Directly</h2>
 
 <p>
 If you contact QuickPixel Tools by email, we may receive
-information that you choose to provide, such as your email
-address, name and the contents of your message.
+information that you choose to provide, such as your name,
+email address and the contents of your message.
 </p>
 
 <p>
-We may use this information to respond to questions, provide
-support, review suggestions and address technical issues.
+We may use information provided directly to us to respond to
+questions, provide support, review suggestions, investigate
+reported technical problems and communicate about your request.
+</p>
+
+<p>
+We do not require you to create an account in order to use the
+basic image tools currently available on the website.
 </p>
 
 <h2>4. Cookies and Similar Technologies</h2>
 
 <p>
 QuickPixel Tools may use cookies, local storage or similar
-technologies for website functionality, analytics and
-advertising purposes.
+technologies when they are required for website functionality,
+advertising, security, measurement or other services used on
+the website.
 </p>
 
 <p>
-Third-party services used on the website may also use cookies
-or similar technologies according to their own policies.
+Third-party services integrated into the website may also use
+cookies, web beacons, IP addresses or similar technologies as
+part of providing their services.
+</p>
+
+<p>
+The technologies used and the information processed may depend
+on which services are active on the website and on your
+browser, device, location and applicable consent choices.
 </p>
 
 <h2>5. Google AdSense and Advertising</h2>
 
 <p>
-QuickPixel Tools may use Google AdSense or other advertising
-services to display advertisements on the website.
+QuickPixel Tools uses Google AdSense advertising services or
+may use them when advertising is active on the website.
+Google and its advertising partners may use cookies and
+similar technologies to serve, measure and personalize
+advertising, subject to applicable settings and requirements.
 </p>
 
 <p>
-Advertising providers may use cookies or similar technologies
-to provide, personalize, measure or limit advertisements.
-The information collected by advertising providers is handled
-according to their applicable privacy policies and terms.
+Third parties, including Google, may place and read cookies
+on your browser or use web beacons, IP addresses or similar
+identifiers as a result of advertising services being used on
+the website.
 </p>
 
 <p>
-Where required, advertising preferences and consent choices
-may be presented to visitors through applicable Google or
-third-party privacy and consent tools.
-</p>
-
-<h2>6. Google Advertising Cookies</h2>
-
-<p>
-If Google advertising services are active on QuickPixel Tools,
-Google may use cookies to help serve and measure advertisements
-shown on this website.
+For information about how Google uses information from websites
+that use its services, please read
+<a href="https://policies.google.com/technologies/partner-sites"
+target="_blank"
+rel="noopener noreferrer">
+How Google uses information from sites or apps that use Google services
+</a>.
 </p>
 
 <p>
-Visitors may be able to manage their advertising preferences
-through Google's available advertising and privacy controls.
+For more information about Google's advertising practices,
+cookies and available controls, you can also review
+<a href="https://policies.google.com/technologies/ads"
+target="_blank"
+rel="noopener noreferrer">
+Google Advertising
+</a>.
 </p>
 
-<h2>7. Analytics and Third-Party Services</h2>
+<h2>6. Advertising Preferences</h2>
 
 <p>
-QuickPixel Tools may use third-party services for purposes
-such as website analytics, advertising, security, hosting or
-other website functionality.
+Depending on your location, browser and applicable advertising
+settings, you may have options to control or limit personalized
+advertising.
 </p>
 
 <p>
-These third-party providers may collect or process information
+You can review and manage available Google advertising
+preferences through
+<a href="https://adssettings.google.com/"
+target="_blank"
+rel="noopener noreferrer">
+Google Ads Settings
+</a>.
+</p>
+
+<p>
+Turning off personalized advertising does not necessarily mean
+that you will stop seeing advertisements. You may still receive
+ads based on contextual or other permitted factors.
+</p>
+
+<h2>7. Consent and Regional Privacy Requirements</h2>
+
+<p>
+Where applicable, QuickPixel Tools may display privacy or
+consent choices to visitors before certain advertising or
+similar technologies are used.
+</p>
+
+<p>
+For visitors in regions where consent is required, applicable
+consent mechanisms may determine whether certain advertising
+or data-processing features are available.
+</p>
+
+<p>
+Google's advertising products have specific consent requirements
+for users in the European Economic Area, the United Kingdom
+and Switzerland. These requirements may include the use of a
+Google-certified consent management platform when applicable.
+</p>
+
+<h2>8. Analytics and Other Third-Party Services</h2>
+
+<p>
+QuickPixel Tools may use third-party services for functions such
+as website analytics, advertising, security, hosting or other
+website functionality when those services are enabled.
+</p>
+
+<p>
+Third-party providers may collect or process information
 according to their own privacy policies, terms and applicable
 laws.
 </p>
 
-<h2>8. Information Security</h2>
+<p>
+QuickPixel Tools does not control the privacy practices of
+independent third-party services. Visitors should review the
+applicable policies of those providers when using services
+provided by them.
+</p>
+
+<h2>9. Information Security</h2>
 
 <p>
-We aim to use reasonable measures to protect information that
-is provided directly to us.
+We take reasonable steps to protect information that is
+provided directly to QuickPixel Tools.
 </p>
 
 <p>
-However, no method of transmission over the internet or
-electronic storage can be guaranteed to be completely secure.
+However, no method of transmission over the internet or method
+of electronic storage can be guaranteed to be completely
+secure. For this reason, absolute security cannot be promised.
 </p>
 
-<h2>9. Children's Privacy</h2>
+<h2>10. Children's Privacy</h2>
 
 <p>
-QuickPixel Tools does not knowingly collect personal
+QuickPixel Tools is not intended to knowingly collect personal
 information from children.
 </p>
 
 <p>
 If you believe that a child has provided personal information
-to us, please contact us so that we can review the situation.
+directly to QuickPixel Tools, please contact us so that we can
+review the situation and take appropriate steps where required.
 </p>
 
-<h2>10. Links to Other Websites</h2>
+<h2>11. Links to Other Websites</h2>
 
 <p>
-QuickPixel Tools may contain links to other websites or
-third-party services.
+QuickPixel Tools may contain links to websites or services
+operated by third parties.
 </p>
 
 <p>
-We are not responsible for the privacy practices, security or
-content of external websites. We recommend reviewing the
-privacy policies of external services before using them.
+External websites have their own privacy policies, terms and
+practices. QuickPixel Tools is not responsible for the privacy
+practices, security or content of independent external websites.
+Visitors should review the relevant policies before providing
+personal information to those services.
 </p>
 
-<h2>11. Your Choices</h2>
+<h2>12. Your Choices and Privacy Rights</h2>
 
 <p>
 Depending on your location and applicable laws, you may have
-certain rights regarding personal information and advertising
-preferences.
+certain rights regarding personal information, including rights
+to access, correct, delete, restrict or otherwise control
+certain information.
 </p>
 
 <p>
-You can also contact us if you have questions about information
-you have provided directly to QuickPixel Tools.
+The availability and scope of these rights depend on applicable
+law and the circumstances in which information is processed.
 </p>
 
-<h2>12. Changes to This Privacy Policy</h2>
+<p>
+If you have provided information directly to QuickPixel Tools
+and have a privacy-related request, you can contact us through
+our <a href="contact.html">Contact page</a>.
+</p>
+
+<h2>13. Changes to This Privacy Policy</h2>
 
 <p>
 We may update this Privacy Policy when our website, tools,
-advertising services or practices change.
+advertising services, third-party services or privacy practices
+change.
 </p>
 
 <p>
-Any updated version will be published on this page with a
-revised "Last updated" date.
+When changes are made, the updated version will be published
+on this page and the "Last updated" date will be revised.
 </p>
 
-<h2>13. Contact Us</h2>
+<h2>14. Contact Us</h2>
 
 <p>
 If you have questions about this Privacy Policy or how
@@ -424,8 +571,25 @@ QuickPixel Tools handles information, please visit our
 <p>
 You can also return to the
 <a href="index.html">QuickPixel Tools home page</a>
-to use our free image tools.
+to use the available image tools.
 </p>
+
+<div class="policy-note">
+
+<p>
+<strong>Important:</strong>
+This Privacy Policy describes the current website practices
+and may be updated if new tools, analytics services,
+advertising technologies or other features are added.
+</p>
+
+<p>
+If a future feature changes how personal information or files
+are handled, the relevant privacy information should be
+updated before that feature is introduced.
+</p>
+
+</div>
 
 </section>
 
@@ -447,6 +611,7 @@ to use our free image tools.
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
+<a href="terms.html">Terms</a>
 
 </div>
 
