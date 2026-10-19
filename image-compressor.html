@@ -32,7 +32,7 @@
                 "name": "Which image formats does the compressor support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "QuickPixel Tools supports JPEG, PNG and WebP images. The output format is kept the same as the selected input format."
+                    "text": "The tool accepts JPEG/JPG, PNG and WebP images. The processed output stays in the selected image format."
                 }
             },
             {
@@ -40,7 +40,7 @@
                 "name": "Does the compressor upload my image to a server?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. The compression process runs in your browser. QuickPixel Tools does not need to upload the selected image to its own server."
+                    "text": "The basic compression operation runs in your browser and does not need to upload the selected image to a QuickPixel Tools image-processing server."
                 }
             },
             {
@@ -48,7 +48,7 @@
                 "name": "Will image dimensions change after compression?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. This compressor keeps the original image width and height. Use the Image Resizer if you also need to change the dimensions."
+                    "text": "No. This tool keeps the original width and height. Use the Image Resizer if you need different dimensions."
                 }
             },
             {
@@ -56,7 +56,7 @@
                 "name": "Does the quality setting work for PNG images?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "PNG is a lossless image format, so the quality slider does not control PNG compression in the same way it does for JPEG or WebP. A PNG file may therefore become only slightly smaller or may not become smaller."
+                    "text": "No, not in the same way as JPEG or WebP. PNG is lossless, so this tool may make a PNG only slightly smaller—or may not reduce its size."
                 }
             },
             {
@@ -64,14 +64,15 @@
                 "name": "Can compression reduce image quality?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "JPEG and WebP compression can reduce visual quality depending on the selected quality level. Higher quality settings usually preserve more detail but may produce larger files."
-                },
+                    "text": "JPEG and WebP quality settings can affect visual detail. Lower settings may create smaller files but can also make artifacts more noticeable, so inspect the output before using it."
+                }
+            },
             {
                 "@type": "Question",
-                "name": "Why did my compressed image not become much smaller?",
+                "name": "Why is the processed file larger than the original?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Some images are already highly compressed or contain content that does not compress efficiently. PNG files in particular may show little size reduction because PNG is lossless."
+                    "text": "Some images are already stored efficiently, and re-encoding does not guarantee a smaller file. If the result is larger, keep the original or try a different quality setting."
                 }
             }
         ]
@@ -671,421 +672,149 @@
 
 <section class="content-section">
     <div class="container content-inner">
-
-        <h2>What Does Image Compression Do?</h2>
-
+        <h2>What This Compressor Changes</h2>
         <p>
-            Image compression reduces the amount of data stored in an image file.
-            A smaller file can be easier to upload, share, store and use on websites.
-            The amount of reduction depends on the image format, its original file size,
-            the image content and the compression settings.
+            This tool re-encodes a JPG/JPEG, PNG or WebP image in the same format.
+            It keeps the image's pixel width and height; it does not resize or crop it.
+            The result panel reports the original size, processed size, dimensions,
+            output format and whether the file became smaller or larger.
         </p>
-
         <p>
-            QuickPixel Tools processes the selected image inside your web browser.
-            The compressor keeps the original width and height instead of resizing the image.
-            If you need to change the dimensions, use the
-            <a href="https://quickpixeltools.github.io/image-resizer.html">
-                Image Resizer
-            </a>.
+            If the dimensions are too large for your use, use the
+            <a href="https://quickpixeltools.github.io/image-resizer.html">Image Resizer</a>.
+            Compression and resizing solve different problems: compression changes
+            how image data is stored, while resizing changes the number of pixels.
         </p>
-
     </div>
 </section>
 
-
 <section class="content-section">
     <div class="container content-inner">
-
-        <h2>How to Compress an Image</h2>
-
+        <h2>How to Use the Compressor</h2>
         <ol>
-            <li>Click the image selection field and choose a JPG, PNG or WebP image.</li>
-            <li>Check the selected format and adjust the quality setting when applicable.</li>
-            <li>Click <strong>Compress Image</strong>.</li>
-            <li>Review the original and new file sizes.</li>
-            <li>Click <strong>Download Compressed Image</strong> to save the result.</li>
+            <li>Select a JPG/JPEG, PNG or WebP image from your device.</li>
+            <li>For JPEG and WebP, start with the default 70% quality setting. PNG does not use this slider in the same way.</li>
+            <li>Select <strong>Compress Image</strong> and wait for the result panel.</li>
+            <li>Compare the original and processed file sizes. Open the result and inspect fine details before using it.</li>
+            <li>Download the result only if it meets your size and visual-quality needs. Keep your original file as a backup.</li>
         </ol>
-
         <div class="info-box">
-
-            <strong>Important:</strong>
-
-            The compressor does not automatically resize your image.
-            A very large image can still have a large file size after compression
-            because its pixel dimensions remain unchanged.
-
+            <strong>Example:</strong> if a 2 MB image must fit under 500 KB, it needs to lose at least 75% of its original size. The tool cannot guarantee that reduction for every image. If compression alone is not enough, consider resizing the image as well.
         </div>
-
     </div>
 </section>
 
-
 <section class="content-section">
     <div class="container content-inner">
-
-        <h2>How the Quality Setting Works</h2>
-
+        <h2>Choosing a Quality Setting</h2>
         <p>
-            The quality setting is most useful for JPEG and WebP images.
-            Lower settings generally produce smaller files, while higher settings
-            generally preserve more visual detail.
+            The slider runs from 10% to 100%. These ranges are starting points, not promises about the final file size or visual result:
         </p>
-
-        <h3>80–100%: Higher quality</h3>
-
-        <p>
-            Useful when preserving more image detail is important.
-            The resulting file may be larger.
-        </p>
-
-        <h3>50–79%: Balanced range</h3>
-
-        <p>
-            A middle range can be useful when you want to reduce file size
-            while retaining a reasonable amount of visual detail.
-        </p>
-
-        <h3>10–49%: Stronger compression</h3>
-
-        <p>
-            Lower settings can produce smaller files, but visible artifacts
-            or loss of detail may become more noticeable.
-        </p>
-
-        <h3>What about PNG?</h3>
-
-        <p>
-            PNG uses lossless compression. The quality slider does not work
-            like JPEG or WebP quality control, so changing the slider does not
-            guarantee a smaller PNG file.
-        </p>
-
-    </div>
-</section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>JPG, PNG and WebP: Which Format Matters?</h2>
-
-        <h3>JPG / JPEG</h3>
-
-        <p>
-            JPEG is commonly used for photographs and other images containing
-            many colors. It supports lossy compression, making it possible to
-            reduce file size by adjusting quality.
-        </p>
-
-        <h3>PNG</h3>
-
-        <p>
-            PNG is useful when transparency or lossless image data is important.
-            PNG files may not become significantly smaller through this type of
-            browser-based re-encoding.
-        </p>
-
-        <h3>WebP</h3>
-
-        <p>
-            WebP supports both lossy and lossless compression and is widely
-            supported by modern browsers. Its file size can vary depending
-            on the image and selected quality level.
-        </p>
-
-        <div class="info-box">
-
-            <strong>Choose based on your goal:</strong>
-
-            <ul>
-                <li>Use JPEG when you mainly need efficient photographic images.</li>
-                <li>Use PNG when transparency or lossless output is important.</li>
-                <li>Use WebP when you want a modern web-friendly image format.</li>
-            </ul>
-
-        </div>
-
-    </div>
-</section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>Why Your Image May Not Become Much Smaller</h2>
-
-        <p>
-            Compression does not guarantee the same percentage of size reduction
-            for every image. Some images are already compressed efficiently,
-            while others contain data that does not reduce significantly.
-        </p>
-
-        <p>
-            PNG images can be especially difficult to reduce with a simple
-            quality-based compressor because PNG is lossless. In these cases,
-            changing the image dimensions or choosing another suitable format
-            may have a larger effect on file size.
-        </p>
-
-        <p>
-            For example, if an image is extremely large in pixel dimensions,
-            compression alone may not make it small enough for a website upload.
-            Resizing it first can reduce the amount of image data substantially.
-        </p>
-
-    </div>
-</section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>When Should You Compress an Image?</h2>
-
-        <p>
-            Compressing an image can be useful before uploading it to a website,
-            attaching it to a form, sharing it online or storing many images.
-            Smaller files can require less storage and can be easier to transfer.
-        </p>
-
-        <p>
-            Before downloading the result, compare the new file size with the
-            original and, for important images, visually check the result as well.
-            A smaller file is not always the best choice if too much detail is lost.
-        </p>
-
-    </div>
-</section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>Browser-Based Image Processing</h2>
-
-        <p>
-            QuickPixel Tools performs this image processing in your browser.
-            The selected image is read locally by the web page and processed
-            using browser image and canvas capabilities.
-        </p>
-
-        <p>
-            This means the compressor does not need to send your image to a
-            QuickPixel Tools upload server. However, your browser still loads
-            the QuickPixel Tools website and any third-party resources used by
-            the site, such as advertising services.
-        </p>
-
-        <p>
-            For important or sensitive files, always review the site's privacy
-            information and use a service you trust.
-        </p>
-
-    </div>
-</section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>Tips for Getting a Smaller Image File</h2>
-
         <ul>
-            <li>Use a suitable image format for the type of image you have.</li>
-            <li>For JPEG and WebP, try a balanced quality level instead of automatically choosing the lowest setting.</li>
-            <li>Check the final image visually before using it.</li>
-            <li>If the image dimensions are unnecessarily large, resize it as well as compressing it.</li>
-            <li>Do not expect every PNG image to become substantially smaller.</li>
-            <li>Keep the original image if you may need the highest-quality version later.</li>
+            <li><strong>80–100%:</strong> try this when preserving fine detail matters more than achieving the smallest file.</li>
+            <li><strong>50–79%:</strong> a practical range to test when balancing size and appearance.</li>
+            <li><strong>10–49%:</strong> use carefully; blockiness, ringing or loss of detail may become more visible.</li>
         </ul>
-
+        <p>
+            The best setting depends on the image. Compare the result at its intended display size, and pay particular attention to faces, text, edges and gradients. A smaller file is not automatically a better result.
+        </p>
+        <p>
+            <strong>PNG note:</strong> PNG is lossless, and this tool re-encodes PNG without applying the JPEG/WebP quality slider. A PNG may become only slightly smaller, stay about the same size or even become larger.
+        </p>
     </div>
 </section>
 
+<section class="content-section">
+    <div class="container content-inner">
+        <h2>Why the File May Not Get Smaller</h2>
+        <ul>
+            <li><strong>The image is already compressed:</strong> re-encoding may offer little additional reduction.</li>
+            <li><strong>The file is PNG:</strong> this tool does not apply lossy quality compression to PNG.</li>
+            <li><strong>The quality setting is high:</strong> keeping more detail can result in a larger output.</li>
+            <li><strong>The image has too many pixels for the target:</strong> compression does not change its dimensions.</li>
+        </ul>
+        <p>
+            Check the size comparison shown after processing. If the new file is larger, you do not have to use it—keep the original. If a website or form has a strict file-size limit, try another quality setting and check the actual output rather than assuming a particular percentage reduction.
+        </p>
+    </div>
+</section>
 
 <section class="content-section">
     <div class="container content-inner">
+        <h2>Which Format Should You Use?</h2>
+        <ul>
+            <li><strong>JPEG/JPG:</strong> commonly suitable for photographs; the quality slider controls JPEG encoding.</li>
+            <li><strong>PNG:</strong> useful for transparency and lossless graphics; this compressor may not reduce its size much.</li>
+            <li><strong>WebP:</strong> supports transparency and lossy or lossless encoding; results depend on the image and browser support.</li>
+        </ul>
+        <p>
+            This compressor keeps the selected format; it does not convert JPG to PNG or WebP. To change formats, use the relevant
+            <a href="https://quickpixeltools.github.io/jpg-to-png.html">JPG to PNG Converter</a>,
+            <a href="https://quickpixeltools.github.io/jpg-to-webp.html">JPG to WebP Converter</a> or
+            <a href="https://quickpixeltools.github.io/webp-to-jpg.html">WebP to JPG Converter</a>.
+        </p>
+    </div>
+</section>
 
+<section class="content-section">
+    <div class="container content-inner">
+        <h2>How Your Image Is Processed</h2>
+        <p>
+            The selected image is read by your browser and processed using browser image and canvas features. The basic compression operation does not require the image to be uploaded to a QuickPixel Tools image-processing server.
+        </p>
+        <p>
+            Your browser still loads the website and its resources, which may include third-party services such as advertising. Processing speed and success depend on your device, browser memory and image dimensions; very large images may fail on some devices. For details about website information and advertising, read the <a href="https://quickpixeltools.github.io/privacy.html">Privacy Policy</a>.
+        </p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container content-inner">
         <h2>Related Image Tools</h2>
-
         <div class="related-tools">
-
             <div class="related-card">
-
                 <h3>Image Resizer</h3>
-
-                <p>
-                    Change the width and height of an image in pixels.
-                    This is useful when the image dimensions are too large
-                    even after compression.
-                </p>
-
-                <a href="https://quickpixeltools.github.io/image-resizer.html">
-                    Use Image Resizer →
-                </a>
-
+                <p>Change pixel width and height when compression alone does not make an image small enough for its intended use.</p>
+                <a href="https://quickpixeltools.github.io/image-resizer.html">Use Image Resizer →</a>
             </div>
-
-
             <div class="related-card">
-
                 <h3>JPG to PNG Converter</h3>
-
-                <p>
-                    Convert a JPG or JPEG image to PNG when you need a PNG
-                    output format, including situations where lossless output
-                    is useful.
-                </p>
-
-                <a href="https://quickpixeltools.github.io/jpg-to-png.html">
-                    Use JPG to PNG Converter →
-                </a>
-
+                <p>Convert a JPG/JPEG file to PNG when a PNG output format is specifically required. Conversion will not restore detail lost from the original JPG.</p>
+                <a href="https://quickpixeltools.github.io/jpg-to-png.html">Use JPG to PNG Converter →</a>
             </div>
-
         </div>
-
     </div>
 </section>
 
-
 <section class="content-section">
     <div class="container content-inner">
-
         <h2>Frequently Asked Questions</h2>
-
-
         <div class="faq-item">
-
             <h3>Which image formats does the compressor support?</h3>
-
-            <p>
-                QuickPixel Tools supports JPEG, PNG and WebP images.
-                The output format is kept the same as the selected input format.
-            </p>
-
+            <p>It accepts JPEG/JPG, PNG and WebP images. The processed output stays in the selected image's format.</p>
         </div>
-
-
         <div class="faq-item">
-
             <h3>Does the compressor upload my image to a server?</h3>
-
-            <p>
-                No. The compression process runs in your browser.
-                QuickPixel Tools does not need to upload the selected image
-                to its own server.
-            </p>
-
+            <p>The basic compression operation runs in your browser and does not need to upload the selected image to a QuickPixel Tools image-processing server.</p>
         </div>
-
-
         <div class="faq-item">
-
             <h3>Will image dimensions change after compression?</h3>
-
-            <p>
-                No. This compressor keeps the original image width and height.
-                Use the Image Resizer if you also need to change the dimensions.
-            </p>
-
+            <p>No. This tool keeps the original width and height. Use the Image Resizer if you need different dimensions.</p>
         </div>
-
-
         <div class="faq-item">
-
-            <h3>Does the quality setting work for PNG images?</h3>
-
-            <p>
-                PNG is a lossless image format, so the quality slider does not
-                control PNG compression in the same way it does for JPEG or WebP.
-                A PNG file may therefore become only slightly smaller or may not
-                become smaller.
-            </p>
-
+            <h3>Does the quality slider work for PNG?</h3>
+            <p>No, not in the same way as JPEG or WebP. PNG is lossless, so this tool may make a PNG only slightly smaller—or may not reduce its size.</p>
         </div>
-
-
         <div class="faq-item">
-
             <h3>Can compression reduce image quality?</h3>
-
-            <p>
-                JPEG and WebP compression can reduce visual quality depending
-                on the selected quality level. Higher quality settings usually
-                preserve more detail but may produce larger files.
-            </p>
-
+            <p>JPEG and WebP quality settings can affect visual detail. Lower settings may create smaller files but can also make artifacts more noticeable, so inspect the output before using it.</p>
         </div>
-
-
         <div class="faq-item">
-
-            <h3>Why did my compressed image not become much smaller?</h3>
-
-            <p>
-                Some images are already highly compressed or contain content
-                that does not compress efficiently. PNG files in particular
-                may show little size reduction because PNG is lossless.
-            </p>
-
+            <h3>Why is the processed file larger than the original?</h3>
+            <p>Some images are already stored efficiently, and re-encoding does not guarantee a smaller file. If the result is larger, keep the original or try a different quality setting.</p>
         </div>
-
-
-        <div class="faq-item">
-
-            <h3>Do I need to install software?</h3>
-
-            <p>
-                No. QuickPixel Tools is browser-based, so you can use the
-                compressor from a modern web browser without installing
-                additional image-compression software.
-            </p>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <h3>Can I use the compressor on a phone?</h3>
-
-            <p>
-                Yes. The page is designed to work in modern mobile browsers.
-                The exact performance can depend on your device, browser and
-                the size of the selected image.
-            </p>
-
-        </div>
-
     </div>
 </section>
-
-
-<section class="content-section">
-    <div class="container content-inner">
-
-        <h2>A Simple Way to Prepare Images for Online Use</h2>
-
-        <p>
-            Image compression is most useful when the original image contains
-            more file data than you need for its intended purpose. Instead of
-            using the lowest possible quality automatically, compare the file
-            size and visual result and choose a setting appropriate for your use.
-        </p>
-
-        <p>
-            If you need both smaller file size and smaller dimensions,
-            compressing alone may not be enough. In that situation, use the
-            <a href="https://quickpixeltools.github.io/image-resizer.html">
-                Image Resizer
-            </a>
-            as a separate step.
-        </p>
-
-    </div>
-</section>
-
 
 <footer>
     <div class="container footer-content">
