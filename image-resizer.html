@@ -9,7 +9,7 @@
 
     <title>Free Image Resizer Online - Resize JPG, PNG & WebP | QuickPixel Tools</title>
 
-    <meta name="description" content="Resize JPG, PNG and WebP images online for free. Change image dimensions while maintaining aspect ratio. Process images directly in your browser with QuickPixel Tools.">
+    <meta name="description" content="Resize JPG, PNG and WebP images to custom pixel dimensions online for free. Keep proportions with aspect-ratio controls, check output dimensions and download the resized image in your browser.">
 
     <meta name="robots" content="index, follow">
 
@@ -443,7 +443,7 @@
 
 
         .download-button {
-            display: block;
+            display: none;
             text-align: center;
             background: #198754;
             color: #ffffff;
@@ -1346,25 +1346,41 @@
     <div class="container content-inner">
 
         <h2>
-            What Dimensions Should You Use?
+            Choose Dimensions for Your Actual Use
         </h2>
 
         <p>
-            There is no single width or height that is correct for every
-            image. The appropriate dimensions depend on where the image
-            will be used.
+            Start with the space where the image will appear, rather than
+            choosing a large number at random. The examples below are
+            planning examples, not mandatory sizes; always follow the
+            exact requirements of the website, app, form or document you
+            are preparing the image for.
         </p>
 
+        <div class="info-box">
+            <strong>Practical sizing examples</strong>
+            <ul>
+                <li><strong>Article image:</strong> if the content area displays an image at about 800 pixels wide, try an 800-pixel-wide copy and review it at the intended display size.</li>
+                <li><strong>Half-size copy:</strong> a 1600 × 1200 image can be reduced to 800 × 600 while keeping its 4:3 proportions.</li>
+                <li><strong>Landscape presentation:</strong> if your source is 1920 × 1080 and you need a smaller 16:9 copy, 1280 × 720 keeps the same proportions.</li>
+                <li><strong>Square image:</strong> a 1200 × 1200 source can be resized to 600 × 600 for a smaller square version.</li>
+            </ul>
+        </div>
+
+        <h3>How to calculate a proportional size</h3>
         <p>
-            If a website, application or platform provides a recommended
-            image size, follow that requirement. Otherwise, choose
-            dimensions that are appropriate for the actual display size.
+            When maintaining the aspect ratio, multiply both dimensions
+            by the same scale factor. For example, halving a 1600 × 1200
+            image gives 800 × 600. If you enter only a new width or height,
+            keep the aspect-ratio option enabled so the other dimension is
+            calculated from the original proportions.
         </p>
 
         <p>
             Avoid enlarging an image simply to increase its pixel
-            dimensions. Larger dimensions do not automatically mean
-            better image quality.
+            dimensions. Larger dimensions do not automatically create
+            extra detail. After resizing, inspect the downloaded image
+            at its intended display size before replacing the original.
         </p>
 
     </div>
@@ -1884,6 +1900,10 @@
         resizeDownload.style.display =
             "none";
 
+        if (currentDownloadURL) {
+            URL.revokeObjectURL(currentDownloadURL);
+            currentDownloadURL = null;
+        }
 
         selectedFile =
             this.files[0] || null;
@@ -2417,6 +2437,9 @@
                                     resizeDownload.download =
                                         "resized-image." +
                                         extension;
+
+                                    resizeDownload.style.display =
+                                        "block";
 
 
                                     originalDimensions.textContent =
